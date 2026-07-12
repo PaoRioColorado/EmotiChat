@@ -1,0 +1,146 @@
+/* EmotiChat v2.1 — Mobile
+   Una sola columna. El panel de análisis permanece visible debajo del chat.
+*/
+
+@media (max-width: 768px) {
+    .gradio-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    #app {
+        display: block !important;
+        width: 100% !important;
+        min-height: 100vh !important;
+    }
+
+    /* La sidebar no ocupa espacio en celular. */
+    .sidebar {
+        display: none !important;
+    }
+
+    .main {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 8px !important;
+        gap: 12px !important;
+    }
+
+    .chat-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 560px !important;
+        max-height: none !important;
+    }
+
+    #chat_area {
+        min-height: 390px !important;
+        max-height: 55vh !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    .composer {
+        width: 100% !important;
+        padding: 8px !important;
+    }
+
+    /* Pestañas visibles y legibles. */
+    .input-mode-tabs button {
+        min-height: 46px !important;
+        font-size: 14px !important;
+        color: #374151 !important;
+        background: #f3f4f6 !important;
+    }
+
+    .input-mode-tabs button.selected,
+    .input-mode-tabs button[aria-selected="true"] {
+        color: #ffffff !important;
+        background: #6d5bd0 !important;
+    }
+
+    /* Escritura: botones grandes y claros. */
+    .text-actions {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+    }
+
+    .text-actions button {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    /* Voz: se eliminan textos largos, no las funciones. */
+    .voice-guide span,
+    .voice-help {
+        display: none !important;
+    }
+
+    .voice-guide {
+        margin-bottom: 8px !important;
+        padding: 10px 12px !important;
+        text-align: center !important;
+    }
+
+    .voice-guide strong {
+        font-size: 15px !important;
+    }
+
+    #audio_input {
+        min-height: 150px !important;
+        border-radius: 18px !important;
+    }
+
+    #voice_process {
+        width: 100% !important;
+        min-height: 52px !important;
+        font-size: 15px !important;
+        margin-top: 8px !important;
+    }
+
+    .voice-output-actions {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .voice-output-actions button {
+        width: 100% !important;
+    }
+
+    /* El panel de análisis NO se oculta: baja debajo del chat. */
+    .module-panel,
+    .module-summary-panel,
+    .summary-panel,
+    .pdf-actions {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .module-card,
+    .wide-card,
+    .info-box,
+    .metric-table {
+        max-width: 100% !important;
+    }
+
+    .metric-table {
+        display: block !important;
+        overflow-x: auto !important;
+        white-space: normal !important;
+    }
+
+    .app-footer {
+        width: 100% !important;
+        margin-top: 16px !important;
+        padding: 14px 12px !important;
+        text-align: center !important;
+    }
+}
