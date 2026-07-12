@@ -1,35 +1,21 @@
-// ============================================================================
-// EmotiChat v2.2
-// app.js
-// Funciones generales de la interfaz
-// ============================================================================
+() => {
+    setTimeout(() => {
+        const panel =
+            document.querySelector("#panel-modulo") ||
+            document.querySelector(".module-panel");
 
-function scrollToModule() {
+        if (!panel) return;
 
-    const panel =
-        document.querySelector("#panel-modulo") ||
-        document.querySelector(".module-panel");
+        const y =
+            panel.getBoundingClientRect().top +
+            window.pageYOffset -
+            18;
 
-    if (!panel) return;
+        window.scrollTo({
+            top: y,
+            behavior: "smooth"
+        });
+    }, 650);
 
-    const y =
-        panel.getBoundingClientRect().top +
-        window.pageYOffset -
-        18;
-
-    window.scrollTo({
-        top: y,
-        behavior: "smooth"
-    });
-
+    return [];
 }
-
-function esperarYScroll() {
-
-    setTimeout(scrollToModule, 650);
-
-}
-
-window.EmotiChat = window.EmotiChat || {};
-
-window.EmotiChat.scrollModulo = esperarYScroll;
