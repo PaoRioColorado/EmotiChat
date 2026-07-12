@@ -144,3 +144,104 @@
         text-align: center !important;
     }
 }
+
+/* ============================================================
+   COMPOSITOR TIPO MENSAJERÍA — MOBILE
+   ============================================================ */
+
+@media (max-width: 768px) {
+    .composer {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 8px !important;
+        border-radius: 18px !important;
+    }
+
+    .message-composer-row {
+        grid-template-columns: minmax(0, 1fr) 46px !important;
+        gap: 7px !important;
+    }
+
+    #msg textarea,
+    #msg input {
+        min-height: 46px !important;
+        max-height: 110px !important;
+        padding: 12px 14px !important;
+        border-radius: 22px !important;
+        font-size: 16px !important;
+    }
+
+    #send {
+        width: 46px !important;
+        min-width: 46px !important;
+        max-width: 46px !important;
+        height: 46px !important;
+        min-height: 46px !important;
+        font-size: 21px !important;
+    }
+
+    .composer-secondary-actions {
+        grid-template-columns: 1fr !important;
+        gap: 7px !important;
+    }
+
+    .composer-secondary-actions button {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 42px !important;
+    }
+
+    .voice-desktop-help {
+        display: none !important;
+    }
+
+    .voice-mobile-help {
+        display: inline !important;
+    }
+
+    .voice-guide {
+        padding: 10px 12px !important;
+        margin-bottom: 8px !important;
+        text-align: center !important;
+        border-radius: 14px !important;
+    }
+
+    .voice-guide strong {
+        display: block !important;
+        margin-bottom: 4px !important;
+        color: #262c39 !important;
+        font-size: 15px !important;
+    }
+
+    .voice-guide span,
+    .voice-help {
+        display: block !important;
+        color: #525b6d !important;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+    }
+
+    #audio_input {
+        width: 100% !important;
+        min-height: 125px !important;
+        border-radius: 18px !important;
+    }
+
+    #voice_process {
+        display: none !important;
+    }
+
+    #audio_out {
+        width: 100% !important;
+    }
+
+    .module-panel,
+    .module-summary-panel,
+    .summary-panel,
+    .pdf-actions {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
