@@ -55,3 +55,41 @@
         width: 100% !important;
     }
 }
+
+/* ============================================================
+   COMPOSITOR Y VOZ — DESKTOP
+   ============================================================ */
+
+@media (min-width: 769px) {
+    .composer {
+        padding: 14px !important;
+    }
+
+    .message-composer-row {
+        grid-template-columns: minmax(0, 1fr) 50px !important;
+    }
+
+    .composer-secondary-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    .voice-desktop-help {
+        display: inline !important;
+    }
+
+    .voice-mobile-help {
+        display: none !important;
+    }
+
+    #audio_input {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    #voice_process {
+        display: block !important;
+        width: 100% !important;
+        min-height: 50px !important;
+    }
+}
+
