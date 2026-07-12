@@ -1,0 +1,51 @@
+/* EmotiChat v2.1 — Voz */
+
+.input-mode-tabs {
+    width: 100% !important;
+}
+
+.voice-guide {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(99, 102, 241, .18);
+    border-radius: 15px;
+    background: #f8f9ff;
+    line-height: 1.45;
+}
+
+.voice-guide strong {
+    color: #1f2937;
+    font-size: 16px;
+}
+
+.voice-guide span,
+.voice-help {
+    color: #4b5563;
+    font-size: 14px;
+}
+
+.voice-recorder,
+#audio_input {
+    width: 100% !important;
+}
+
+#audio_input {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+}
+
+#voice_process {
+    width: 100% !important;
+    margin-top: 10px !important;
+}
+
+.voice-output-actions {
+    margin-top: 10px !important;
+}
+
+#audio_out {
+    width: 100% !important;
+}

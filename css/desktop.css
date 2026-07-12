@@ -1,0 +1,57 @@
+/* EmotiChat v2.1 — Desktop
+   Mantiene la estructura original de dos columnas:
+   sidebar izquierda + área principal derecha.
+*/
+
+@media (min-width: 769px) {
+    #app {
+        display: grid !important;
+        grid-template-columns: 280px minmax(0, 1fr) !important;
+        align-items: start !important;
+        gap: 22px !important;
+        width: 100% !important;
+    }
+
+    .sidebar {
+        display: flex !important;
+        flex-direction: column !important;
+        min-width: 0 !important;
+    }
+
+    .main {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .composer-actions,
+    .text-actions,
+    .voice-output-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+
+    .composer-actions button,
+    .text-actions button,
+    .voice-output-actions button {
+        min-height: 44px !important;
+    }
+
+    #send {
+        min-width: 145px !important;
+    }
+
+    #reset {
+        min-width: 180px !important;
+    }
+
+    #voice_process {
+        width: 100% !important;
+        min-height: 50px !important;
+    }
+
+    .module-panel,
+    .pdf-actions {
+        width: 100% !important;
+    }
+}

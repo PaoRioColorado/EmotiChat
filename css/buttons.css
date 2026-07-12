@@ -1,0 +1,55 @@
+/* EmotiChat v2.1 — Botones */
+
+button,
+.gr-button {
+    min-height: 44px !important;
+    border-radius: 12px !important;
+    font-weight: 650 !important;
+    transition:
+        transform .16s ease,
+        box-shadow .16s ease,
+        border-color .16s ease !important;
+}
+
+button:hover,
+.gr-button:hover {
+    transform: translateY(-1px);
+}
+
+button:active,
+.gr-button:active {
+    transform: translateY(0);
+}
+
+#send,
+#voice_process {
+    font-weight: 750 !important;
+}
+
+#send {
+    box-shadow: 0 8px 18px rgba(99, 102, 241, .18) !important;
+}
+
+#voice_process {
+    box-shadow: 0 8px 18px rgba(124, 58, 237, .16) !important;
+}
+
+.side-button {
+    justify-content: flex-start !important;
+    text-align: left !important;
+}
+
+.tool-btn {
+    min-width: 0 !important;
+}
+
+.input-mode-tabs button {
+    color: #374151 !important;
+    font-weight: 700 !important;
+}
+
+.input-mode-tabs button.selected,
+.input-mode-tabs button[aria-selected="true"] {
+    color: #ffffff !important;
+    background: #6d5bd0 !important;
+}
