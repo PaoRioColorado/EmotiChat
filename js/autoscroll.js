@@ -1,60 +1,54 @@
-// ============================================================================
-// EmotiChat v2.2
-// Autoscroll del chat
-// ============================================================================
+() => {
+    const bajarChat = () => {
+        const area = document.querySelector("#chat_area");
 
-function bajarChat() {
+        if (!area) return;
 
-    const area = document.querySelector("#chat_area");
+        const candidatos = [
+            area,
+            ...area.querySelectorAll("*")
+        ];
 
-    if (!area) return;
+        let contenedor = area;
 
-    area.scrollTop = area.scrollHeight;
+        for (const elemento of candidatos) {
+            const estilo = window.getComputedStyle(elemento);
 
-    const internos = area.querySelectorAll("*");
-
-    internos.forEach((el) => {
-
-        const estilo = window.getComputedStyle(el);
-
-        if (
-            (estilo.overflowY === "auto" ||
-             estilo.overflowY === "scroll") &&
-            el.scrollHeight > el.clientHeight
-        ) {
-            el.scrollTop = el.scrollHeight;
+            if (
+                (estilo.overflowY === "auto" ||
+                 estilo.overflowY === "scroll") &&
+                elemento.scrollHeight > elemento.clientHeight + 2
+            ) {
+                contenedor = elemento;
+                break;
+            }
         }
 
+        requestAnimationFrame(() => {
+            contenedor.scrollTop = contenedor.scrollHeight;
+        });
+    };
+
+    const bajarVariasVeces = () => {
+        bajarChat();
+        setTimeout(bajarChat, 80);
+        setTimeout(bajarChat, 220);
+        setTimeout(bajarChat, 500);
+    };
+
+    const observer = new MutationObserver(() => {
+        bajarVariasVeces();
     });
 
-}
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
+        characterData: true
+    });
 
-function bajarVariasVeces() {
-
-    bajarChat();
-
-    setTimeout(bajarChat, 80);
-    setTimeout(bajarChat, 220);
-    setTimeout(bajarChat, 500);
-
-}
-
-const observer = new MutationObserver(() => {
+    window.addEventListener("resize", bajarVariasVeces);
 
     bajarVariasVeces();
 
-});
-
-observer.observe(document.body, {
-
-    childList: true,
-    subtree: true,
-    characterData: true
-
-});
-
-window.addEventListener("resize", bajarVariasVeces);
-
-window.addEventListener("load", bajarVariasVeces);
-
-setTimeout(bajarVariasVeces, 300);
+    return [];
+}
