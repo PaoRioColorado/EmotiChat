@@ -1,0 +1,158 @@
+
+/* =========================================================
+   EmotiChat Release v1.0 — contraste y legibilidad
+   ========================================================= */
+
+/* Recursos recomendados y cierre */
+.resources-card,
+.resources-card *,
+.closing-summary,
+.closing-summary * {
+    color: #1f2937 !important;
+}
+
+.resources-card,
+.closing-summary {
+    background: #f8f7ff !important;
+    border: 1px solid #cfc8ef !important;
+}
+
+.resources-card h3,
+.closing-summary h3 {
+    color: #31265f !important;
+}
+
+.resource-item strong,
+.closing-summary strong {
+    color: #2f255d !important;
+    font-weight: 800 !important;
+}
+
+.resource-item p,
+.resource-note,
+.closing-summary p,
+.closing-summary li {
+    color: #374151 !important;
+    opacity: 1 !important;
+}
+
+.resource-note {
+    border-top: 1px solid rgba(49, 38, 95, 0.16);
+    padding-top: 10px;
+}
+
+/* Tarjetas y tablas */
+.summary-card,
+.summary-card *,
+.module-card,
+.module-card *,
+.info-box,
+.info-box *,
+.analysis-details,
+.analysis-details *,
+.sidebar-info-card,
+.sidebar-info-card *,
+.breathe-card,
+.breathe-card * {
+    color: #1f2937 !important;
+}
+
+.summary-card h3,
+.module-card h2,
+.module-card h3,
+.module-card h4,
+.info-box strong,
+.sidebar-info-card h3,
+.breathe-card h3 {
+    color: #31265f !important;
+}
+
+.metric-table,
+.metric-table td,
+.metric-table th {
+    color: #1f2937 !important;
+}
+
+.metric-table thead th {
+    background: #eeeafd !important;
+    color: #2d2357 !important;
+}
+
+.metric-table tbody td {
+    background: #ffffff !important;
+}
+
+/* Procesamiento de audio */
+.processing-card,
+.processing-card *,
+.voice-guide,
+.voice-guide *,
+.voice-help,
+.voice-help *,
+.voice-step,
+.voice-note-mobile {
+    color: #2b2350 !important;
+}
+
+/* Chat */
+.bot-bubble,
+.bot-bubble p,
+.user-bubble,
+.user-bubble p {
+    color: #1f2937 !important;
+}
+
+/* Crisis */
+.crisis-card,
+.crisis-card p,
+.crisis-card summary,
+.crisis-details p {
+    color: #3b1f1f !important;
+}
+
+.crisis-heading {
+    color: #9f1d1d !important;
+}
+
+.crisis-btn.emergency {
+    color: #ffffff !important;
+}
+
+.crisis-btn.whatsapp {
+    color: #14532d !important;
+}
+
+.crisis-btn.copy-message {
+    color: #3f3278 !important;
+}
+
+.crisis-btn.emergency-secondary {
+    color: #8b1e1e !important;
+}
+
+/* Mobile: reforzar contraste */
+@media (max-width: 760px) {
+    .resources-card,
+    .resources-card *,
+    .closing-summary,
+    .closing-summary *,
+    .module-card,
+    .module-card *,
+    .summary-card,
+    .summary-card *,
+    .info-box,
+    .info-box *,
+    .sidebar-info-card,
+    .sidebar-info-card * {
+        color: #1f2937 !important;
+    }
+
+    .resources-card h3,
+    .closing-summary h3,
+    .module-card h2,
+    .module-card h3,
+    .summary-card h3,
+    .info-box strong {
+        color: #31265f !important;
+    }
+}
