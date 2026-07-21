@@ -1,1 +1,145 @@
-
+{
+  "intenciones": {
+    "saludo": [
+      "hola",
+      "buenas",
+      "buen dia",
+      "buenos dias",
+      "buenas tardes",
+      "buenas noches",
+      "como estas"
+    ],
+    "agradecimiento": [
+      "gracias",
+      "muchas gracias",
+      "te agradezco",
+      "gracias por escucharme",
+      "muy amable"
+    ],
+    "despedida": [
+      "chau",
+      "adios",
+      "hasta luego",
+      "nos vemos",
+      "hasta pronto",
+      "me voy",
+      "terminar conversacion"
+    ]
+  },
+  "emociones": {
+    "positiva": [
+      "bien",
+      "muy bien",
+      "feliz",
+      "contenta",
+      "contento",
+      "tranquila",
+      "tranquilo",
+      "mejor",
+      "alegre",
+      "genial",
+      "excelente",
+      "animada",
+      "animado"
+    ],
+    "negativa": [
+      "mal",
+      "triste",
+      "ansiosa",
+      "ansioso",
+      "angustiada",
+      "angustiado",
+      "cansada",
+      "cansado",
+      "preocupada",
+      "preocupado",
+      "miedo",
+      "enojada",
+      "enojado",
+      "sola",
+      "solo",
+      "llorando",
+      "quiero llorar",
+      "agotada",
+      "agotado",
+      "nerviosa",
+      "nervioso"
+    ],
+    "neutral": [
+      "normal",
+      "mas o menos",
+      "ahi estoy",
+      "no se",
+      "igual que siempre",
+      "regular"
+    ]
+  },
+  "respuestas": {
+    "saludo": [
+      "Hola, {nombre}. Me alegra que estés acá. ¿Cómo te sentís en este momento?",
+      "Hola, {nombre}. Estoy para escucharte. ¿Qué te gustaría conversar hoy?",
+      "Qué bueno encontrarte, {nombre}. ¿Cómo viene tu día?"
+    ],
+    "agradecimiento": [
+      "No hay de qué, {nombre}. Me alegra poder acompañarte. ¿Querés seguir conversando?",
+      "Gracias a vos por confiar en este espacio, {nombre}. ¿Hay algo más que quieras compartir?",
+      "Con gusto, {nombre}. ¿Cómo te sentís después de haberlo hablado?"
+    ],
+    "despedida": [
+      "Gracias por conversar conmigo, {nombre}. Espero que tengas un momento tranquilo.",
+      "Fue un gusto acompañarte, {nombre}. Podés volver cuando necesites conversar.",
+      "Gracias por compartir este momento, {nombre}. Que estés muy bien."
+    ],
+    "positiva": [
+      "Me alegra saber que te sentís bien, {nombre}. ¿Pasó algo lindo hoy?",
+      "Qué bueno leer eso, {nombre}. ¿Qué hizo que hoy te sintieras así?",
+      "Me alegra que estés teniendo un buen momento, {nombre}. ¿Qué te gustaría compartir?",
+      "Qué linda noticia, {nombre}. ¿Hay algo especial que haya mejorado tu día?",
+      "Excelente, {nombre}. ¿Qué fue lo mejor de tu día hasta ahora?",
+      "Me alegra escucharlo, {nombre}. ¿Querés contarme un poco más?"
+    ],
+    "negativa": [
+      "Lamento que te sientas así, {nombre}. ¿Querés contarme qué pasó?",
+      "Estoy acá para escucharte, {nombre}. ¿Qué es lo que más te preocupa ahora?",
+      "Entiendo, {nombre}. ¿Desde cuándo te venís sintiendo de esta manera?",
+      "Siento que estés pasando por un momento difícil, {nombre}. ¿Qué parte te pesa más?",
+      "Gracias por contármelo, {nombre}. ¿Qué necesitás poder expresar ahora?",
+      "No tenés que explicar todo de una vez, {nombre}. ¿Por dónde te gustaría empezar?"
+    ],
+    "negacion_emocional": [
+      "Lamento que no te estés sintiendo bien, {nombre}. ¿Querés contarme qué pasó?",
+      "Gracias por decirlo, {nombre}. ¿Qué es lo que más te está afectando ahora?",
+      "Estoy para escucharte, {nombre}. ¿Desde cuándo sentís este malestar?",
+      "Entiendo, {nombre}. ¿Hay algo concreto que haya desencadenado cómo te sentís?"
+    ],
+    "neutral": [
+      "Entiendo, {nombre}. ¿Qué te gustaría conversar hoy?",
+      "Gracias por contármelo, {nombre}. ¿Hay algo de tu día que quieras explorar un poco más?",
+      "A veces cuesta poner en palabras cómo estamos, {nombre}. ¿Qué fue lo más importante de tu día?",
+      "Está bien, {nombre}. ¿Hay algún tema que tengas dando vueltas?",
+      "Te escucho, {nombre}. ¿Por dónde te gustaría empezar?"
+    ],
+    "pregunta_general": [
+      "{nombre}, para responderte mejor necesito un poco más de contexto. ¿Podés contarme qué está pasando?",
+      "Entiendo tu pregunta, {nombre}. ¿Qué situación concreta te llevó a plantearla?",
+      "{nombre}, me gustaría orientarte con cuidado. ¿Podés contarme un poco más?"
+    ],
+    "general": [
+      "Gracias por compartirlo, {nombre}. ¿Qué parte de eso te gustaría conversar primero?",
+      "Te estoy escuchando, {nombre}. ¿Qué es lo más importante de lo que contaste?",
+      "Entiendo, {nombre}. ¿Cómo te está afectando esta situación?",
+      "Gracias por confiarme eso, {nombre}. ¿Qué sentís que necesitás ahora?",
+      "Podemos ir de a poco, {nombre}. ¿Por dónde preferís empezar?"
+    ]
+  },
+  "seguridad": {
+    "crisis": [
+      "me quiero morir",
+      "no quiero vivir",
+      "me quiero matar",
+      "quiero terminar con todo",
+      "no puedo seguir viviendo"
+    ],
+    "nota": "Las situaciones de crisis se procesan antes que cualquier respuesta conversacional mediante el módulo de seguridad."
+  }
+}
