@@ -1,0 +1,251 @@
+
+/* ==========================================================================
+   EmotiChat v6.1
+   Comparación de transcripción + mejoras de interfaz móvil
+   Este archivo debe subirse a: css/emotichat-v6-1.css
+   ========================================================================== */
+
+.transcription-comparison-section {
+    width: 100%;
+    margin-top: 18px;
+    padding: 22px;
+    border: 1px solid rgba(92, 81, 160, 0.16);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 14px 34px rgba(45, 38, 88, 0.08);
+}
+
+.comparison-heading {
+    margin-bottom: 18px;
+}
+
+.comparison-kicker {
+    display: inline-block;
+    margin-bottom: 7px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6257a8;
+}
+
+.comparison-heading h2 {
+    margin: 0 0 8px;
+    font-size: 1.28rem;
+    color: #292543;
+}
+
+.comparison-heading p {
+    margin: 0;
+    line-height: 1.55;
+    color: #67627c;
+}
+
+#compare_transcriptions_button {
+    margin-top: 10px;
+}
+
+#transcription_comparison_result {
+    margin-top: 18px;
+}
+
+.reference-card {
+    border-left: 4px solid #7468bd;
+}
+
+.comparison-table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.transcription-comparison-table {
+    min-width: 940px;
+}
+
+.transcription-comparison-table th,
+.transcription-comparison-table td {
+    vertical-align: top;
+}
+
+.transcription-comparison-table td:nth-child(5) {
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    body,
+    .gradio-container {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #app {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        padding: 0 !important;
+        gap: 0 !important;
+    }
+
+    .sidebar {
+        position: static !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 10px 10px 7px !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .brand {
+        min-height: auto !important;
+        padding: 5px 4px 9px !important;
+    }
+
+    .brand h1 {
+        font-size: 1.05rem !important;
+        margin: 0 !important;
+    }
+
+    .brand p {
+        display: none !important;
+    }
+
+    .brand .logo-img {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .menu {
+        display: grid !important;
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+        gap: 5px !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .menu-section,
+    .sidebar-detail,
+    .breathe-card {
+        display: none !important;
+    }
+
+    .side-button {
+        min-width: 0 !important;
+        min-height: 44px !important;
+        padding: 7px 3px !important;
+        border-radius: 12px !important;
+        font-size: 0.68rem !important;
+        line-height: 1.08 !important;
+        white-space: normal !important;
+    }
+
+    .main {
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 8px 10px 14px !important;
+    }
+
+    .topbar {
+        min-height: auto !important;
+        padding: 8px 4px 10px !important;
+    }
+
+    .topbar h2 {
+        font-size: 1rem !important;
+        margin: 0 !important;
+    }
+
+    .topbar p {
+        display: none !important;
+    }
+
+    .chat-card {
+        width: 100% !important;
+        margin: 0 !important;
+        border-radius: 18px !important;
+        overflow: hidden !important;
+    }
+
+    .chat-scroll {
+        height: 53vh !important;
+        min-height: 360px !important;
+        padding: 12px 10px !important;
+    }
+
+    .msg {
+        width: 100% !important;
+        gap: 7px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .bubble {
+        max-width: 88% !important;
+        padding: 10px 12px !important;
+        border-radius: 16px !important;
+    }
+
+    .avatar {
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+    }
+
+    .composer {
+        padding: 8px !important;
+    }
+
+    .message-composer-row {
+        gap: 7px !important;
+    }
+
+    #send {
+        min-width: 68px !important;
+        padding: 0 12px !important;
+    }
+
+    .composer-secondary-actions {
+        gap: 6px !important;
+    }
+
+    .secondary-action-btn,
+    .tool-btn {
+        min-height: 38px !important;
+        padding: 7px 9px !important;
+        font-size: 0.73rem !important;
+    }
+
+    .module-panel,
+    .transcription-comparison-section {
+        margin-top: 12px !important;
+    }
+
+    .transcription-comparison-section {
+        padding: 15px 12px !important;
+        border-radius: 17px !important;
+    }
+
+    .comparison-heading h2 {
+        font-size: 1.08rem !important;
+    }
+
+    .comparison-heading p {
+        font-size: 0.88rem !important;
+    }
+
+    .summary-panel,
+    .module-shell {
+        padding: 14px 11px !important;
+    }
+
+    .module-card {
+        padding: 13px !important;
+    }
+
+    .pdf-actions {
+        padding: 0 4px !important;
+    }
+}
