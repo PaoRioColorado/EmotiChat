@@ -6264,3 +6264,104 @@ fuera del viewport. Se evita depender de reducir el zoom del navegador.
     transform: translateY(-3px) !important;
 }
 
+
+
+/* === V11 ENTREGA ESTABLE === */
+/* Archivos compactos: una sola acción visible y alineada en móvil. */
+#comparison_audio_input,
+#pipeline_audio_input,
+#upload_audio,
+#txt_file_upload {
+  min-height: 54px !important;
+  height: 54px !important;
+  overflow: hidden !important;
+  border: 1px solid #d9d6e8 !important;
+  border-radius: 14px !important;
+  background: #f7f6fc !important;
+}
+
+#comparison_audio_input > label[data-testid="block-label"] {
+  display: none !important;
+}
+
+#comparison_audio_input > button[aria-label="Click to upload or drop files"] {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 54px !important;
+  min-height: 54px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: transparent !important;
+}
+
+#comparison_audio_input > button[aria-label="Click to upload or drop files"] .wrap,
+#comparison_audio_input > button[aria-label="Click to upload or drop files"] svg {
+  display: none !important;
+}
+
+#comparison_audio_input > button[aria-label="Click to upload or drop files"]::after {
+  content: "Seleccionar audio para comparar" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #49406f !important;
+  font-size: 15px !important;
+  font-weight: 750 !important;
+  line-height: 1 !important;
+  transform: translateY(-8px) !important;
+}
+
+#txt_file_upload > button[aria-label="Click to upload or drop files"]::after,
+#upload_audio > button[aria-label="Click to upload or drop files"]::after,
+#pipeline_audio_input > button[aria-label="Click to upload or drop files"]::after {
+  transform: translateY(-8px) !important;
+}
+
+.own-audio-comparison {
+  margin-top: 20px !important;
+  padding: 18px !important;
+  gap: 14px !important;
+  border: 1px solid #dedbea !important;
+  border-radius: 18px !important;
+  background: #ffffff !important;
+}
+
+.own-audio-heading h3 {
+  margin: 0 0 5px !important;
+  color: #24243d !important;
+  font-size: 19px !important;
+}
+
+.own-audio-heading p {
+  margin: 0 !important;
+  color: #62677a !important;
+  font-size: 14px !important;
+}
+
+.academic-audio-shell #run_project_audios_button {
+  margin-top: 8px !important;
+}
+
+@media (max-width: 640px) {
+  .academic-audio-shell,
+  .own-audio-comparison {
+    padding: 14px !important;
+  }
+
+  .project-audio-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .academic-audio-card {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+}
