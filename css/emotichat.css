@@ -6165,3 +6165,95 @@ fuera del viewport. Se evita depender de reducir el zoom del navegador.
     }
 }
 
+/* ===== V9: traducción, audio de respuesta y carga TXT ===== */
+#audio_out,
+#audio_out > div,
+#audio_out .audio-container {
+    background: #ffffff !important;
+    color: #293149 !important;
+    border-color: #dfe3ec !important;
+    box-shadow: none !important;
+}
+
+#audio_out > label[data-testid="block-label"] {
+    position: static !important;
+    display: flex !important;
+    align-items: center !important;
+    min-height: 34px !important;
+    padding: 8px 10px 2px !important;
+    margin: 0 !important;
+    background: transparent !important;
+    color: #3f4760 !important;
+    -webkit-text-fill-color: #3f4760 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+}
+
+#audio_out > label[data-testid="block-label"] svg {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+}
+
+#audio_out .icon-button-wrapper,
+#audio_out button[aria-label*="share" i],
+#audio_out button[title*="share" i],
+#audio_out button[aria-label*="download" i],
+#audio_out button[title*="download" i],
+#audio_out .share-button,
+#audio_out .download-button {
+    display: none !important;
+}
+
+/* Centrado robusto del texto de los botones de archivo. */
+#txt_file_upload,
+#upload_audio,
+#pipeline_audio_input {
+    min-height: 54px !important;
+    height: 54px !important;
+    max-height: 54px !important;
+    overflow: hidden !important;
+}
+
+#txt_file_upload > button[aria-label="Click to upload or drop files"],
+#upload_audio > button[aria-label="Click to upload or drop files"],
+#pipeline_audio_input > button[aria-label="Click to upload or drop files"] {
+    position: relative !important;
+    min-height: 54px !important;
+    height: 54px !important;
+    max-height: 54px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+#txt_file_upload > button[aria-label="Click to upload or drop files"]::after,
+#upload_audio > button[aria-label="Click to upload or drop files"]::after,
+#pipeline_audio_input > button[aria-label="Click to upload or drop files"]::after {
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    padding: 8px 14px !important;
+    margin: 0 !important;
+    color: #4b4478 !important;
+    -webkit-text-fill-color: #4b4478 !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    font-weight: 750 !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    pointer-events: none !important;
+}
+
+.translation-step p {
+    overflow-wrap: anywhere !important;
+}
+
