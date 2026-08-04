@@ -5862,63 +5862,222 @@ fuera del viewport. Se evita depender de reducir el zoom del navegador.
     }
 }
 
-/* ===== V7: interfaz móvil profesional y controles restaurados ===== */
+/* ===== V8: controles nativos estables e interfaz profesional ===== */
 :root {
-    --ui-primary: #6f63c8;
-    --ui-primary-soft: #f0eef9;
-    --ui-primary-border: #cec8e9;
-    --ui-text: #242b3f;
-    --ui-muted: #667085;
-    --ui-border: #dfe3ec;
-    --ui-surface: #ffffff;
-    --ui-surface-soft: #f8f9fc;
+    --v8-primary: #6f63c8;
+    --v8-primary-soft: #f0eef9;
+    --v8-primary-border: #cec8e9;
+    --v8-text: #252c40;
+    --v8-muted: #667085;
+    --v8-border: #dfe3ec;
+    --v8-surface: #ffffff;
+    --v8-surface-soft: #f8f9fc;
 }
 
-/* Selectores de archivo claros y consistentes en todas las pantallas. */
+/* Un único botón de carga: funciona igual en escritorio y celular. */
 #txt_file_upload,
 #upload_audio,
 #pipeline_audio_input {
-    background: var(--ui-surface) !important;
-    color: var(--ui-text) !important;
-    border: 1px solid var(--ui-border) !important;
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    min-height: 50px !important;
+    height: 50px !important;
+    max-height: 50px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 11px !important;
     box-shadow: none !important;
 }
 
-#txt_file_upload button,
-#upload_audio button,
-#pipeline_audio_input button {
-    background: var(--ui-primary-soft) !important;
-    color: #4b4478 !important;
-    -webkit-text-fill-color: #4b4478 !important;
-    border: 1px solid var(--ui-primary-border) !important;
-    box-shadow: none !important;
+#txt_file_upload > label[data-testid="block-label"],
+#upload_audio > label[data-testid="block-label"],
+#pipeline_audio_input > label[data-testid="block-label"] {
+    display: none !important;
 }
 
-/* El control de grabación debe permanecer visible. */
-#audio_input button,
-#audio_input button.icon-button,
-#audio_input .icon-button {
-    display: inline-flex !important;
+#txt_file_upload > button[aria-label="Click to upload or drop files"],
+#upload_audio > button[aria-label="Click to upload or drop files"],
+#pipeline_audio_input > button[aria-label="Click to upload or drop files"] {
+    position: static !important;
+    display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    min-height: 50px !important;
+    height: 50px !important;
+    max-height: 50px !important;
+    padding: 10px 15px !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    background: var(--v8-primary-soft) !important;
+    color: #4b4478 !important;
+    -webkit-text-fill-color: #4b4478 !important;
+    border: 1px solid var(--v8-primary-border) !important;
+    border-radius: 11px !important;
+    box-shadow: none !important;
+    font-size: 0 !important;
+    line-height: 1 !important;
+    box-sizing: border-box !important;
 }
 
-/* Solo se ocultan acciones de limpieza, nunca el botón para grabar. */
-#audio_input button[aria-label*="clear" i],
-#audio_input button[aria-label*="remove" i],
-#audio_input button[aria-label*="delete" i],
-#audio_input button[title*="clear" i],
-#audio_input button[title*="remove" i],
-#audio_input button[title*="delete" i],
-#audio_input .clear-button {
+#txt_file_upload > button[aria-label="Click to upload or drop files"] > .wrap,
+#upload_audio > button[aria-label="Click to upload or drop files"] > .wrap,
+#pipeline_audio_input > button[aria-label="Click to upload or drop files"] > .wrap {
     display: none !important;
+}
+
+#txt_file_upload > button[aria-label="Click to upload or drop files"]::after,
+#upload_audio > button[aria-label="Click to upload or drop files"]::after,
+#pipeline_audio_input > button[aria-label="Click to upload or drop files"]::after {
+    display: block !important;
+    color: #4b4478 !important;
+    -webkit-text-fill-color: #4b4478 !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    font-weight: 750 !important;
+}
+
+#txt_file_upload > button[aria-label="Click to upload or drop files"]::after {
+    content: "Subir archivo TXT" !important;
+}
+
+#upload_audio > button[aria-label="Click to upload or drop files"]::after {
+    content: "Subir audio" !important;
+}
+
+#pipeline_audio_input > button[aria-label="Click to upload or drop files"]::after {
+    content: "Subir audio para analizar" !important;
+}
+
+/* Grabadora: no se fuerza display en los estados; Gradio decide cuál corresponde. */
+#audio_input {
+    width: 100% !important;
+    min-height: 126px !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: var(--v8-surface) !important;
+    border: 1px solid var(--v8-border) !important;
+    border-radius: 12px !important;
+    box-shadow: none !important;
+}
+
+#audio_input > label[data-testid="block-label"] {
+    position: static !important;
+    display: flex !important;
+    align-items: center !important;
+    min-height: 38px !important;
+    padding: 9px 11px 3px !important;
+    margin: 0 !important;
+    background: transparent !important;
+    color: var(--v8-text) !important;
+    border: 0 !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+}
+
+#audio_input > label[data-testid="block-label"] svg {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    min-height: 16px !important;
+    max-width: 16px !important;
+    max-height: 16px !important;
+}
+
+#audio_input .audio-container {
+    position: relative !important;
+    min-height: 86px !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 8px 11px 11px !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+#audio_input .icon-button-wrapper,
+#audio_input button[aria-label="Limpiar"],
+#audio_input button[title="Limpiar"],
+#audio_input button[aria-label*="clear" i],
+#audio_input button[title*="clear" i] {
+    display: none !important;
+}
+
+#audio_input .component-wrapper,
+#audio_input .controls,
+#audio_input .controls .wrapper {
+    position: static !important;
+    width: 100% !important;
+    min-height: 58px !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+#audio_input .microphone,
+#audio_input .mic-select {
+    display: none !important;
+}
+
+#audio_input .record-button,
+#audio_input .stop-button,
+#audio_input .stop-button-paused,
+#audio_input .pause-button,
+#audio_input .resume-button {
+    width: auto !important;
+    min-width: 106px !important;
+    max-width: 170px !important;
+    min-height: 42px !important;
+    height: 42px !important;
+    max-height: 42px !important;
+    padding: 9px 14px !important;
+    margin: 0 7px 0 0 !important;
+    background: var(--v8-primary-soft) !important;
+    color: #4b4478 !important;
+    -webkit-text-fill-color: #4b4478 !important;
+    border: 1px solid var(--v8-primary-border) !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    font-size: 14px !important;
+    line-height: 1.2 !important;
+    font-weight: 750 !important;
+}
+
+#process_uploaded_audio,
+#process_uploaded_audio button,
+#run_full_pipeline_button,
+#run_full_pipeline_button button,
+#compare_transcriptions_button,
+#compare_transcriptions_button button,
+#load_project_audios_button,
+#load_project_audios_button button {
+    background: var(--v8-primary-soft) !important;
+    color: #4b4478 !important;
+    -webkit-text-fill-color: #4b4478 !important;
+    border: 1px solid var(--v8-primary-border) !important;
+    box-shadow: none !important;
 }
 
 @media (max-width: 768px) {
     body,
     .gradio-container {
         background: #f5f7fb !important;
-        color: var(--ui-text) !important;
+        color: var(--v8-text) !important;
     }
 
     .gradio-container {
@@ -5939,16 +6098,8 @@ fuera del viewport. Se evita depender de reducir el zoom del navegador.
         min-width: 0 !important;
         padding: 14px !important;
         margin: 0 0 10px !important;
-        border-radius: 16px !important;
+        border-radius: 15px !important;
         box-sizing: border-box !important;
-    }
-
-    .txt-v26-header,
-    .voice-guide,
-    .voice-pipeline-heading,
-    .comparison-heading {
-        margin: 0 0 14px !important;
-        text-align: left !important;
     }
 
     .txt-v26-header h3,
@@ -5959,169 +6110,35 @@ fuera del viewport. Se evita depender de reducir el zoom del navegador.
         margin: 0 0 6px !important;
         font-size: 19px !important;
         line-height: 1.25 !important;
-        letter-spacing: -.01em !important;
-        color: var(--ui-text) !important;
+        color: var(--v8-text) !important;
     }
 
     .txt-v26-header p,
     .voice-guide span,
     .voice-pipeline-heading p,
-    .comparison-heading p {
-        margin: 0 !important;
+    .comparison-heading p,
+    .voice-help,
+    .voice-note-mobile {
         font-size: 13px !important;
         line-height: 1.5 !important;
-        color: var(--ui-muted) !important;
+        color: var(--v8-muted) !important;
     }
 
-    /* Carga compacta: el botón es la acción principal y no hay dropzone gigante. */
-    #txt_file_upload,
-    #upload_audio,
-    #pipeline_audio_input {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        width: 100% !important;
-        min-height: 62px !important;
-        height: auto !important;
-        max-height: 84px !important;
-        padding: 8px !important;
-        overflow: hidden !important;
-        border-radius: 12px !important;
-        box-sizing: border-box !important;
+    #audio_input {
+        min-height: 132px !important;
     }
 
-    #txt_file_upload > div,
-    #txt_file_upload [class*="wrap"],
-    #txt_file_upload [class*="container"],
-    #txt_file_upload [class*="drop"],
-    #txt_file_upload [class*="upload"],
-    #upload_audio > div,
-    #upload_audio [class*="wrap"],
-    #upload_audio [class*="container"],
-    #upload_audio [class*="drop"],
-    #upload_audio [class*="upload"],
-    #pipeline_audio_input > div,
-    #pipeline_audio_input [class*="wrap"],
-    #pipeline_audio_input [class*="container"],
-    #pipeline_audio_input [class*="drop"],
-    #pipeline_audio_input [class*="upload"] {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 100% !important;
-        min-height: 44px !important;
-        height: 44px !important;
-        max-height: 44px !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        gap: 0 !important;
-        overflow: hidden !important;
-        background: transparent !important;
-        border: 0 !important;
-        box-shadow: none !important;
-    }
-
-    #txt_file_upload button,
-    #txt_file_upload [role="button"],
-    #upload_audio button,
-    #upload_audio [role="button"],
-    #pipeline_audio_input button,
-    #pipeline_audio_input [role="button"] {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-        min-height: 42px !important;
-        height: 42px !important;
-        max-height: 42px !important;
-        padding: 9px 12px !important;
-        margin: 0 !important;
-        gap: 7px !important;
-        border-radius: 10px !important;
-        font-size: 14px !important;
-        line-height: 1.2 !important;
-        font-weight: 700 !important;
-        white-space: normal !important;
-        box-sizing: border-box !important;
-    }
-
-    /* Se eliminan únicamente los dibujos del dropzone que provocaban solapamientos. */
-    #txt_file_upload svg,
-    #upload_audio svg,
-    #pipeline_audio_input svg,
-    #txt_file_upload [class*="upload"] p,
-    #upload_audio [class*="upload"] p,
-    #pipeline_audio_input [class*="upload"] p {
-        display: none !important;
-    }
-
-    /* Grabadora compacta, con el botón Grabar centrado y visible. */
-    #audio_input,
-    #audio_input > div,
-    #audio_input [class*="wrap"],
-    #audio_input [class*="container"] {
-        position: relative !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        width: 100% !important;
-        min-height: 76px !important;
-        height: auto !important;
-        max-height: 108px !important;
-        padding: 9px !important;
-        margin: 0 !important;
-        overflow: hidden !important;
-        background: var(--ui-surface) !important;
-        border: 1px solid var(--ui-border) !important;
-        border-radius: 12px !important;
-        box-shadow: none !important;
-        box-sizing: border-box !important;
-    }
-
-    #audio_input button,
-    #audio_input button.icon-button,
-    #audio_input .icon-button {
-        display: inline-flex !important;
-        width: auto !important;
-        min-width: 112px !important;
-        max-width: 180px !important;
-        min-height: 44px !important;
-        height: 44px !important;
-        padding: 9px 14px !important;
-        margin: 0 !important;
-        background: var(--ui-primary-soft) !important;
-        color: #4b4478 !important;
-        -webkit-text-fill-color: #4b4478 !important;
-        border: 1px solid var(--ui-primary-border) !important;
-        border-radius: 11px !important;
-        box-shadow: none !important;
-        font-size: 14px !important;
-        font-weight: 700 !important;
-    }
-
-    #audio_input button[aria-label*="clear" i],
-    #audio_input button[aria-label*="remove" i],
-    #audio_input button[aria-label*="delete" i],
-    #audio_input button[title*="clear" i],
-    #audio_input button[title*="remove" i],
-    #audio_input button[title*="delete" i],
-    #audio_input .clear-button {
-        display: none !important;
+    #audio_input .audio-container {
+        min-height: 92px !important;
+        padding-bottom: 14px !important;
     }
 
     .voice-step {
         margin: 16px 0 8px !important;
         font-size: 15px !important;
         line-height: 1.3 !important;
+        color: var(--v8-text) !important;
         font-weight: 750 !important;
-        color: var(--ui-text) !important;
-    }
-
-    .txt-status,
-    .txt-actions-label {
-        margin: 10px 0 !important;
     }
 
     .txt-actions-v28,
@@ -6137,200 +6154,14 @@ fuera del viewport. Se evita depender de reducir el zoom del navegador.
         min-height: 44px !important;
         height: auto !important;
         padding: 9px 12px !important;
-        background: var(--ui-surface-soft) !important;
+        background: var(--v8-surface-soft) !important;
         color: #3f4760 !important;
         -webkit-text-fill-color: #3f4760 !important;
-        border: 1px solid var(--ui-border) !important;
+        border: 1px solid var(--v8-border) !important;
         border-radius: 11px !important;
         box-shadow: none !important;
         font-size: 14px !important;
         font-weight: 700 !important;
-    }
-}
-
-/* Selectores ajustados contra la estructura real de Gradio. */
-@media (max-width: 768px) {
-    #txt_file_upload,
-    #upload_audio,
-    #pipeline_audio_input {
-        display: block !important;
-        min-height: 48px !important;
-        height: 48px !important;
-        max-height: 48px !important;
-        padding: 0 !important;
-        overflow: hidden !important;
-        border: 0 !important;
-        border-radius: 11px !important;
-        background: transparent !important;
-    }
-
-    #txt_file_upload > label[data-testid="block-label"],
-    #upload_audio > label[data-testid="block-label"],
-    #pipeline_audio_input > label[data-testid="block-label"] {
-        display: none !important;
-    }
-
-    #txt_file_upload > button[aria-label="Click to upload or drop files"],
-    #upload_audio > button[aria-label="Click to upload or drop files"],
-    #pipeline_audio_input > button[aria-label="Click to upload or drop files"] {
-        position: static !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: 100% !important;
-        min-height: 48px !important;
-        height: 48px !important;
-        max-height: 48px !important;
-        padding: 10px 14px !important;
-        margin: 0 !important;
-        overflow: hidden !important;
-        background: var(--ui-primary-soft) !important;
-        color: #4b4478 !important;
-        -webkit-text-fill-color: #4b4478 !important;
-        border: 1px solid var(--ui-primary-border) !important;
-        border-radius: 11px !important;
-        box-shadow: none !important;
-        font-size: 0 !important;
-        line-height: 1 !important;
-        box-sizing: border-box !important;
-    }
-
-    #txt_file_upload > button[aria-label="Click to upload or drop files"] > .wrap,
-    #upload_audio > button[aria-label="Click to upload or drop files"] > .wrap,
-    #pipeline_audio_input > button[aria-label="Click to upload or drop files"] > .wrap {
-        display: none !important;
-    }
-
-    #txt_file_upload > button[aria-label="Click to upload or drop files"]::after,
-    #upload_audio > button[aria-label="Click to upload or drop files"]::after,
-    #pipeline_audio_input > button[aria-label="Click to upload or drop files"]::after {
-        display: block !important;
-        font-size: 14px !important;
-        line-height: 1.2 !important;
-        font-weight: 750 !important;
-        color: #4b4478 !important;
-        -webkit-text-fill-color: #4b4478 !important;
-    }
-
-    #txt_file_upload > button[aria-label="Click to upload or drop files"]::after {
-        content: "Subir archivo TXT" !important;
-    }
-
-    #upload_audio > button[aria-label="Click to upload or drop files"]::after {
-        content: "Subir audio" !important;
-    }
-
-    #pipeline_audio_input > button[aria-label="Click to upload or drop files"]::after {
-        content: "Subir audio para analizar" !important;
-    }
-
-    #audio_input {
-        display: block !important;
-        min-height: 104px !important;
-        height: auto !important;
-        max-height: 124px !important;
-        padding: 0 !important;
-        overflow: hidden !important;
-        background: var(--ui-surface) !important;
-        border: 1px solid var(--ui-border) !important;
-        border-radius: 12px !important;
-    }
-
-    #audio_input > label[data-testid="block-label"] {
-        position: static !important;
-        display: flex !important;
-        align-items: center !important;
-        min-height: 34px !important;
-        padding: 8px 10px 2px !important;
-        margin: 0 !important;
-        background: transparent !important;
-        color: var(--ui-text) !important;
-        border: 0 !important;
-        font-size: 13px !important;
-        font-weight: 700 !important;
-    }
-
-    #audio_input > label[data-testid="block-label"] svg {
-        width: 16px !important;
-        height: 16px !important;
-        max-width: 16px !important;
-        max-height: 16px !important;
-    }
-
-    #audio_input .audio-container {
-        position: relative !important;
-        display: block !important;
-        min-height: 68px !important;
-        height: 68px !important;
-        max-height: 68px !important;
-        padding: 7px 10px !important;
-        margin: 0 !important;
-        overflow: hidden !important;
-        background: transparent !important;
-        border: 0 !important;
-        box-shadow: none !important;
-    }
-
-    #audio_input .icon-button-wrapper,
-    #audio_input button[aria-label="Limpiar"],
-    #audio_input button[title="Limpiar"] {
-        display: none !important;
-    }
-
-    #audio_input .component-wrapper,
-    #audio_input .controls,
-    #audio_input .controls .wrapper {
-        position: static !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        width: 100% !important;
-        min-height: 48px !important;
-        height: 48px !important;
-        max-height: 48px !important;
-        padding: 0 !important;
-        margin: 0 !important;
-        gap: 8px !important;
-        overflow: visible !important;
-        background: transparent !important;
-        border: 0 !important;
-        box-shadow: none !important;
-    }
-
-    #audio_input .microphone,
-    #audio_input .mic-select {
-        display: none !important;
-    }
-
-    #audio_input .record-button,
-    #audio_input .stop-button,
-    #audio_input .stop-button-paused,
-    #audio_input .pause-button,
-    #audio_input .resume-button {
-        position: static !important;
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: auto !important;
-        min-width: 108px !important;
-        max-width: 160px !important;
-        min-height: 42px !important;
-        height: 42px !important;
-        max-height: 42px !important;
-        padding: 9px 14px !important;
-        margin: 0 !important;
-        background: var(--ui-primary-soft) !important;
-        color: #4b4478 !important;
-        -webkit-text-fill-color: #4b4478 !important;
-        border: 1px solid var(--ui-primary-border) !important;
-        border-radius: 10px !important;
-        box-shadow: none !important;
-        font-size: 14px !important;
-        line-height: 1.2 !important;
-        font-weight: 750 !important;
-        box-sizing: border-box !important;
     }
 }
 
