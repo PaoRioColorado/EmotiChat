@@ -6257,3 +6257,10 @@ fuera del viewport. Se evita depender de reducir el zoom del navegador.
     overflow-wrap: anywhere !important;
 }
 
+/* ===== V10: alineación final de botones ===== */
+#txt_file_upload > button[aria-label="Click to upload or drop files"]::after,
+#upload_audio > button[aria-label="Click to upload or drop files"]::after,
+#pipeline_audio_input > button[aria-label="Click to upload or drop files"]::after {
+    transform: translateY(-3px) !important;
+}
+
