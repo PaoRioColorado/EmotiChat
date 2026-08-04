@@ -1,0 +1,5864 @@
+/* EmotiChat - CSS único y completamente externalizado. */
+/* Se conserva el orden original para respetar la cascada. */
+
+/* ===== Inicio: style.css ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root{
+    --text:#10153f;
+    --muted:#596481;
+    --line:rgba(116,120,180,.18);
+    --violet:#6d4cff;
+    --blue:#3f82ff;
+    --cyan:#49c7f5;
+    --mint:#35d6a3;
+    --pink:#ef5bb8;
+    --orange:#ff9f43;
+}
+
+*{box-sizing:border-box!important}
+
+html, body, .gradio-container{
+    margin:0!important;
+    padding:0!important;
+    width:100%!important;
+    max-width:none!important;
+    min-height:100%!important;
+    overflow:auto!important;
+    background:#eef4ff!important;
+    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+    color:var(--text)!important;
+}
+
+footer{display:none!important}
+
+.gradio-container > div{
+    width:100%!important;
+    max-width:none!important;
+    padding:0!important;
+    margin:0!important;
+}
+
+.gradio-container .block,
+.gradio-container .form,
+.gradio-container .wrap,
+.gradio-container .contain,
+.gradio-container .panel{
+    background:transparent!important;
+    border:none!important;
+    box-shadow:none!important;
+}
+
+
+
+/* SIDEBAR */
+.sidebar{
+    min-height:100vh!important;
+    padding:26px 20px!important;
+    border-right:1px solid rgba(109,76,255,.16)!important;
+    background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(245,247,255,.70))!important;
+    backdrop-filter:blur(20px);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    margin-bottom:34px;
+}
+
+.logo-img{
+    width:54px;
+    height:54px;
+    object-fit:contain;
+    border-radius:16px;
+    background:#fff;
+    box-shadow:0 18px 34px rgba(109,76,255,.18);
+}
+
+.logo-fallback{
+    width:54px;
+    height:54px;
+    border-radius:18px;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,var(--blue),var(--violet),var(--pink));
+    color:#fff;
+    font-weight:800;
+}
+
+.brand h1{
+    margin:0!important;
+    font-size:23px!important;
+    line-height:1.1!important;
+    font-weight:800!important;
+    color:var(--text)!important;
+}
+
+.brand p{
+    margin:7px 0 0!important;
+    color:var(--muted)!important;
+    font-size:13px!important;
+    line-height:1.45!important;
+}
+
+.menu{
+    display:grid;
+    gap:10px;
+}
+
+.menu-item{
+    padding:14px 16px;
+    border-radius:17px;
+    color:#27305d!important;
+    font-size:14px;
+    font-weight:750;
+    transition:.24s ease;
+}
+
+.menu-item:hover{
+    background:rgba(109,76,255,.10);
+    transform:translateX(4px);
+}
+
+.menu-item.active{
+    background:linear-gradient(135deg,rgba(109,76,255,.18),rgba(239,91,184,.13))!important;
+    color:var(--violet)!important;
+    box-shadow:0 12px 28px rgba(109,76,255,.13);
+}
+
+.breathe-card{
+    margin-top:52px;
+    border-radius:26px;
+    padding:24px 20px;
+    text-align:center;
+    background:
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,.75), transparent 35%),
+        linear-gradient(160deg,rgba(255,231,220,.95),rgba(224,232,255,.95) 55%,rgba(224,255,244,.95))!important;
+    border:1px solid rgba(255,255,255,.86);
+    box-shadow:0 22px 48px rgba(109,76,255,.16);
+}
+
+.breathe-illustration{
+    width:52px;
+    height:52px;
+    margin:0 auto 14px;
+    display:grid;
+    place-items:center;
+    border-radius:18px;
+    background:linear-gradient(135deg,var(--orange),var(--mint));
+    color:#fff;
+    font-size:22px;
+}
+
+.breathe-card h3{
+    margin:0 0 8px!important;
+    color:var(--text)!important;
+    font-size:17px!important;
+    font-weight:800!important;
+}
+
+.breathe-card p{
+    margin:0!important;
+    color:var(--muted)!important;
+    font-size:13px!important;
+    line-height:1.6!important;
+}
+
+/* MAIN */
+.main{
+    min-width:0!important;
+    min-height:100vh!important;
+    padding:24px 22px 14px!important;
+    display:grid!important;
+    grid-template-rows:auto minmax(520px, calc(100vh - 152px)) auto!important;
+    gap:14px!important;
+}
+
+.topbar{
+    min-height:58px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+}
+
+.top-left{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.top-logo{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    background:#ffffff;
+    display:grid;
+    place-items:center;
+    box-shadow:0 14px 30px rgba(53,214,163,.18);
+    overflow:hidden;
+}
+
+.top-logo-img{
+    width:44px;
+    height:44px;
+    object-fit:contain;
+    border-radius:50%;
+}
+
+.topbar h2{
+    margin:0!important;
+    color:var(--text)!important;
+    font-size:24px!important;
+    font-weight:800!important;
+}
+
+.topbar p{
+    margin:5px 0 0!important;
+    color:var(--muted)!important;
+    font-size:14px!important;
+}
+
+.top-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.privacy-pill{
+    padding:9px 13px;
+    border-radius:999px;
+    background:rgba(255,255,255,.78);
+    border:1px solid rgba(109,76,255,.14);
+    color:#34406b;
+    font-size:12px;
+    font-weight:700;
+    box-shadow:0 10px 24px rgba(65,78,150,.08);
+}
+
+.status-dot{
+    width:11px;
+    height:11px;
+    border-radius:50%;
+    background:var(--mint);
+    box-shadow:0 0 0 6px rgba(53,214,163,.15);
+}
+
+/* CHAT */
+.chat-card{
+    min-height:0!important;
+    height:100%!important;
+    border:1px solid rgba(109,76,255,.16)!important;
+    border-radius:30px!important;
+    background:rgba(255,255,255,.82)!important;
+    backdrop-filter:blur(22px);
+    box-shadow:0 26px 70px rgba(65,78,150,.16);
+    display:flex!important;
+    flex-direction:column!important;
+    overflow:hidden!important;
+}
+
+
+
+.chat-scroll::-webkit-scrollbar{width:9px}
+.chat-scroll::-webkit-scrollbar-thumb{
+    background:rgba(109,76,255,.22);
+    border-radius:999px;
+}
+
+.day-pill{
+    width:max-content;
+    margin:0 auto 24px;
+    padding:8px 20px;
+    border-radius:999px;
+    background:#ffffff;
+    color:var(--text)!important;
+    font-size:12px;
+    font-weight:800;
+    box-shadow:0 8px 22px rgba(80,90,140,.13);
+}
+
+.msg{
+    display:flex;
+    gap:16px;
+    margin-bottom:22px;
+    align-items:flex-start;
+    animation:fadeInUp .28s ease both;
+}
+
+.bot-msg{justify-content:flex-start}
+.user-msg{justify-content:flex-end}
+
+.avatar{
+    width:48px;
+    height:48px;
+    min-width:48px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+    box-shadow:0 14px 28px rgba(109,76,255,.20);
+}
+
+.bot-avatar{
+    background:#fff;
+    border:1px solid rgba(109,76,255,.14);
+}
+
+.avatar-logo{
+    width:42px;
+    height:42px;
+    object-fit:contain;
+    border-radius:50%;
+}
+
+.user-avatar{
+    background:linear-gradient(135deg,#ffffff,#f1ebff);
+    color:var(--violet);
+    border:1px solid rgba(109,76,255,.18);
+    font-size:13px;
+    font-weight:800;
+}
+
+.bubble{
+    max-width:min(560px, 72%)!important;
+    padding:18px 22px!important;
+    border-radius:24px!important;
+    line-height:1.58!important;
+    font-size:15.5px!important;
+    box-shadow:0 18px 38px rgba(80,90,140,.14);
+}
+
+.bubble p{
+    margin:0!important;
+    color:inherit!important;
+}
+
+.bubble small{
+    display:block;
+    margin-top:12px;
+    font-size:12px;
+}
+
+.bot-bubble{
+    background:linear-gradient(135deg,#ffffff,#f7f9ff)!important;
+    color:var(--text)!important;
+    border:1px solid rgba(109,76,255,.14)!important;
+    border-top-left-radius:14px!important;
+}
+
+.bot-bubble small{color:#697390!important}
+
+.user-bubble{
+    max-width:min(440px, 60%)!important;
+    background:linear-gradient(135deg,#dce9ff 0%,#ded2ff 55%,#f1dcff 100%)!important;
+    color:#10153f!important;
+    border:1px solid rgba(109,76,255,.22)!important;
+    box-shadow:0 18px 38px rgba(109,76,255,.20);
+    border-top-right-radius:14px!important;
+}
+
+.user-bubble small{color:#4c54c9!important}
+
+.typing-bubble{min-width:230px}
+
+.typing-dots{
+    display:flex;
+    gap:6px;
+    margin-top:10px;
+}
+
+.typing-dots span{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--violet);
+    animation:bounce 1s infinite ease-in-out;
+}
+
+.typing-dots span:nth-child(2){animation-delay:.15s}
+.typing-dots span:nth-child(3){animation-delay:.3s}
+
+/* COMPOSER */
+.composer{
+    flex:0 0 auto!important;
+    margin:0 24px 18px!important;
+    padding:14px!important;
+    border-radius:26px!important;
+    background:linear-gradient(135deg,#ffffff,#f7f9ff)!important;
+    border:1px solid rgba(109,76,255,.16)!important;
+    box-shadow:0 18px 45px rgba(65,78,150,.18);
+}
+
+#msg textarea,
+#msg input{
+    height:54px!important;
+    min-height:54px!important;
+    background:#ffffff!important;
+    color:var(--text)!important;
+    border:1px solid rgba(109,76,255,.18)!important;
+    border-radius:20px!important;
+    font-size:15px!important;
+    padding:0 18px!important;
+}
+
+#msg textarea::placeholder,
+#msg input::placeholder{
+    color:#6f7899!important;
+}
+
+.composer-actions{
+    display:grid!important;
+    grid-template-columns:1fr 1.25fr 1fr!important;
+    gap:12px!important;
+    align-items:center!important;
+    width:100%!important;
+    margin-top:10px!important;
+}
+
+.composer-actions > *,
+.composer-actions button{
+    width:100%!important;
+    min-width:0!important;
+}
+
+button{
+    border-radius:18px!important;
+    font-weight:800!important;
+    transition:.25s ease!important;
+}
+
+button:hover{transform:translateY(-1px)}
+
+#send,
+#reset,
+.tool-btn button{
+    height:48px!important;
+    min-height:48px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    text-align:center!important;
+    white-space:nowrap!important;
+}
+
+#send{
+    background:linear-gradient(135deg,var(--blue),var(--violet),var(--pink))!important;
+    color:#ffffff!important;
+    border:none!important;
+    box-shadow:0 14px 28px rgba(109,76,255,.28)!important;
+}
+
+.tool-btn button,
+#reset{
+    background:linear-gradient(135deg,#f4f7ff,#ffffff)!important;
+    color:#252b5f!important;
+    border:1px solid rgba(109,76,255,.14)!important;
+}
+
+#audio_out{margin-top:10px}
+
+/* FOOTER */
+.app-footer{
+    min-height:34px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:0 8px;
+    color:#64708f;
+    font-size:12px;
+}
+
+
+
+/* RIGHT PANEL */
+.right-panel{
+    min-height:100vh!important;
+    padding:30px 20px 24px!important;
+}
+
+.summary-panel{
+    border-radius:30px;
+    padding:24px;
+    background:rgba(255,255,255,.84);
+    border:1px solid rgba(109,76,255,.16);
+    backdrop-filter:blur(22px);
+    box-shadow:0 26px 70px rgba(65,78,150,.16);
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.panel-title{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+    margin-bottom:6px;
+}
+
+.spark{
+    width:32px;
+    height:32px;
+    border-radius:11px;
+    display:grid;
+    place-items:center;
+    background:linear-gradient(135deg,#fff,var(--pink));
+    color:#fff;
+    font-size:18px;
+}
+
+.summary-panel h2{
+    margin:0!important;
+    color:var(--text)!important;
+    font-size:20px!important;
+    line-height:1.25!important;
+    font-weight:800!important;
+}
+
+.panel-title p{
+    margin:7px 0 0!important;
+    color:var(--muted)!important;
+    font-size:13px!important;
+    line-height:1.5!important;
+}
+
+.summary-card{
+    border-radius:22px;
+    padding:16px;
+    display:flex;
+    gap:12px;
+    align-items:center;
+    border:1px solid rgba(124,77,255,.14);
+    box-shadow:0 12px 28px rgba(80,90,140,.08);
+}
+
+.green-card{
+    background:linear-gradient(135deg,#dffcf1,#f6fffb)!important;
+    border-color:rgba(54,214,163,.24)!important;
+}
+
+.purple-card{
+    background:linear-gradient(135deg,#eee7ff,#fbf8ff)!important;
+    border-color:rgba(109,76,255,.22)!important;
+}
+
+.blue-card{
+    background:linear-gradient(135deg,#e3f2ff,#f8fcff)!important;
+    border-color:rgba(63,130,255,.20)!important;
+}
+
+.orange-card{
+    background:linear-gradient(135deg,#fff0d9,#fffaf4)!important;
+    border-color:rgba(255,159,67,.25)!important;
+}
+
+.summary-icon{
+    width:48px;
+    height:48px;
+    min-width:48px;
+    border-radius:50%;
+    display:grid;
+    place-items:center;
+    font-size:21px;
+    color:var(--violet);
+    background:rgba(255,255,255,.88);
+    box-shadow:0 8px 20px rgba(80,90,140,.10);
+}
+
+.summary-copy span{
+    color:#293160!important;
+    font-size:12px;
+    font-weight:800;
+}
+
+.summary-copy h3{
+    margin:5px 0 4px!important;
+    color:var(--text)!important;
+    font-size:18px!important;
+    font-weight:800!important;
+}
+
+.summary-copy p{
+    margin:0!important;
+    color:var(--muted)!important;
+    font-size:12px!important;
+    line-height:1.5!important;
+}
+
+.progress{
+    height:10px;
+    background:#dbe7ff;
+    border-radius:999px;
+    overflow:hidden;
+    margin-top:8px;
+}
+
+.progress div{
+    height:100%;
+    background:linear-gradient(90deg,var(--violet),var(--blue),var(--cyan));
+}
+
+.analysis-details{
+    margin-top:auto;
+    border-radius:20px;
+    padding:18px;
+    background:linear-gradient(135deg,#ffffff,#f8f9ff);
+    border:1px solid rgba(109,76,255,.16);
+}
+
+.analysis-details summary{
+    color:var(--violet)!important;
+    font-weight:800;
+    cursor:pointer;
+}
+
+.analysis-details p{
+    color:var(--muted)!important;
+    font-size:14px;
+    line-height:1.5;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInUp{
+    from{opacity:0; transform:translateY(10px)}
+    to{opacity:1; transform:translateY(0)}
+}
+
+@keyframes bounce{
+    0%,80%,100%{transform:scale(.7); opacity:.5}
+    40%{transform:scale(1); opacity:1}
+}
+
+
+/* ==========================================================
+   V6.1 VISUAL POLISH + LAYOUT FIX
+   - evita que Enviar se corte
+   - separa chat/composer
+   - footer visible
+   - más aire visual tipo app comercial
+========================================================== */
+
+#app{
+    grid-template-columns:230px minmax(620px, 1fr) 300px!important;
+}
+
+
+
+
+
+
+
+.composer{
+    width:calc(100% - 48px)!important;
+    max-width:none!important;
+    margin:0 24px 18px!important;
+    padding:14px!important;
+    overflow:hidden!important;
+}
+
+.composer-actions{
+    display:grid!important;
+    grid-template-columns:minmax(120px, .85fr) minmax(190px, 1.15fr) minmax(130px, .95fr)!important;
+    gap:12px!important;
+    width:100%!important;
+    max-width:100%!important;
+    overflow:hidden!important;
+}
+
+.composer-actions > div,
+.composer-actions > .form,
+.composer-actions .form,
+.composer-actions button,
+.composer-actions .gr-button,
+.composer-actions .lg,
+.composer-actions .secondary,
+.composer-actions .primary{
+    min-width:0!important;
+    max-width:100%!important;
+    width:100%!important;
+    box-sizing:border-box!important;
+}
+
+#send,
+#reset,
+.tool-btn button{
+    width:100%!important;
+    max-width:100%!important;
+    overflow:hidden!important;
+    text-overflow:ellipsis!important;
+    padding-left:12px!important;
+    padding-right:12px!important;
+}
+
+#send{
+    border-radius:18px!important;
+    box-shadow:0 14px 28px rgba(109,76,255,.24)!important;
+}
+
+#reset{
+    box-shadow:0 10px 22px rgba(65,78,150,.10)!important;
+}
+
+.tool-btn button{
+    background:#4b5563!important;
+    color:#fff!important;
+    border:none!important;
+    box-shadow:0 10px 22px rgba(15,23,42,.18)!important;
+}
+
+.bubble{
+    max-width:min(540px, 70%)!important;
+}
+
+.bot-bubble{
+    background:linear-gradient(135deg,#ffffff 0%,#f9fbff 100%)!important;
+}
+
+.user-bubble{
+    max-width:min(420px, 56%)!important;
+}
+
+.summary-panel{
+    max-width:282px!important;
+    margin:0 auto!important;
+}
+
+.right-panel{
+    padding:30px 16px 24px!important;
+}
+
+
+
+
+
+
+
+/* ==========================================================
+   ESTRUCTURA PRINCIPAL UNIFICADA
+   Una sola definición para evitar reglas duplicadas.
+========================================================== */
+#app{
+    width:100%!important;
+    min-height:100vh!important;
+    display:grid!important;
+    grid-template-columns:230px minmax(620px,1fr)!important;
+    align-items:start!important;
+    background:
+        radial-gradient(circle at 14% 8%, rgba(109,76,255,.24), transparent 27%),
+        radial-gradient(circle at 82% 8%, rgba(239,91,184,.22), transparent 26%),
+        radial-gradient(circle at 72% 88%, rgba(53,214,163,.22), transparent 30%),
+        linear-gradient(135deg,#f7f3ff 0%,#edf6ff 48%,#f3fff9 100%)!important;
+}
+
+.main{
+    min-width:0!important;
+    min-height:100vh!important;
+    padding:24px 34px 18px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    gap:18px!important;
+}
+
+.chat-card{
+    width:100%!important;
+    max-width:1040px!important;
+    height:min(680px, calc(100vh - 148px))!important;
+    min-height:560px!important;
+    margin:0 auto!important;
+    border:1px solid rgba(109,76,255,.16)!important;
+    border-radius:32px!important;
+    background:rgba(255,255,255,.82)!important;
+    backdrop-filter:blur(22px);
+    box-shadow:0 26px 70px rgba(65,78,150,.16);
+    display:flex!important;
+    flex-direction:column!important;
+    overflow:hidden!important;
+}
+
+.chat-scroll{
+    flex:1 1 auto!important;
+    min-height:0!important;
+    width:100%!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+    scroll-behavior:smooth!important;
+    padding:26px 42px 18px!important;
+    background:
+        radial-gradient(circle at 80% 30%, rgba(109,76,255,.13), transparent 28%),
+        radial-gradient(circle at 20% 75%, rgba(73,199,245,.12), transparent 26%),
+        linear-gradient(180deg,rgba(255,255,255,.68),rgba(255,255,255,.32));
+}
+
+.app-footer{
+    position:relative!important;
+    inset:auto!important;
+    z-index:1!important;
+    width:100%!important;
+    max-width:none!important;
+    min-height:58px!important;
+    margin:28px 0 0!important;
+    padding:18px 28px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    flex-wrap:wrap!important;
+    gap:12px!important;
+    background:#f8fafc!important;
+    border-top:1px solid #d9dee7!important;
+    color:#475569!important;
+    font-size:13px!important;
+    font-weight:500!important;
+    line-height:1.4!important;
+    box-sizing:border-box!important;
+}
+
+.app-footer a{
+    color:var(--violet)!important;
+    font-weight:800!important;
+    text-decoration:none!important;
+}
+
+@media(max-width:1180px){
+    #app{
+        grid-template-columns:220px minmax(0,1fr)!important;
+    }
+    .chat-card{
+        max-width:none!important;
+    }
+}
+
+@media(max-width:900px){
+    .composer-actions{
+        grid-template-columns:1fr!important;
+    }
+    #send,
+    #reset,
+    .tool-btn button{
+        min-height:46px!important;
+    }
+}
+
+
+/* RESPONSIVE */
+@media(max-width:1180px){
+    #app{
+        grid-template-columns:220px minmax(0,1fr)!important;
+    }
+
+    .right-panel{
+        display:none!important;
+    }
+}
+
+@media(max-width:820px){
+    #app{
+        grid-template-columns:1fr!important;
+    }
+
+    .sidebar{
+        min-height:auto!important;
+        padding:18px!important;
+    }
+
+    .brand{
+        margin-bottom:0;
+    }
+
+    .menu,
+    .breathe-card{
+        display:none!important;
+    }
+
+    .main{
+        min-height:calc(100vh - 90px)!important;
+        padding:16px!important;
+        grid-template-rows:auto minmax(520px, calc(100vh - 150px)) auto!important;
+    }
+
+    .topbar{
+        flex-direction:column;
+        text-align:center;
+        gap:14px;
+    }
+
+    .top-left{
+        flex-direction:column;
+    }
+
+    .top-actions{
+        display:none;
+    }
+
+    .chat-scroll{
+        padding:20px!important;
+    }
+
+    .composer{
+        margin:0 16px 16px!important;
+    }
+
+    .composer-actions{
+        grid-template-columns:1fr!important;
+    }
+
+    .bubble,
+    .user-bubble{
+        max-width:82%!important;
+    }
+
+    .avatar{
+        width:42px;
+        height:42px;
+        min-width:42px;
+    }
+
+    .app-footer{
+        flex-direction:column;
+        justify-content:center;
+        text-align:center;
+        padding-bottom:8px;
+    }
+}
+
+/* ==========================================================
+   V6.2 SIN PANEL DERECHO
+   - chat protagonista
+   - métricas como opciones del menú izquierdo
+   - marca alineada
+========================================================== */
+
+#app{
+    grid-template-columns:250px minmax(0,1fr)!important;
+}
+
+.right-panel,
+.hidden-panel{
+    display:none!important;
+}
+
+.sidebar{
+    width:250px!important;
+    padding:26px 18px!important;
+}
+
+.brand{
+    display:grid!important;
+    grid-template-columns:54px minmax(0,1fr)!important;
+    align-items:center!important;
+    gap:12px!important;
+}
+
+.brand > div:last-child{
+    min-width:0!important;
+}
+
+.brand h1{
+    font-size:22px!important;
+    white-space:nowrap!important;
+}
+
+.brand p{
+    max-width:145px!important;
+    line-height:1.35!important;
+}
+
+.menu-section{
+    margin:14px 8px 4px!important;
+    color:#7b85a5!important;
+    font-size:11px!important;
+    font-weight:800!important;
+    text-transform:uppercase!important;
+    letter-spacing:.08em!important;
+}
+
+.menu-item{
+    padding:13px 14px!important;
+    font-size:13.5px!important;
+}
+
+
+
+
+
+
+
+.composer{
+    width:calc(100% - 56px)!important;
+    margin:0 28px 18px!important;
+}
+
+.composer-actions{
+    grid-template-columns:minmax(120px,.8fr) minmax(210px,1.1fr) minmax(140px,.9fr)!important;
+}
+
+.bubble{
+    max-width:min(620px, 72%)!important;
+}
+
+.user-bubble{
+    max-width:min(480px, 58%)!important;
+}
+
+.topbar{
+    max-width:1040px!important;
+    width:100%!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+}
+
+
+
+@media(max-width:1180px){
+    #app{
+        grid-template-columns:230px minmax(0,1fr)!important;
+    }
+
+    .sidebar{
+        width:230px!important;
+    }
+
+    .main{
+        padding:22px 22px 12px!important;
+    }
+}
+
+@media(max-width:820px){
+    #app{
+        grid-template-columns:1fr!important;
+    }
+
+    .sidebar{
+        width:100%!important;
+    }
+
+    .menu-section{
+        display:none!important;
+    }
+
+    .chat-scroll{
+        padding-left:20px!important;
+        padding-right:20px!important;
+    }
+}
+
+
+/* ==========================================================
+   AUTOSCROLL TIPO WHATSAPP
+   Mantiene la interfaz original y solo mejora el comportamiento.
+========================================================== */
+
+#chat_area,
+.chat-scroll{
+    scroll-behavior:smooth!important;
+    overflow-y:auto!important;
+    overflow-x:hidden!important;
+}
+
+/* Barra de scroll discreta: queda disponible, pero no molesta */
+#chat_area::-webkit-scrollbar,
+.chat-scroll::-webkit-scrollbar{
+    width:7px!important;
+}
+
+#chat_area::-webkit-scrollbar-thumb,
+.chat-scroll::-webkit-scrollbar-thumb{
+    background:rgba(109,76,255,.22)!important;
+    border-radius:20px!important;
+}
+
+#chat_area::-webkit-scrollbar-track,
+.chat-scroll::-webkit-scrollbar-track{
+    background:transparent!important;
+}
+
+
+/* AJUSTES DE ESTABILIDAD: SIDEBAR FUNCIONAL Y FOOTER GLOBAL */
+.side-button,
+.side-button > div,
+.side-button button{
+    width:100%!important;
+}
+
+.side-button button{
+    justify-content:flex-start!important;
+    min-height:46px!important;
+    padding:13px 14px!important;
+    border:none!important;
+    border-radius:17px!important;
+    background:transparent!important;
+    color:#27305d!important;
+    font-size:13.5px!important;
+    font-weight:750!important;
+    box-shadow:none!important;
+    transition:.24s ease!important;
+}
+
+.side-button button:hover,
+.side-button.active button{
+    background:#ffffff!important;
+    box-shadow:0 14px 26px rgba(109,76,255,.14)!important;
+    transform:translateX(3px);
+}
+
+.sidebar-info-card{
+    margin-top:16px!important;
+    padding:16px!important;
+    border-radius:20px!important;
+    background:rgba(255,255,255,.72)!important;
+    border:1px solid rgba(109,76,255,.14)!important;
+    box-shadow:0 16px 30px rgba(109,76,255,.10)!important;
+}
+
+.sidebar-info-card h3{
+    margin:0 0 8px!important;
+    color:var(--text)!important;
+    font-size:15px!important;
+    font-weight:800!important;
+}
+
+.sidebar-info-card p{
+    margin:0!important;
+    color:var(--muted)!important;
+    font-size:12.5px!important;
+    line-height:1.55!important;
+}
+
+
+
+@media(max-width:820px){
+    .app-footer{
+        flex-direction:column!important;
+        align-items:flex-start!important;
+    }
+}
+
+/* ==========================================================
+   AJUSTES RC: footer legible y paneles de módulos visibles
+========================================================== */
+
+.module-panel{
+    display:block!important;
+    width:100%!important;
+    max-width:1040px!important;
+    margin:14px auto 0!important;
+}
+
+.module-panel .summary-panel,
+.module-summary-panel{
+    max-width:1040px!important;
+    width:100%!important;
+    margin:0 auto!important;
+}
+
+.module-panel .summary-card{
+    width:100%!important;
+}
+
+
+
+.app-footer span{
+    color:#4b5563!important;
+}
+
+
+
+@media(max-width:820px){
+    .app-footer{
+        flex-direction:column!important;
+        align-items:center!important;
+        text-align:center!important;
+    }
+}
+
+
+/* ============================================================
+   AJUSTES FINALES: LEGIBILIDAD, SIDEBAR, CHAT Y PANEL
+   ============================================================ */
+
+#app{
+    grid-template-columns:230px minmax(620px, 1fr)!important;
+}
+
+.side-button,
+.side-button > div,
+.side-button button{
+    width:100%!important;
+}
+
+.side-button button{
+    min-height:44px!important;
+    height:44px!important;
+    padding:8px 12px!important;
+    border-radius:13px!important;
+    font-size:13px!important;
+    font-weight:750!important;
+    justify-content:flex-start!important;
+    text-align:left!important;
+    background:rgba(255,255,255,.58)!important;
+    color:#27305d!important;
+    box-shadow:none!important;
+    border:1px solid rgba(109,76,255,.10)!important;
+}
+
+.side-button button:hover{
+    background:rgba(109,76,255,.10)!important;
+    transform:translateX(2px)!important;
+}
+
+.menu{gap:7px!important}
+.menu-section{margin:10px 0 4px!important;font-size:11px!important;color:#6b7280!important}
+.breathe-card{margin-top:22px!important;padding:18px 14px!important}
+
+.module-panel{
+    width:100%!important;
+    max-width:980px!important;
+    margin:18px auto 0!important;
+}
+
+.module-summary-panel,
+.summary-panel{
+    max-width:980px!important;
+    width:100%!important;
+    margin:0 auto!important;
+}
+
+.module-card{
+    background:#ffffff!important;
+    border:1px solid #e5e7eb!important;
+    border-radius:18px!important;
+    padding:18px!important;
+    margin:12px 0!important;
+    color:#111827!important;
+    box-shadow:0 12px 26px rgba(15,23,42,.08)!important;
+}
+
+.module-card h3,
+.info-box h4{
+    color:#111827!important;
+    margin:0 0 10px!important;
+}
+
+.module-card p,
+.info-box p,
+.translation-step p{
+    color:#334155!important;
+}
+
+.metric-table{
+    width:100%!important;
+    border-collapse:collapse!important;
+    margin:12px 0!important;
+    background:#ffffff!important;
+    color:#111827!important;
+    overflow:hidden!important;
+    border-radius:14px!important;
+}
+
+.metric-table th{
+    background:#eef2ff!important;
+    color:#24325b!important;
+    font-weight:800!important;
+    text-align:left!important;
+    padding:11px 12px!important;
+    border:1px solid #dbe2f0!important;
+}
+
+.metric-table td{
+    color:#111827!important;
+    padding:11px 12px!important;
+    border:1px solid #e5e7eb!important;
+    background:#ffffff!important;
+}
+
+.metric-table td strong{
+    color:#111827!important;
+}
+
+.info-box{
+    background:#f8fafc!important;
+    border:1px solid #e5e7eb!important;
+    border-radius:16px!important;
+    padding:16px!important;
+    margin-top:14px!important;
+}
+
+.tech-pill{
+    display:inline-flex!important;
+    margin-top:14px!important;
+    padding:8px 12px!important;
+    border-radius:999px!important;
+    background:#eef2ff!important;
+    color:#4338ca!important;
+    font-size:12px!important;
+    font-weight:750!important;
+}
+
+.translation-step{
+    padding:12px 0!important;
+    border-bottom:1px solid #e5e7eb!important;
+}
+
+.translation-step span{
+    color:#4338ca!important;
+    font-weight:800!important;
+}
+
+.user-msg{
+    justify-content:flex-end!important;
+}
+
+.user-bubble{
+    width:auto!important;
+    max-width:70%!important;
+    display:inline-block!important;
+}
+
+.user-bubble p{
+    white-space:normal!important;
+}
+
+
+
+
+
+@media(max-width:980px){
+    #app{grid-template-columns:1fr!important}
+    .sidebar{min-height:auto!important}
+    .user-bubble{max-width:86%!important}
+}
+
+
+/* ============================================================
+   CORRECCIÓN FINAL DE CONTRASTE EN MÓDULOS
+   ============================================================ */
+#panel-modulo,
+#panel-modulo *,
+.module-panel,
+.module-panel *{
+    text-shadow:none!important;
+}
+
+#panel-modulo,
+.module-panel{
+    color:#111827!important;
+}
+
+#panel-modulo h1,
+#panel-modulo h2,
+#panel-modulo h3,
+#panel-modulo h4,
+#panel-modulo h5,
+#panel-modulo h6,
+#panel-modulo strong,
+#panel-modulo b,
+.module-panel h1,
+.module-panel h2,
+.module-panel h3,
+.module-panel h4,
+.module-panel h5,
+.module-panel h6,
+.module-panel strong,
+.module-panel b{
+    color:#111827!important;
+    opacity:1!important;
+}
+
+#panel-modulo p,
+#panel-modulo span,
+#panel-modulo div,
+#panel-modulo li,
+.module-panel p,
+.module-panel span,
+.module-panel div,
+.module-panel li{
+    color:#334155!important;
+    opacity:1!important;
+}
+
+#panel-modulo .panel-title h2,
+.module-panel .panel-title h2{
+    color:#111827!important;
+}
+
+#panel-modulo .panel-title p,
+.module-panel .panel-title p{
+    color:#64748b!important;
+}
+
+#panel-modulo .metric-table,
+.module-panel .metric-table{
+    background:#ffffff!important;
+    color:#111827!important;
+}
+
+#panel-modulo .metric-table thead,
+#panel-modulo .metric-table tbody,
+#panel-modulo .metric-table tr,
+.module-panel .metric-table thead,
+.module-panel .metric-table tbody,
+.module-panel .metric-table tr{
+    background:#ffffff!important;
+    color:#111827!important;
+}
+
+#panel-modulo .metric-table th,
+.module-panel .metric-table th{
+    background:#eef2ff!important;
+    color:#1e2a5a!important;
+    opacity:1!important;
+    font-weight:800!important;
+}
+
+#panel-modulo .metric-table td,
+#panel-modulo .metric-table td *,
+.module-panel .metric-table td,
+.module-panel .metric-table td *{
+    background:#ffffff!important;
+    color:#111827!important;
+    opacity:1!important;
+    font-weight:500!important;
+}
+
+#panel-modulo .metric-table td strong,
+.module-panel .metric-table td strong{
+    color:#0f172a!important;
+    font-weight:800!important;
+}
+
+#panel-modulo .info-box,
+.module-panel .info-box{
+    background:#f8fafc!important;
+    color:#334155!important;
+}
+
+#panel-modulo .info-box h4,
+.module-panel .info-box h4{
+    color:#111827!important;
+}
+
+#panel-modulo .info-box p,
+#panel-modulo .interpretation,
+#panel-modulo .interpretation *,
+.module-panel .info-box p,
+.module-panel .interpretation,
+.module-panel .interpretation *{
+    color:#334155!important;
+    opacity:1!important;
+}
+
+/* El botón PDF no debe ocupar una franja completa */
+.pdf-actions{
+    max-width:980px!important;
+    margin:14px auto 0!important;
+    justify-content:flex-start!important;
+    gap:12px!important;
+}
+
+.pdf-actions button{
+    width:auto!important;
+    min-width:240px!important;
+    max-width:320px!important;
+    min-height:46px!important;
+    border-radius:14px!important;
+    padding:10px 18px!important;
+    background:linear-gradient(90deg,#5b6cff,#c84bc8)!important;
+    color:#ffffff!important;
+    border:none!important;
+    box-shadow:0 10px 24px rgba(91,108,255,.22)!important;
+}
+
+
+
+@media(max-width:820px){
+    .main{
+        min-height:auto!important;
+        padding:16px!important;
+        gap:14px!important;
+    }
+    .chat-card{
+        width:100%!important;
+        max-width:none!important;
+        height:calc(100vh - 170px)!important;
+        min-height:520px!important;
+    }
+    .chat-scroll{
+        padding:20px!important;
+    }
+    .app-footer{
+        margin-top:18px!important;
+        padding:16px 18px!important;
+        flex-direction:column!important;
+        align-items:center!important;
+        text-align:center!important;
+    }
+}
+
+
+/* =========================================================
+   AJUSTES FINALES CONSOLIDADOS
+   Antes estaban repartidos en emotichat-final.css,
+   emotichat-release-final.css y emotichat-release-v1.css.
+   ========================================================= */
+
+
+/* Integrado desde: emotichat-final.css */
+.voice-option-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #24243a;
+    margin: 4px 0 10px;
+}
+
+.voice-upload-box {
+    border: 1px solid rgba(100, 84, 190, 0.22) !important;
+    border-radius: 18px !important;
+    background: #ffffff !important;
+    padding: 8px !important;
+}
+
+#upload_audio button,
+#process_uploaded_audio button,
+#voice_process button {
+    background: #6956d9 !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+}
+
+#process_uploaded_audio button:disabled,
+#voice_process button:disabled {
+    background: #d8d4eb !important;
+    color: #605b70 !important;
+    opacity: 1 !important;
+}
+
+@media (max-width: 768px) {
+    #audio_input {
+        min-height: 150px !important;
+    }
+
+    #upload_audio {
+        min-height: 88px !important;
+    }
+
+    .voice-guide {
+        padding: 16px !important;
+    }
+
+    .voice-mobile-help {
+        display: block !important;
+        line-height: 1.5 !important;
+    }
+
+    #voice_process,
+    #process_uploaded_audio {
+        width: 100% !important;
+        min-height: 48px !important;
+        margin-top: 8px !important;
+    }
+}
+
+#voice_process,
+#process_uploaded_audio {
+    background: #5f4bd8 !important;
+    color: #ffffff !important;
+    border: 1px solid #5f4bd8 !important;
+    border-radius: 12px !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+    min-height: 48px !important;
+    box-shadow: none !important;
+}
+
+#voice_process:hover,
+#process_uploaded_audio:hover {
+    background: #4f3bc7 !important;
+    color: #ffffff !important;
+}
+
+#voice_process:disabled,
+#process_uploaded_audio:disabled {
+    background: #5f4bd8 !important;
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+#upload_audio {
+    background: #ffffff !important;
+    border: 1px solid #c9c2ef !important;
+    border-radius: 14px !important;
+    min-height: 90px !important;
+}
+
+#upload_audio button,
+#upload_audio [role="button"] {
+    background: #ffffff !important;
+    color: #302b55 !important;
+    border: 1px solid #7665df !important;
+    border-radius: 10px !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+}
+
+.voice-step {
+    margin: 14px 0 8px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #24243a;
+}
+
+.voice-note-mobile {
+    margin-top: 8px;
+    font-size: 13px;
+    line-height: 1.45;
+    color: #5d5970;
+}
+
+@media (max-width: 768px) {
+    #voice_process,
+    #process_uploaded_audio {
+        width: 100% !important;
+        display: block !important;
+        font-size: 16px !important;
+    }
+
+    #audio_input,
+    #upload_audio {
+        width: 100% !important;
+    }
+
+    #upload_audio {
+        min-height: 105px !important;
+    }
+}
+
+/* Oculta el selector interno de dispositivo que muestra "Predeterminado". */
+#audio_input select,
+#audio_input [role="combobox"] {
+    display: none !important;
+}
+
+/* Estado de procesamiento del audio. */
+#voice_processing_status:empty {
+    display: none !important;
+}
+
+#voice_processing_status .processing-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    padding: 12px 14px;
+    border: 1px solid rgba(92, 75, 153, 0.18);
+    border-radius: 14px;
+    background: rgba(245, 242, 255, 0.94);
+    box-shadow: 0 5px 16px rgba(55, 45, 90, 0.08);
+}
+
+#voice_processing_status .processing-card strong,
+#voice_processing_status .processing-card span {
+    display: block;
+}
+
+#voice_processing_status .processing-card strong {
+    margin-bottom: 2px;
+    font-size: 0.95rem;
+}
+
+#voice_processing_status .processing-card span {
+    font-size: 0.82rem;
+    opacity: 0.78;
+}
+
+#voice_processing_status .processing-spinner {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+    border: 3px solid rgba(92, 75, 153, 0.20);
+    border-top-color: rgba(92, 75, 153, 0.90);
+    border-radius: 50%;
+    animation: emotichat-spin 0.8s linear infinite;
+}
+
+@keyframes emotichat-spin {
+    to { transform: rotate(360deg); }
+}
+
+/* =========================================================
+   VISTA WEB COMPLETA
+   En pantallas angostas no se ocultan módulos ni opciones.
+   Se apilan para que todo siga siendo accesible.
+   ========================================================= */
+@media (max-width: 980px) {
+    #app {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+        width: 100% !important;
+    }
+
+    .sidebar,
+    .main,
+    .module-panel,
+    .chat-card,
+    .menu,
+    .sidebar-detail,
+    .pdf-actions {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        max-width: none !important;
+        position: static !important;
+        transform: none !important;
+    }
+
+    .sidebar {
+        order: 1 !important;
+    }
+
+    .main {
+        order: 2 !important;
+    }
+
+    .menu {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    .side-button,
+    .menu button {
+        display: block !important;
+        width: 100% !important;
+        min-height: 46px !important;
+        white-space: normal !important;
+    }
+
+    .module-panel {
+        margin-top: 16px !important;
+        overflow: visible !important;
+    }
+
+    .pdf-actions {
+        margin-top: 12px !important;
+    }
+
+    .breathe-card,
+    .sidebar-detail {
+        display: block !important;
+    }
+}
+
+@media (max-width: 520px) {
+    .menu {
+        grid-template-columns: 1fr !important;
+    }
+
+    .sidebar,
+    .main {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+}
+
+/* =========================================================
+   EXPERIENCIA MÓVIL SIMPLE
+   El chat queda primero y las funciones se abren desde accesos rápidos.
+   ========================================================= */
+
+.quick-actions {
+    gap: 8px !important;
+    margin: 12px 0 10px !important;
+    flex-wrap: wrap !important;
+}
+
+.quick-action-btn {
+    min-height: 42px !important;
+    border-radius: 12px !important;
+    font-weight: 700 !important;
+}
+
+@media (max-width: 760px) {
+    /* En celular se oculta la barra lateral para evitar subir y bajar. */
+    .sidebar {
+        display: none !important;
+    }
+
+    #app {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .main {
+        width: 100% !important;
+        max-width: none !important;
+        padding: 0 8px !important;
+    }
+
+    .chat-card {
+        width: 100% !important;
+        min-height: auto !important;
+    }
+
+    .quick-actions {
+        position: sticky !important;
+        bottom: 8px !important;
+        z-index: 40 !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        padding: 8px !important;
+        border: 1px solid rgba(92, 75, 153, 0.14) !important;
+        border-radius: 16px !important;
+        background: rgba(255, 255, 255, 0.96) !important;
+        box-shadow: 0 8px 24px rgba(39, 31, 71, 0.12) !important;
+        backdrop-filter: blur(8px) !important;
+    }
+
+    .quick-action-btn {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 44px !important;
+        padding: 8px 6px !important;
+        font-size: 0.86rem !important;
+        white-space: normal !important;
+    }
+
+    .module-panel {
+        margin-top: 10px !important;
+        scroll-margin-top: 14px !important;
+    }
+
+    .pdf-actions {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 8px !important;
+        margin-bottom: 90px !important;
+    }
+
+    .input-mode-tabs,
+    .composer,
+    .chat-scroll {
+        width: 100% !important;
+    }
+
+    .voice-guide,
+    .voice-help,
+    .voice-note-mobile {
+        text-align: left !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .quick-actions {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .quick-action-btn {
+        font-size: 0.78rem !important;
+    }
+}
+
+/* =========================================================
+   AJUSTE FINAL DE ENTREGA
+   En escritorio se utiliza únicamente el menú lateral.
+   Los accesos rápidos inferiores se muestran solo en celular.
+   ========================================================= */
+.quick-actions {
+    display: none !important;
+}
+
+@media (max-width: 760px) {
+    .quick-actions {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        position: sticky !important;
+        bottom: 8px !important;
+        z-index: 50 !important;
+        margin: 10px 0 !important;
+        padding: 8px !important;
+        border: 1px solid rgba(92, 75, 153, 0.14) !important;
+        border-radius: 16px !important;
+        background: rgba(255, 255, 255, 0.96) !important;
+        box-shadow: 0 8px 24px rgba(39, 31, 71, 0.12) !important;
+        backdrop-filter: blur(8px) !important;
+    }
+
+    .quick-action-btn {
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 44px !important;
+        padding: 8px 6px !important;
+        font-size: 0.84rem !important;
+        white-space: normal !important;
+    }
+
+    .metric-table {
+        display: block !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        white-space: nowrap !important;
+    }
+}
+
+
+/* Análisis multimodal SpeechBrain */
+.module-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+@media (max-width: 760px) {
+    .module-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Integrado desde: emotichat-release-final.css */
+.crisis-card{border:2px solid #d64545;background:#fff7f7;border-radius:18px;padding:18px;margin:12px 0;box-shadow:0 10px 28px rgba(160,35,35,.12)}
+.crisis-heading{font-size:1.1rem;font-weight:800;color:#a61f1f;margin-bottom:10px}
+.crisis-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}
+.crisis-btn{display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 12px;border-radius:12px;text-decoration:none!important;font-weight:700;border:1px solid rgba(0,0,0,.08);cursor:pointer}
+.crisis-btn.whatsapp{background:#e8f8ee;color:#166a39}
+.crisis-btn.copy-message{background:#f3f0ff;color:#4d3c91}
+.crisis-btn.emergency{background:#c93434;color:#fff}
+.crisis-btn.emergency-secondary{background:#fff0f0;color:#9b2424}
+.ethical-note{margin-top:12px;font-size:.82rem;color:#6b5252}
+.resources-card,.closing-summary{border:1px solid rgba(83,69,145,.16);background:#faf9ff;border-radius:16px;padding:16px;margin:12px 0}
+.resource-item{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid rgba(83,69,145,.08)}
+.resource-item:last-child{border-bottom:0}
+.resource-icon{font-size:1.25rem}
+.resource-item p{margin:4px 0 0}
+.resource-note{font-size:.82rem;opacity:.72;margin-top:10px}
+.method-explanations p{margin:8px 0;line-height:1.5}
+@media(max-width:760px){
+.crisis-actions{grid-template-columns:1fr}
+.crisis-btn{width:100%;min-height:52px;font-size:.95rem}
+.crisis-card{padding:14px;border-radius:16px}
+}
+
+
+/* Integrado desde: emotichat-release-v1.css */
+/* =========================================================
+   EmotiChat Release v1.0 — contraste y legibilidad
+   ========================================================= */
+
+/* Recursos recomendados y cierre */
+.resources-card,
+.resources-card *,
+.closing-summary,
+.closing-summary * {
+    color: #1f2937 !important;
+}
+
+.resources-card,
+.closing-summary {
+    background: #f8f7ff !important;
+    border: 1px solid #cfc8ef !important;
+}
+
+.resources-card h3,
+.closing-summary h3 {
+    color: #31265f !important;
+}
+
+.resource-item strong,
+.closing-summary strong {
+    color: #2f255d !important;
+    font-weight: 800 !important;
+}
+
+.resource-item p,
+.resource-note,
+.closing-summary p,
+.closing-summary li {
+    color: #374151 !important;
+    opacity: 1 !important;
+}
+
+.resource-note {
+    border-top: 1px solid rgba(49, 38, 95, 0.16);
+    padding-top: 10px;
+}
+
+/* Tarjetas y tablas */
+.summary-card,
+.summary-card *,
+.module-card,
+.module-card *,
+.info-box,
+.info-box *,
+.analysis-details,
+.analysis-details *,
+.sidebar-info-card,
+.sidebar-info-card *,
+.breathe-card,
+.breathe-card * {
+    color: #1f2937 !important;
+}
+
+.summary-card h3,
+.module-card h2,
+.module-card h3,
+.module-card h4,
+.info-box strong,
+.sidebar-info-card h3,
+.breathe-card h3 {
+    color: #31265f !important;
+}
+
+.metric-table,
+.metric-table td,
+.metric-table th {
+    color: #1f2937 !important;
+}
+
+.metric-table thead th {
+    background: #eeeafd !important;
+    color: #2d2357 !important;
+}
+
+.metric-table tbody td {
+    background: #ffffff !important;
+}
+
+/* Procesamiento de audio */
+.processing-card,
+.processing-card *,
+.voice-guide,
+.voice-guide *,
+.voice-help,
+.voice-help *,
+.voice-step,
+.voice-note-mobile {
+    color: #2b2350 !important;
+}
+
+/* Chat */
+.bot-bubble,
+.bot-bubble p,
+.user-bubble,
+.user-bubble p {
+    color: #1f2937 !important;
+}
+
+/* Crisis */
+.crisis-card,
+.crisis-card p,
+.crisis-card summary,
+.crisis-details p {
+    color: #3b1f1f !important;
+}
+
+.crisis-heading {
+    color: #9f1d1d !important;
+}
+
+.crisis-btn.emergency {
+    color: #ffffff !important;
+}
+
+.crisis-btn.whatsapp {
+    color: #14532d !important;
+}
+
+.crisis-btn.copy-message {
+    color: #3f3278 !important;
+}
+
+.crisis-btn.emergency-secondary {
+    color: #8b1e1e !important;
+}
+
+/* Mobile: reforzar contraste */
+@media (max-width: 760px) {
+    .resources-card,
+    .resources-card *,
+    .closing-summary,
+    .closing-summary *,
+    .module-card,
+    .module-card *,
+    .summary-card,
+    .summary-card *,
+    .info-box,
+    .info-box *,
+    .sidebar-info-card,
+    .sidebar-info-card * {
+        color: #1f2937 !important;
+    }
+
+    .resources-card h3,
+    .closing-summary h3,
+    .module-card h2,
+    .module-card h3,
+    .summary-card h3,
+    .info-box strong {
+        color: #31265f !important;
+    }
+}
+/* ===== Fin: style.css ===== */
+
+/* ===== Inicio: desktop.css ===== */
+/* EmotiChat v2.1 — Desktop
+   Mantiene la estructura original de dos columnas:
+   sidebar izquierda + área principal derecha.
+*/
+
+@media (min-width: 769px) {
+    #app {
+        display: grid !important;
+        grid-template-columns: 280px minmax(0, 1fr) !important;
+        align-items: start !important;
+        gap: 22px !important;
+        width: 100% !important;
+    }
+
+    .sidebar {
+        display: flex !important;
+        flex-direction: column !important;
+        min-width: 0 !important;
+    }
+
+    .main {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .composer-actions,
+    .text-actions,
+    .voice-output-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+    }
+
+    .composer-actions button,
+    .text-actions button,
+    .voice-output-actions button {
+        min-height: 44px !important;
+    }
+
+    #send {
+        min-width: 145px !important;
+    }
+
+    #reset {
+        min-width: 180px !important;
+    }
+
+    #voice_process {
+        width: 100% !important;
+        min-height: 50px !important;
+    }
+
+    .module-panel,
+    .pdf-actions {
+        width: 100% !important;
+    }
+}
+/* ===== Fin: desktop.css ===== */
+
+/* ===== Inicio: buttons.css ===== */
+/* EmotiChat v2.1 — Botones */
+
+button,
+.gr-button {
+    min-height: 44px !important;
+    border-radius: 12px !important;
+    font-weight: 650 !important;
+    transition:
+        transform .16s ease,
+        box-shadow .16s ease,
+        border-color .16s ease !important;
+}
+
+button:hover,
+.gr-button:hover {
+    transform: translateY(-1px);
+}
+
+button:active,
+.gr-button:active {
+    transform: translateY(0);
+}
+
+#send,
+#voice_process {
+    font-weight: 750 !important;
+}
+
+#send {
+    box-shadow: 0 8px 18px rgba(99, 102, 241, .18) !important;
+}
+
+#voice_process {
+    box-shadow: 0 8px 18px rgba(124, 58, 237, .16) !important;
+}
+
+.side-button {
+    justify-content: flex-start !important;
+    text-align: left !important;
+}
+
+.tool-btn {
+    min-width: 0 !important;
+}
+
+.input-mode-tabs button {
+    color: #374151 !important;
+    font-weight: 700 !important;
+}
+
+.input-mode-tabs button.selected,
+.input-mode-tabs button[aria-selected="true"] {
+    color: #ffffff !important;
+    background: #6d5bd0 !important;
+}
+/* ===== Fin: buttons.css ===== */
+
+/* ===== Inicio: voice.css ===== */
+/* EmotiChat v2.1 — Voz */
+
+.input-mode-tabs {
+    width: 100% !important;
+}
+
+.voice-guide {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(99, 102, 241, .18);
+    border-radius: 15px;
+    background: #f8f9ff;
+    line-height: 1.45;
+}
+
+.voice-guide strong {
+    color: #1f2937;
+    font-size: 16px;
+}
+
+.voice-guide span,
+.voice-help {
+    color: #4b5563;
+    font-size: 14px;
+}
+
+.voice-recorder,
+#audio_input {
+    width: 100% !important;
+}
+
+#audio_input {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+}
+
+#voice_process {
+    width: 100% !important;
+    margin-top: 10px !important;
+}
+
+.voice-output-actions {
+    margin-top: 10px !important;
+}
+
+#audio_out {
+    width: 100% !important;
+}
+/* ===== Fin: voice.css ===== */
+
+/* ===== Inicio: mobile.css ===== */
+/* EmotiChat v2.1 — Mobile
+   Una sola columna. El panel de análisis permanece visible debajo del chat.
+*/
+
+@media (max-width: 768px) {
+    .gradio-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    #app {
+        display: block !important;
+        width: 100% !important;
+        min-height: 100vh !important;
+    }
+
+    /* La sidebar no ocupa espacio en celular. */
+    .sidebar {
+        display: none !important;
+    }
+
+    .main {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 8px !important;
+        gap: 12px !important;
+    }
+
+    .chat-card {
+        width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 560px !important;
+        max-height: none !important;
+    }
+
+    #chat_area {
+        min-height: 390px !important;
+        max-height: 55vh !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    .composer {
+        width: 100% !important;
+        padding: 8px !important;
+    }
+
+    /* Pestañas visibles y legibles. */
+    .input-mode-tabs button {
+        min-height: 46px !important;
+        font-size: 14px !important;
+        color: #374151 !important;
+        background: #f3f4f6 !important;
+    }
+
+    .input-mode-tabs button.selected,
+    .input-mode-tabs button[aria-selected="true"] {
+        color: #ffffff !important;
+        background: #6d5bd0 !important;
+    }
+
+    /* Escritura: botones grandes y claros. */
+    .text-actions {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+    }
+
+    .text-actions button {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    /* Voz: se eliminan textos largos, no las funciones. */
+    .voice-guide span,
+    .voice-help {
+        display: none !important;
+    }
+
+    .voice-guide {
+        margin-bottom: 8px !important;
+        padding: 10px 12px !important;
+        text-align: center !important;
+    }
+
+    .voice-guide strong {
+        font-size: 15px !important;
+    }
+
+    #audio_input {
+        min-height: 150px !important;
+        border-radius: 18px !important;
+    }
+
+    #voice_process {
+        width: 100% !important;
+        min-height: 52px !important;
+        font-size: 15px !important;
+        margin-top: 8px !important;
+    }
+
+    .voice-output-actions {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .voice-output-actions button {
+        width: 100% !important;
+    }
+
+    /* El panel de análisis NO se oculta: baja debajo del chat. */
+    .module-panel,
+    .module-summary-panel,
+    .summary-panel,
+    .pdf-actions {
+        display: block !important;
+        position: relative !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+
+    .module-card,
+    .wide-card,
+    .info-box,
+    .metric-table {
+        max-width: 100% !important;
+    }
+
+    .metric-table {
+        display: block !important;
+        overflow-x: auto !important;
+        white-space: normal !important;
+    }
+
+    .app-footer {
+        width: 100% !important;
+        margin-top: 16px !important;
+        padding: 14px 12px !important;
+        text-align: center !important;
+    }
+}
+/* ===== Fin: mobile.css ===== */
+
+/* ===== Inicio: emotichat-v6-1.css ===== */
+/* ==========================================================================
+   EmotiChat v6.1
+   Comparación de transcripción + mejoras de interfaz móvil
+   Este archivo debe subirse a: css/emotichat-v6-1.css
+   ========================================================================== */
+
+.transcription-comparison-section {
+    width: 100%;
+    margin-top: 18px;
+    padding: 22px;
+    border: 1px solid rgba(92, 81, 160, 0.16);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 14px 34px rgba(45, 38, 88, 0.08);
+}
+
+.comparison-heading {
+    margin-bottom: 18px;
+}
+
+.comparison-kicker {
+    display: inline-block;
+    margin-bottom: 7px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6257a8;
+}
+
+.comparison-heading h2 {
+    margin: 0 0 8px;
+    font-size: 1.28rem;
+    color: #292543;
+}
+
+.comparison-heading p {
+    margin: 0;
+    line-height: 1.55;
+    color: #67627c;
+}
+
+#compare_transcriptions_button {
+    margin-top: 10px;
+}
+
+#transcription_comparison_result {
+    margin-top: 18px;
+}
+
+.reference-card {
+    border-left: 4px solid #7468bd;
+}
+
+.comparison-table-scroll {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.transcription-comparison-table {
+    min-width: 940px;
+}
+
+.transcription-comparison-table th,
+.transcription-comparison-table td {
+    vertical-align: top;
+}
+
+.transcription-comparison-table td:nth-child(5) {
+    white-space: nowrap;
+}
+
+/* ==========================================================================
+   Mobile
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    body,
+    .gradio-container {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #app {
+        display: block !important;
+        width: 100% !important;
+        max-width: none !important;
+        padding: 0 !important;
+        gap: 0 !important;
+    }
+
+    .sidebar {
+        position: static !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 10px 10px 7px !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+    }
+
+    .brand {
+        min-height: auto !important;
+        padding: 5px 4px 9px !important;
+    }
+
+    .brand h1 {
+        font-size: 1.05rem !important;
+        margin: 0 !important;
+    }
+
+    .brand p {
+        display: none !important;
+    }
+
+    .brand .logo-img {
+        width: 34px !important;
+        height: 34px !important;
+    }
+
+    .menu {
+        display: grid !important;
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+        gap: 5px !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .menu-section,
+    .sidebar-detail,
+    .breathe-card {
+        display: none !important;
+    }
+
+    .side-button {
+        min-width: 0 !important;
+        min-height: 44px !important;
+        padding: 7px 3px !important;
+        border-radius: 12px !important;
+        font-size: 0.68rem !important;
+        line-height: 1.08 !important;
+        white-space: normal !important;
+    }
+
+    .main {
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 8px 10px 14px !important;
+    }
+
+    .topbar {
+        min-height: auto !important;
+        padding: 8px 4px 10px !important;
+    }
+
+    .topbar h2 {
+        font-size: 1rem !important;
+        margin: 0 !important;
+    }
+
+    .topbar p {
+        display: none !important;
+    }
+
+    .chat-card {
+        width: 100% !important;
+        margin: 0 !important;
+        border-radius: 18px !important;
+        overflow: hidden !important;
+    }
+
+    .chat-scroll {
+        height: 53vh !important;
+        min-height: 360px !important;
+        padding: 12px 10px !important;
+    }
+
+    .msg {
+        width: 100% !important;
+        gap: 7px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .bubble {
+        max-width: 88% !important;
+        padding: 10px 12px !important;
+        border-radius: 16px !important;
+    }
+
+    .avatar {
+        width: 28px !important;
+        height: 28px !important;
+        min-width: 28px !important;
+    }
+
+    .composer {
+        padding: 8px !important;
+    }
+
+    .message-composer-row {
+        gap: 7px !important;
+    }
+
+    #send {
+        min-width: 68px !important;
+        padding: 0 12px !important;
+    }
+
+    .composer-secondary-actions {
+        gap: 6px !important;
+    }
+
+    .secondary-action-btn,
+    .tool-btn {
+        min-height: 38px !important;
+        padding: 7px 9px !important;
+        font-size: 0.73rem !important;
+    }
+
+    .module-panel,
+    .transcription-comparison-section {
+        margin-top: 12px !important;
+    }
+
+    .transcription-comparison-section {
+        padding: 15px 12px !important;
+        border-radius: 17px !important;
+    }
+
+    .comparison-heading h2 {
+        font-size: 1.08rem !important;
+    }
+
+    .comparison-heading p {
+        font-size: 0.88rem !important;
+    }
+
+    .summary-panel,
+    .module-shell {
+        padding: 14px 11px !important;
+    }
+
+    .module-card {
+        padding: 13px !important;
+    }
+
+    .pdf-actions {
+        padding: 0 4px !important;
+    }
+}
+/* ===== Fin: emotichat-v6-1.css ===== */
+
+
+.inline-resources-divider {
+    height: 1px;
+    margin: 14px 0;
+    background: rgba(83, 78, 118, .16);
+}
+
+.bot-bubble .resources-card {
+    margin: 0;
+    padding: 12px 0 0;
+    border: 0;
+    box-shadow: none;
+    background: transparent;
+}
+
+.compact-analysis {
+    padding-bottom: 14px !important;
+}
+
+.analysis-overview {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border-radius: 18px;
+    margin: 10px 0 12px;
+    background: rgba(239, 238, 250, .78);
+}
+
+.analysis-overview .overview-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    border-radius: 14px;
+    background: white;
+    font-size: 22px;
+}
+
+.analysis-overview span,
+.analysis-inline-metrics span {
+    display: block;
+    font-size: 12px;
+    opacity: .72;
+}
+
+.analysis-overview h3 {
+    margin: 2px 0 3px;
+    font-size: 22px;
+}
+
+.analysis-overview p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.negative-status {
+    background: rgba(255, 236, 238, .88);
+}
+
+.positive-status {
+    background: rgba(232, 248, 239, .88);
+}
+
+.neutral-status {
+    background: rgba(239, 238, 250, .88);
+}
+
+.analysis-inline-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.analysis-inline-metrics > div {
+    padding: 10px 12px;
+    border: 1px solid rgba(83, 78, 118, .11);
+    border-radius: 14px;
+    background: rgba(255,255,255,.72);
+}
+
+.analysis-inline-metrics strong {
+    display: block;
+    margin-top: 3px;
+    font-size: 14px;
+}
+
+.analysis-details {
+    margin-top: 8px;
+}
+
+#send {
+    min-width: 48px !important;
+    width: 48px !important;
+    max-width: 48px !important;
+    padding: 0 !important;
+    border-radius: 15px !important;
+    font-size: 20px !important;
+}
+
+.message-composer-row {
+    grid-template-columns: minmax(0, 1fr) 48px !important;
+    align-items: stretch !important;
+}
+
+.composer-secondary-actions {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+}
+
+.composer-secondary-actions button {
+    min-width: 0 !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    white-space: nowrap !important;
+    font-size: 13px !important;
+}
+
+@media (max-width: 768px) {
+    #app {
+        display: block !important;
+    }
+
+    .sidebar {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+    }
+
+    .main {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .chat-card {
+        min-height: auto !important;
+    }
+
+    .chat-scroll {
+        height: 54vh !important;
+        min-height: 360px !important;
+        max-height: 560px !important;
+    }
+
+    .composer {
+        padding: 10px !important;
+    }
+
+    .message-composer-row {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) 46px !important;
+        gap: 8px !important;
+    }
+
+    #send {
+        width: 46px !important;
+        min-width: 46px !important;
+        max-width: 46px !important;
+    }
+
+    .composer-secondary-actions {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+
+    .composer-secondary-actions button {
+        font-size: 11px !important;
+        min-height: 38px !important;
+        padding: 6px 4px !important;
+    }
+
+    .summary-panel {
+        padding: 14px !important;
+    }
+
+    .summary-card {
+        margin-bottom: 8px !important;
+        padding: 12px !important;
+    }
+
+    .analysis-inline-metrics {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .analysis-inline-metrics > div {
+        padding: 8px;
+    }
+
+    .analysis-inline-metrics strong {
+        font-size: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    .panel-title h2 {
+        font-size: 18px !important;
+    }
+
+    .side-button {
+        white-space: normal !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .chat-scroll {
+        height: 50vh !important;
+        min-height: 330px !important;
+    }
+
+    .composer-secondary-actions button {
+        font-size: 10px !important;
+    }
+
+    .analysis-inline-metrics {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ===== Ajustes v28: módulo TXT visible, ordenado y con navegación ===== */
+.txt-section-card,
+.txt-section-card * {
+    color: #182038 !important;
+}
+
+.txt-v26-header h3,
+.txt-v26-header p,
+.txt-status,
+.txt-status p,
+.txt-status strong,
+.txt-control-card h4,
+.txt-analysis-result,
+.txt-analysis-result p,
+.txt-analysis-result li,
+.txt-analysis-result strong,
+.txt-analysis-result em,
+.txt-analysis-result h1,
+.txt-analysis-result h2,
+.txt-analysis-result h3,
+.txt-analysis-result h4,
+.txt-preview-accordion,
+.txt-preview-accordion * {
+    color: #182038 !important;
+    opacity: 1 !important;
+}
+
+.txt-status {
+    background: #f7f7fc !important;
+    border: 1px solid #e1e3f0 !important;
+    border-radius: 14px !important;
+    padding: 12px 14px !important;
+    margin: 14px 0 10px !important;
+}
+
+.txt-actions-v28 {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin: 14px 0 18px !important;
+    align-items: stretch !important;
+}
+
+.txt-actions-v28 button {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 46px !important;
+    margin: 0 !important;
+    border: 1px solid #d6d9e8 !important;
+    border-radius: 12px !important;
+    background: #f5f6fa !important;
+    color: #2d3548 !important;
+    font-weight: 700 !important;
+    box-shadow: none !important;
+    transition: background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease !important;
+}
+
+.txt-actions-v28 button:hover {
+    background: #eceefe !important;
+    border-color: #b9bdf5 !important;
+    transform: translateY(-1px);
+}
+
+.txt-actions-v28 button.txt-action-selected,
+.txt-actions-v28 button[aria-pressed="true"] {
+    background: linear-gradient(135deg, #5548e9, #6d5cf5) !important;
+    border-color: #5548e9 !important;
+    color: #ffffff !important;
+}
+
+.txt-control-card,
+.txt-analysis-shell,
+.txt-context-result-shell {
+    scroll-margin-top: 24px;
+    border: 1px solid #e1e3ef !important;
+    border-radius: 16px !important;
+    background: #ffffff !important;
+    padding: 18px !important;
+    margin-top: 8px !important;
+    box-shadow: 0 8px 24px rgba(31, 39, 76, .06) !important;
+}
+
+.txt-analysis-shell:empty,
+.txt-context-result-shell:empty {
+    display: none !important;
+}
+
+.txt-analysis-result table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 10px 0 18px !important;
+}
+
+.txt-analysis-result th {
+    color: #10172b !important;
+    background: #eef0fb !important;
+    font-weight: 800 !important;
+}
+
+.txt-analysis-result td {
+    color: #20283c !important;
+    background: #ffffff !important;
+}
+
+.txt-analysis-result th,
+.txt-analysis-result td {
+    border: 1px solid #d9ddea !important;
+    padding: 10px 12px !important;
+    text-align: left !important;
+}
+
+.file-context-active,
+.file-context-active span,
+.file-context-active strong,
+.file-context-active small,
+.file-context-empty {
+    color: #2b3150 !important;
+    opacity: 1 !important;
+}
+
+.bot-bubble strong {
+    color: #3f38b8 !important;
+    opacity: 1 !important;
+}
+
+@media (max-width: 900px) {
+    .txt-actions-v28 {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 560px) {
+    .txt-actions-v28 {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+/* Evita espacios innecesarios entre el chat, el compositor y el análisis */
+.chat-card {
+    overflow: hidden !important;
+}
+
+.chat-scroll {
+    padding-bottom: 12px !important;
+}
+
+.composer {
+    margin-top: 0 !important;
+}
+
+.module-panel {
+    margin-top: 12px !important;
+}
+
+/* Mensajes más naturales */
+.bot-bubble,
+.user-bubble {
+    max-width: 82% !important;
+}
+
+.bot-bubble .resources-card {
+    padding-top: 10px !important;
+}
+
+/* Botones inferiores uniformes */
+.composer-secondary-actions button {
+    min-height: 40px !important;
+    border-radius: 12px !important;
+}
+
+/* Análisis técnico cerrado por defecto */
+.analysis-details summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.66);
+    border: 1px solid rgba(83,78,118,.12);
+}
+
+.analysis-details[open] summary {
+    margin-bottom: 10px;
+}
+
+/* Comparación de transcripciones */
+.transcription-comparison-section {
+    margin-top: 14px !important;
+}
+
+.comparison-table {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Mejoras móviles */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden !important;
+    }
+
+    #app {
+        gap: 10px !important;
+    }
+
+    .brand {
+        padding: 12px !important;
+    }
+
+    .brand h1 {
+        font-size: 22px !important;
+    }
+
+    .brand p {
+        font-size: 12px !important;
+        line-height: 1.3 !important;
+    }
+
+    .chat-scroll {
+        height: 48vh !important;
+        min-height: 300px !important;
+        max-height: 470px !important;
+        padding: 12px !important;
+    }
+
+    .message-composer-row {
+        grid-template-columns: minmax(0, 1fr) 46px !important;
+    }
+
+    .message-input textarea {
+        min-height: 46px !important;
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+    }
+
+    .composer-secondary-actions {
+        gap: 6px !important;
+    }
+
+    .composer-secondary-actions button {
+        min-height: 38px !important;
+        padding: 5px 4px !important;
+        font-size: 10.5px !important;
+    }
+
+    .module-panel {
+        margin-top: 8px !important;
+    }
+
+    .analysis-overview {
+        padding: 12px !important;
+        gap: 10px !important;
+    }
+
+    .analysis-overview h3 {
+        font-size: 19px !important;
+    }
+
+    .panel-title p,
+    .analysis-overview p {
+        font-size: 12px !important;
+    }
+
+    .bot-bubble,
+    .user-bubble {
+        max-width: 88% !important;
+    }
+
+    .transcription-comparison-section {
+        padding: 12px !important;
+    }
+
+    .comparison-heading h2 {
+        font-size: 20px !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .chat-scroll {
+        height: 44vh !important;
+        min-height: 280px !important;
+    }
+
+    .composer-secondary-actions button {
+        font-size: 9.5px !important;
+    }
+
+    .analysis-inline-metrics {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .analysis-inline-metrics > div:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* Impide el desplazamiento horizontal de toda la aplicación. */
+html,
+body,
+.gradio-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+}
+
+.gradio-container *,
+.gradio-container *::before,
+.gradio-container *::after {
+    box-sizing: border-box !important;
+}
+
+/* Gradio crea una fila flex. Se fija el ancho real de sidebar + contenido. */
+#app {
+    display: grid !important;
+    grid-template-columns: 300px minmax(0, 1fr) !important;
+    gap: 0 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: clip !important;
+}
+
+#app > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+}
+
+.sidebar {
+    width: 300px !important;
+    min-width: 300px !important;
+    max-width: 300px !important;
+}
+
+.main {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+/* Las tarjetas principales no pueden superar el ancho del área central. */
+.topbar,
+.chat-card,
+.module-panel,
+.summary-panel,
+.composer,
+.input-mode-tabs,
+.input-mode-tabs > div,
+.input-mode-tabs .tabitem {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+}
+
+/* Chat y compositor: se mantienen dentro de la tarjeta. */
+.chat-card {
+    overflow: hidden !important;
+}
+
+.composer {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    overflow: hidden !important;
+}
+
+.message-composer-row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 48px !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+.message-composer-row > *,
+.message-input,
+.message-input > div,
+.message-input .form,
+.message-input .wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+}
+
+.message-input textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    margin: 0 !important;
+    padding: 12px 16px !important;
+    resize: none !important;
+}
+
+.message-composer-row > :last-child {
+    width: 48px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
+    overflow: hidden !important;
+}
+
+#send,
+#send button {
+    width: 48px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Botones inferiores centrados y sin salirse. */
+.composer-secondary-actions {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin: 10px 0 0 !important;
+    padding: 0 !important;
+}
+
+.composer-secondary-actions > *,
+.composer-secondary-actions button {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+}
+
+/* Corrige la tarjeta de idioma: ícono y textos ya no se superponen. */
+.summary-card {
+    display: grid !important;
+    grid-template-columns: 56px minmax(0, 1fr) !important;
+    align-items: center !important;
+    column-gap: 18px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 22px !important;
+    overflow: hidden !important;
+}
+
+.summary-icon {
+    position: static !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 56px !important;
+    min-width: 56px !important;
+    max-width: 56px !important;
+    height: 56px !important;
+    margin: 0 !important;
+    font-size: 24px !important;
+}
+
+.summary-copy {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.summary-copy span,
+.summary-copy h3,
+.summary-copy p {
+    position: static !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    transform: none !important;
+    overflow-wrap: anywhere !important;
+}
+
+/* Escritorio angosto y tablet. */
+@media (max-width: 1050px) {
+    #app {
+        grid-template-columns: 250px minmax(0, 1fr) !important;
+    }
+
+    .sidebar {
+        width: 250px !important;
+        min-width: 250px !important;
+        max-width: 250px !important;
+    }
+
+    .main {
+        padding-left: 14px !important;
+        padding-right: 14px !important;
+    }
+}
+
+/* Móvil: sidebar y contenido uno debajo del otro, ambos centrados. */
+@media (max-width: 768px) {
+    #app {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .sidebar,
+    .main {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+    }
+
+    .main {
+        padding: 10px !important;
+        margin: 0 !important;
+    }
+
+    .topbar,
+    .chat-card,
+    .module-panel {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .composer {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    .message-composer-row {
+        grid-template-columns: minmax(0, 1fr) 44px !important;
+        gap: 8px !important;
+    }
+
+    .message-input textarea {
+        height: 46px !important;
+        min-height: 46px !important;
+        padding: 11px 13px !important;
+        font-size: 15px !important;
+    }
+
+    .message-composer-row > :last-child,
+    #send,
+    #send button {
+        width: 44px !important;
+        min-width: 44px !important;
+        max-width: 44px !important;
+        height: 44px !important;
+        min-height: 44px !important;
+    }
+
+    .composer-secondary-actions {
+        gap: 7px !important;
+    }
+
+    .summary-card {
+        grid-template-columns: 48px minmax(0, 1fr) !important;
+        column-gap: 14px !important;
+        padding: 16px !important;
+    }
+
+    .summary-icon {
+        width: 48px !important;
+        min-width: 48px !important;
+        max-width: 48px !important;
+        height: 48px !important;
+        font-size: 21px !important;
+    }
+
+    .summary-copy h3 {
+        font-size: 20px !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .main {
+        padding: 6px !important;
+    }
+
+    .composer {
+        padding-left: 7px !important;
+        padding-right: 7px !important;
+    }
+
+    .composer-secondary-actions button {
+        padding-left: 3px !important;
+        padding-right: 3px !important;
+        font-size: 10px !important;
+    }
+}
+
+
+/* Reserva espacio real a la derecha para que el botón no quede cortado. */
+.message-composer-row {
+    grid-template-columns: minmax(0, 1fr) 48px !important;
+    column-gap: 10px !important;
+    padding-left: 0 !important;
+    padding-right: 18px !important;
+    overflow: visible !important;
+}
+
+/* El primer componente ocupa solamente la primera columna. */
+.message-composer-row > :first-child {
+    grid-column: 1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+}
+
+/* El botón queda completamente dentro de la segunda columna. */
+.message-composer-row > :last-child {
+    grid-column: 2 !important;
+    justify-self: start !important;
+    align-self: center !important;
+    width: 48px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
+    margin: 0 !important;
+    overflow: visible !important;
+}
+
+#send,
+#send button {
+    position: static !important;
+    transform: none !important;
+    right: auto !important;
+    left: auto !important;
+    width: 48px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Fuerza la apariencia clara de los botones deshabilitados. */
+#listen_response,
+#listen_response button,
+#conversation_summary,
+#conversation_summary button {
+    background: #f4f4fa !important;
+    color: #9296aa !important;
+    border: 1px solid #dedfec !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+}
+
+#listen_response:disabled,
+#listen_response button:disabled,
+#conversation_summary:disabled,
+#conversation_summary button:disabled,
+#listen_response[disabled],
+#listen_response button[disabled],
+#conversation_summary[disabled],
+#conversation_summary button[disabled] {
+    background: #f4f4fa !important;
+    color: #9296aa !important;
+    border-color: #dedfec !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+}
+
+/* El botón Nuevo conserva su estilo claro. */
+#reset,
+#reset button {
+    background: rgba(255,255,255,.94) !important;
+    color: #252951 !important;
+    border: 1px solid rgba(111,92,214,.20) !important;
+    box-shadow: none !important;
+}
+
+/* Ajuste equivalente para celular. */
+@media (max-width: 768px) {
+    .message-composer-row {
+        grid-template-columns: minmax(0, 1fr) 44px !important;
+        column-gap: 8px !important;
+        padding-right: 12px !important;
+    }
+
+    .message-composer-row > :last-child,
+    #send,
+    #send button {
+        width: 44px !important;
+        min-width: 44px !important;
+        max-width: 44px !important;
+        height: 44px !important;
+        min-height: 44px !important;
+    }
+}
+
+
+:root {
+    --ec-bg: #f4f3f8;
+    --ec-surface: #ffffff;
+    --ec-border: rgba(66, 61, 92, .12);
+    --ec-text: #252331;
+    --ec-muted: #706b80;
+    --ec-primary: #6860a8;
+    --ec-shadow: 0 16px 42px rgba(54, 48, 83, .10);
+    --ec-radius: 22px;
+}
+
+/* Estructura general: sidebar + una única vista central. */
+html,
+body {
+    min-height: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.gradio-container {
+    min-height: 100vh !important;
+    height: auto !important;
+    background: var(--ec-bg) !important;
+}
+
+#app {
+    display: grid !important;
+    grid-template-columns: minmax(230px, 280px) minmax(0, 1fr) !important;
+    align-items: start !important;
+    gap: 18px !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+.sidebar {
+    position: sticky !important;
+    top: 12px !important;
+    align-self: start !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: calc(100vh - 24px) !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+.main {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+/* Encabezado discreto. */
+.topbar {
+    min-height: 72px !important;
+    padding: 12px 18px !important;
+}
+
+.top-logo,
+.top-logo-img {
+    width: 42px !important;
+    height: 42px !important;
+}
+
+.top-logo img,
+.top-logo-img img,
+.logo-img img,
+.avatar-logo img,
+.bot-avatar img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    padding: 2px !important;
+}
+
+/* Tarjeta principal del chat. */
+.chat-card {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    min-height: 560px !important;
+    height: min(720px, calc(100dvh - 112px)) !important;
+    max-height: 760px !important;
+    overflow: hidden !important;
+    border: 1px solid var(--ec-border) !important;
+    border-radius: var(--ec-radius) !important;
+    background: var(--ec-surface) !important;
+    box-shadow: var(--ec-shadow) !important;
+}
+
+/* Botón Nueva: pequeño y ubicado arriba a la derecha. */
+.chat-toolbar {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    flex: 0 0 46px !important;
+    min-height: 46px !important;
+    margin: 0 !important;
+    padding: 8px 14px 4px !important;
+    background: transparent !important;
+}
+
+.chat-toolbar > div {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+}
+
+#reset,
+#reset > div,
+#reset button {
+    width: auto !important;
+    min-width: 74px !important;
+    max-width: 92px !important;
+    height: 32px !important;
+    min-height: 32px !important;
+    padding: 0 11px !important;
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+}
+
+/* Historial: es la única zona con desplazamiento interno. */
+#chat_area {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 12px 18px 18px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth !important;
+    background: transparent !important;
+}
+
+#chat_area > div,
+#chat_area .prose,
+#chat_area .html-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+#chat_area .messages {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 0 10px !important;
+}
+
+#chat_area .msg {
+    display: flex !important;
+    align-items: flex-end !important;
+    gap: 9px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+}
+
+#chat_area .bot-msg { justify-content: flex-start !important; }
+#chat_area .user-msg { justify-content: flex-end !important; }
+
+#chat_area .bubble {
+    flex: 0 1 auto !important;
+    width: fit-content !important;
+    min-width: 0 !important;
+    max-width: min(76%, 680px) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 11px 14px 8px !important;
+    overflow-wrap: anywhere !important;
+}
+
+#chat_area .bubble p {
+    margin: 0 0 4px !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+#chat_area .avatar {
+    display: grid !important;
+    place-items: center !important;
+    flex: 0 0 38px !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
+    height: 38px !important;
+    overflow: hidden !important;
+    border-radius: 50% !important;
+}
+
+#chat_area .avatar img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    padding: 3px !important;
+}
+
+/* Composer siempre visible dentro de la tarjeta. */
+.composer {
+    position: relative !important;
+    z-index: 3 !important;
+    flex: 0 0 auto !important;
+    padding: 10px 14px 14px !important;
+    background: var(--ec-surface) !important;
+}
+
+.message-composer-row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 48px !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+}
+
+#send,
+#send button {
+    width: 48px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
+    min-height: 44px !important;
+    padding: 0 !important;
+    border-radius: 14px !important;
+}
+
+.composer-secondary-actions {
+    display: none !important;
+}
+
+/* Sustituye el adorno ✦ por una marca visual sobria. */
+.section-mark {
+    display: block;
+    flex: 0 0 4px;
+    width: 4px;
+    height: 34px;
+    border-radius: 999px;
+    background: var(--ec-primary);
+}
+
+.spark {
+    display: none !important;
+}
+
+/* Los módulos aparecen en la misma columna central, nunca a la derecha. */
+.module-panel,
+.transcription-comparison-section,
+.pdf-actions {
+    width: 100% !important;
+    min-width: 0 !important;
+    margin-top: 18px !important;
+}
+
+/* Laptop con poca altura. */
+@media (min-width: 769px) and (max-height: 760px) {
+    .chat-card {
+        min-height: 500px !important;
+        height: calc(100dvh - 96px) !important;
+        max-height: 650px !important;
+    }
+
+    .topbar {
+        min-height: 62px !important;
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+}
+
+/* Tablet y celular: flujo vertical natural. */
+@media (max-width: 768px) {
+    #app {
+        display: block !important;
+        min-height: auto !important;
+    }
+
+    .sidebar {
+        position: relative !important;
+        top: auto !important;
+        min-height: auto !important;
+        margin-bottom: 12px !important;
+    }
+
+    .main {
+        min-height: auto !important;
+    }
+
+    .chat-card {
+        min-height: 68vh !important;
+        height: auto !important;
+        max-height: none !important;
+    }
+
+    #chat_area {
+        min-height: 360px !important;
+        max-height: 58vh !important;
+        padding: 12px 10px 16px !important;
+    }
+
+    #chat_area .bubble {
+        max-width: 84% !important;
+    }
+
+    #chat_area .avatar {
+        flex-basis: 32px !important;
+        width: 32px !important;
+        min-width: 32px !important;
+        max-width: 32px !important;
+        height: 32px !important;
+    }
+
+    .chat-toolbar {
+        min-height: 40px !important;
+        flex-basis: 40px !important;
+        padding: 6px 10px 2px !important;
+    }
+}
+
+
+/*
+El chat se adapta a la altura visible de la pantalla sin dejar el composer
+fuera del viewport. Se evita depender de reducir el zoom del navegador.
+*/
+.chat-card {
+    min-height: 470px !important;
+    height: clamp(500px, calc(100dvh - 190px), 650px) !important;
+    max-height: 650px !important;
+}
+
+#chat_area {
+    min-height: 0 !important;
+    overflow-y: auto !important;
+}
+
+/* El composer permanece dentro de la tarjeta y siempre visible. */
+.composer {
+    flex-shrink: 0 !important;
+    padding-bottom: 12px !important;
+}
+
+/* Iconos de las tarjetas: centrados y sin texto cortado. */
+.summary-icon {
+    display: grid !important;
+    place-items: center !important;
+    flex: 0 0 58px !important;
+    width: 58px !important;
+    height: 58px !important;
+    min-width: 58px !important;
+    overflow: hidden !important;
+    font-size: 27px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+}
+
+/* En equipos con poca altura se compacta todavía más. */
+@media (min-width: 769px) and (max-height: 820px) {
+    .chat-card {
+        min-height: 450px !important;
+        height: calc(100dvh - 170px) !important;
+        max-height: 590px !important;
+    }
+
+    .chat-toolbar {
+        flex-basis: 40px !important;
+        min-height: 40px !important;
+        padding-top: 5px !important;
+    }
+
+    #chat_area {
+        padding-top: 8px !important;
+        padding-bottom: 10px !important;
+    }
+
+    .composer {
+        padding-top: 8px !important;
+        padding-bottom: 10px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .chat-card {
+        min-height: 620px !important;
+        height: auto !important;
+        max-height: none !important;
+    }
+
+    #chat_area {
+        min-height: 380px !important;
+        max-height: 55vh !important;
+    }
+}
+
+
+/* Modelo de caja consistente: padding y bordes no aumentan el ancho real. */
+#app,
+#app *,
+.main,
+.main *,
+.chat-card,
+.chat-card * {
+    box-sizing: border-box !important;
+}
+
+/* Evita que filas y columnas internas de Gradio excedan el ancho disponible. */
+#app,
+.main,
+.chat-card,
+.chat-toolbar,
+#chat_area,
+#chat_area > div,
+#chat_area .messages,
+.composer,
+.composer > div,
+.message-composer-row,
+.message-composer-row > div,
+.input-mode-tabs,
+.input-mode-tabs > div {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+}
+
+.main {
+    overflow-x: hidden !important;
+}
+
+.chat-card {
+    align-self: stretch !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    overflow: hidden !important;
+}
+
+/* Encabezado compacto, sin márgenes negativos de las filas de Gradio. */
+.chat-toolbar {
+    margin: 0 !important;
+    padding: 7px 14px 3px !important;
+    justify-content: flex-end !important;
+    overflow: visible !important;
+}
+
+.chat-toolbar > div {
+    width: auto !important;
+    min-width: 0 !important;
+    flex: 0 0 auto !important;
+}
+
+#reset,
+#reset button {
+    width: auto !important;
+    min-width: 78px !important;
+    max-width: none !important;
+}
+
+/* Área de mensajes alineada con el compositor. */
+#chat_area {
+    padding: 8px 18px 14px !important;
+    overflow-x: hidden !important;
+}
+
+#chat_area .messages {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+}
+
+#chat_area .day-pill {
+    margin-top: 0 !important;
+    margin-bottom: 14px !important;
+}
+
+#chat_area .msg {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+#chat_area .bubble {
+    min-width: 0 !important;
+    max-width: min(76%, 720px) !important;
+    overflow-wrap: anywhere !important;
+    word-break: break-word !important;
+}
+
+#chat_area .bubble p {
+    max-width: 100% !important;
+    margin: 0 !important;
+    overflow-wrap: anywhere !important;
+}
+
+/* El compositor usa el ancho interior real de la tarjeta. */
+.composer {
+    margin: 0 !important;
+    padding: 10px 18px 14px !important;
+    border-radius: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-bottom: 0 !important;
+    box-shadow: 0 -10px 28px rgba(65, 78, 150, .08) !important;
+    overflow: hidden !important;
+}
+
+.input-mode-tabs,
+.input-mode-tabs > div,
+.input-mode-tabs .tabitem,
+.input-mode-tabs .form {
+    margin: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.message-composer-row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 48px !important;
+    gap: 8px !important;
+    margin: 0 !important;
+    align-items: stretch !important;
+}
+
+#msg,
+#msg > div,
+#msg .form,
+#msg textarea {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+}
+
+#msg textarea {
+    overflow-x: hidden !important;
+    resize: none !important;
+}
+
+#send,
+#send > div,
+#send button {
+    width: 48px !important;
+    min-width: 48px !important;
+    max-width: 48px !important;
+    margin: 0 !important;
+}
+
+/* Laptop y escritorio: tarjeta fluida dentro de la columna central. */
+@media (min-width: 769px) {
+    #app {
+        grid-template-columns: 280px minmax(0, 1fr) !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    .main {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+
+    .chat-card {
+        width: 100% !important;
+        max-width: none !important;
+    }
+}
+
+/* Celular: menos padding, burbujas amplias y ningún desborde lateral. */
+@media (max-width: 768px) {
+    body,
+    .gradio-container {
+        overflow-x: hidden !important;
+    }
+
+    #app,
+    .main,
+    .chat-card {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .main {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    #chat_area {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    #chat_area .bubble {
+        max-width: 86% !important;
+    }
+
+    .composer {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+}
+
+
+/* V20 visual */
+.result-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0 0 16px}.result-card{background:#f7f9fc;border:1px solid #dfe5ee;border-radius:12px;padding:16px;min-height:96px;display:flex;flex-direction:column;justify-content:center}.result-card span{font-size:.78rem;color:#667085;text-transform:uppercase;letter-spacing:.04em}.result-card strong{font-size:1.12rem;color:#1f2a44;margin-top:6px}.compact-content{padding-top:16px!important;padding-bottom:16px!important}.interpretation-card{background:#f8fafc;border:1px solid #d9e2ec;border-left:4px solid #49658c;border-radius:12px;padding:18px;margin:14px 0}.interpretation-header{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:12px}.interpretation-header span{font-weight:700;color:#1f2a44}.interpretation-header b{font-size:.82rem;color:#49658c;background:#eaf0f7;padding:6px 9px;border-radius:8px}.progress-track{height:7px;background:#e5eaf0;border-radius:99px;overflow:hidden;margin-bottom:16px}.progress-track span{display:block;height:100%;background:#49658c}.interpretation-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:18px}.interpretation-grid h4{margin:0 0 6px;color:#344054}.interpretation-grid p,.technology-note{margin:0;color:#475467;line-height:1.55}.technology-note{border-top:1px solid #e1e7ef;margin-top:14px;padding-top:12px}.model-results-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.model-results-grid>div{border:1px solid #e0e5ec;border-radius:10px;padding:14px;background:#fbfcfe;display:flex;flex-direction:column;gap:5px}.model-results-grid span,.model-results-grid small{color:#667085}.model-results-grid strong{color:#1f2a44}.tech-accordion{display:grid;gap:8px}.tech-detail{border:1px solid #e1e6ed;border-radius:10px;background:#fbfcfd}.tech-detail summary{cursor:pointer;padding:13px 15px;font-weight:650;color:#26364f;list-style:none}.tech-detail summary:after{content:'+';float:right}.tech-detail[open] summary:after{content:'−'}.tech-detail>div{padding:0 15px 13px;color:#475467}.comparison-strip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0}.comparison-strip>div{border:1px solid #e2e7ee;border-radius:10px;padding:14px}.comparison-strip strong,.comparison-strip span{display:block}.comparison-strip span{color:#667085;font-size:.9rem;margin-top:5px}.final-conclusion-card{background:#243b5a;color:#fff;border-radius:12px;padding:20px;margin:14px 0}.final-conclusion-card p{color:#fff;margin:8px 0 0;line-height:1.6}@media(max-width:900px){.result-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.model-results-grid,.interpretation-grid,.comparison-strip{grid-template-columns:1fr}}@media(max-width:560px){.result-grid{grid-template-columns:1fr}.interpretation-header{align-items:flex-start;flex-direction:column}}
+
+
+
+.final-conclusion-card,
+.final-conclusion-card * {
+    color: #ffffff !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+.final-conclusion-card {
+    background: #243b5a !important;
+    border: 1px solid rgba(255,255,255,.14) !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    margin: 14px 0 !important;
+}
+.final-conclusion-card > span,
+.final-conclusion-card span {
+    display: block !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+}
+.final-conclusion-card > p,
+.final-conclusion-card p {
+    color: #f4f7fb !important;
+    font-size: .98rem !important;
+    line-height: 1.65 !important;
+    margin: 10px 0 0 !important;
+}
+
+
+/* Secciones agregadas: texto a voz desde TXT y pipeline académico. */
+.academic-addon {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    margin-top: 12px !important;
+    border: 1px solid rgba(83, 78, 118, .18) !important;
+    border-radius: 14px !important;
+    background: rgba(255, 255, 255, .96) !important;
+    overflow: hidden !important;
+}
+
+.academic-addon > button,
+.academic-addon > .label-wrap,
+.academic-addon summary,
+.academic-addon [role="button"] {
+    color: #25264f !important;
+    background: rgba(248, 247, 255, .98) !important;
+    font-weight: 700 !important;
+    opacity: 1 !important;
+}
+
+.academic-addon span,
+.academic-addon p,
+.academic-addon label,
+.academic-addon .prose,
+.academic-addon .prose p,
+.academic-addon .markdown,
+.academic-addon .markdown p {
+    color: #35375f !important;
+    opacity: 1 !important;
+}
+
+.academic-addon input,
+.academic-addon textarea,
+.academic-addon select {
+    color: #25264f !important;
+    background: #ffffff !important;
+    opacity: 1 !important;
+}
+
+.academic-addon input::placeholder,
+.academic-addon textarea::placeholder {
+    color: #777a9c !important;
+    opacity: 1 !important;
+}
+
+.academic-addon button {
+    opacity: 1 !important;
+}
+
+.academic-addon .wrap,
+.academic-addon .form,
+.academic-addon .container,
+.academic-addon .block,
+.academic-addon > div,
+.academic-addon fieldset {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: hidden !important;
+}
+
+.academic-addon .gradio-row,
+.academic-addon [class*="row"] {
+    max-width: 100% !important;
+    min-width: 0 !important;
+}
+
+.academic-addon audio {
+    max-width: 100% !important;
+}
+
+@media (max-width: 768px) {
+    .academic-addon {
+        margin-top: 8px !important;
+    }
+
+    .academic-addon .gradio-row,
+    .academic-addon [class*="row"] {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.txt-workspace {
+    border: 1px solid #d9dded !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+    box-shadow: 0 8px 24px rgba(36, 43, 74, 0.07) !important;
+}
+
+.txt-workspace > .label-wrap {
+    min-height: 52px !important;
+    padding: 14px 18px !important;
+    background: #f7f7fc !important;
+    color: #303650 !important;
+    font-weight: 700 !important;
+}
+
+.txt-workspace .open {
+    padding: 18px !important;
+}
+
+.txt-module-header {
+    padding: 4px 2px 12px !important;
+}
+
+.txt-module-header h3 {
+    margin: 4px 0 5px !important;
+    font-size: 1.08rem !important;
+    color: #242a42 !important;
+}
+
+.txt-module-header p {
+    margin: 0 !important;
+    color: #606781 !important;
+    font-size: 0.94rem !important;
+}
+
+.txt-step-label {
+    display: inline-flex !important;
+    padding: 4px 9px !important;
+    border-radius: 999px !important;
+    background: #eeeafd !important;
+    color: #5f4bc5 !important;
+    font-size: 0.76rem !important;
+    font-weight: 700 !important;
+}
+
+.txt-file-input {
+    min-height: 96px !important;
+    border-radius: 14px !important;
+}
+
+.txt-file-input .wrap,
+.txt-file-input .file-preview {
+    min-height: 72px !important;
+    background: #f8f9fd !important;
+    border: 1px dashed #b9bfd7 !important;
+    border-radius: 12px !important;
+}
+
+.txt-status {
+    margin: 6px 0 10px !important;
+    padding: 10px 12px !important;
+    border-radius: 10px !important;
+    background: #f5f6fb !important;
+    color: #4f5773 !important;
+}
+
+.txt-status p {
+    margin: 0 !important;
+}
+
+.txt-options-row {
+    gap: 14px !important;
+    align-items: end !important;
+}
+
+.txt-actions {
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+    margin-top: 4px !important;
+}
+
+.txt-actions button {
+    min-height: 44px !important;
+    border-radius: 12px !important;
+    font-weight: 700 !important;
+}
+
+.txt-main-action {
+    min-width: 180px !important;
+}
+
+.txt-preview textarea {
+    background: #fbfbfe !important;
+    color: #272d46 !important;
+    border-radius: 12px !important;
+}
+
+.txt-audio-output,
+.txt-analysis-result {
+    margin-top: 12px !important;
+}
+
+@media (max-width: 700px) {
+    .txt-workspace .open {
+        padding: 13px !important;
+    }
+
+    .txt-options-row,
+    .txt-actions {
+        flex-direction: column !important;
+    }
+
+    .txt-actions button,
+    .txt-main-action {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+}
+
+
+.chat-card {
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+}
+
+.composer,
+.input-mode-tabs,
+.input-mode-tabs > div,
+.input-mode-tabs .tabitem,
+.txt-workspace,
+.txt-section-card {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+#chat_area {
+    flex: 0 0 auto !important;
+    height: 250px !important;
+    min-height: 190px !important;
+    max-height: 340px !important;
+    overflow-y: auto !important;
+}
+
+.txt-section-card {
+    display: block !important;
+    width: 100% !important;
+    margin-top: 14px !important;
+    padding: 16px !important;
+    box-sizing: border-box !important;
+}
+
+.txt-actions {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    margin: 10px 0 14px !important;
+    overflow: visible !important;
+}
+
+.txt-actions > div,
+.txt-actions button {
+    width: 100% !important;
+    min-width: 0 !important;
+    visibility: visible !important;
+}
+
+.txt-actions button {
+    min-height: 46px !important;
+    white-space: normal !important;
+}
+
+.txt-options-row {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+}
+
+.txt-preview-accordion {
+    margin-top: 10px !important;
+}
+
+.txt-status {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+.module-panel {
+    clear: both !important;
+}
+
+@media (max-width: 768px) {
+    #chat_area {
+        height: 42vh !important;
+        min-height: 300px !important;
+        max-height: 480px !important;
+    }
+
+    .txt-actions,
+    .txt-options-row {
+        grid-template-columns: 1fr !important;
+    }
+
+    .txt-section-card {
+        padding: 12px !important;
+    }
+}
+
+
+.txt-section-card {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 14px !important;
+    gap: 10px !important;
+    border: 1px solid #d9dded !important;
+    border-radius: 16px !important;
+    background: #ffffff !important;
+}
+
+.txt-v25-title {
+    margin: 0 !important;
+    padding: 0 2px 4px !important;
+}
+
+.txt-v25-title h3 {
+    margin: 0 0 4px !important;
+    color: #252a44 !important;
+    font-size: 1.05rem !important;
+}
+
+.txt-v25-title p {
+    margin: 0 !important;
+    color: #626983 !important;
+    font-size: .92rem !important;
+}
+
+.txt-actions-v25 {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin: 2px 0 4px !important;
+    position: relative !important;
+    z-index: 20 !important;
+    overflow: visible !important;
+}
+
+.txt-actions-v25 > div,
+.txt-actions-v25 button {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 46px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+.txt-file-input,
+.txt-status,
+.txt-options-row,
+.txt-preview-accordion,
+.txt-audio-output,
+.txt-analysis-result {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+.composer,
+.input-mode-tabs,
+.input-mode-tabs > div,
+.input-mode-tabs .tabitem,
+.chat-card {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+#chat_area {
+    height: 210px !important;
+    min-height: 160px !important;
+    max-height: 260px !important;
+    overflow-y: auto !important;
+}
+
+@media (max-width: 768px) {
+    .txt-actions-v25 {
+        grid-template-columns: 1fr !important;
+    }
+
+    #chat_area {
+        height: 34vh !important;
+        min-height: 230px !important;
+        max-height: 380px !important;
+    }
+}
+
+
+.txt-section-card { padding: 18px !important; gap: 14px !important; }
+.txt-v26-header h3 { margin: 0 0 5px !important; color: #171b36 !important; font-size: 1.08rem !important; }
+.txt-v26-header p { margin: 0 !important; color: #4f5874 !important; }
+.txt-control-card { border: 1px solid #dfe3f1 !important; background: #f8f9fd !important; border-radius: 14px !important; padding: 14px !important; gap: 12px !important; }
+.txt-control-card h4 { color: #252a44 !important; margin: 0 !important; }
+.txt-options-row { align-items: end !important; gap: 12px !important; }
+.txt-options-row > div { min-width: 0 !important; }
+.txt-analysis-result, .txt-analysis-result * { color: #252a44 !important; opacity: 1 !important; }
+.txt-analysis-result h3 { color: #171b36 !important; }
+.txt-analysis-result table { background: #fff !important; border-collapse: collapse !important; }
+.txt-analysis-result th { background: #eef0fb !important; color: #202641 !important; font-weight: 700 !important; }
+.txt-analysis-result td { color: #303750 !important; background: #fff !important; }
+.txt-analysis-result th, .txt-analysis-result td { border: 1px solid #d9deec !important; padding: 10px !important; }
+.file-context-active, .file-context-empty { border-radius: 12px; padding: 10px 13px; margin: 0 0 10px; }
+.file-context-active { border: 1px solid #cfc8ff; background: #f4f1ff; display: grid; gap: 2px; color: #292344; }
+.file-context-active span { font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .04em; color: #5b4bc4; }
+.file-context-active strong { font-size: .95rem; }
+.file-context-active small { color: #5d6378; }
+.file-context-empty { border: 1px dashed #d6daea; background: #fafbfe; color: #6a7188; font-size: .9rem; }
+.txt-actions-v26 { display: grid !important; grid-template-columns: repeat(4,minmax(0,1fr)) !important; gap: 10px !important; }
+.txt-actions-v26 button { min-height: 44px !important; }
+.voice-pipeline-section { margin-top: 18px !important; padding: 18px !important; border: 1px solid #dbe0ee !important; border-radius: 18px !important; background: #fff !important; }
+.voice-pipeline-heading h2 { color: #1d223c !important; margin: 0 0 5px !important; }
+.voice-pipeline-heading p { color: #59617b !important; margin: 0 0 14px !important; }
+@media (max-width: 768px) {
+  .txt-actions-v26 { grid-template-columns: 1fr 1fr !important; }
+  .txt-options-row { display: grid !important; grid-template-columns: 1fr !important; }
+}
+
+
+/* ===== Ajustes v29: recupera reproductor y orden del módulo TXT ===== */
+.txt-section-card {
+    max-width: 100% !important;
+}
+
+.txt-actions-label {
+    margin-top: 18px !important;
+    text-align: left !important;
+}
+
+.txt-actions-v28 {
+    justify-content: flex-start !important;
+    margin-bottom: 12px !important;
+}
+
+#txt_voice_section,
+#txt_analysis_section,
+#txt_context_result_section {
+    scroll-margin-top: 18px !important;
+    margin-top: 14px !important;
+}
+
+#txt_voice_section .audio-container,
+#txt_voice_section .waveform-container,
+#txt_voice_section audio {
+    width: 100% !important;
+}
+
+.txt-control-card label,
+.txt-control-card label span,
+.txt-control-card .wrap,
+.txt-control-card .wrap * {
+    color: #1d2740 !important;
+    opacity: 1 !important;
+}
+
+.txt-control-card fieldset {
+    border: 1px solid #dfe3f0 !important;
+    border-radius: 12px !important;
+    background: #f8f9fd !important;
+    padding: 10px 12px !important;
+}
+
+.txt-control-card input:checked + span,
+.txt-control-card input:checked ~ span {
+    color: #ffffff !important;
+}
+
+.txt-file-input .file-preview,
+.txt-file-input .file-preview *,
+.txt-file-input [data-testid="file"],
+.txt-file-input [data-testid="file"] * {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+.txt-file-input button {
+    color: #ffffff !important;
+}
+
+.txt-analysis-shell,
+.txt-context-result-shell {
+    min-height: 0 !important;
+}
+
+@media (min-width: 901px) {
+    .txt-actions-v28 {
+        grid-template-columns: repeat(4, minmax(150px, 220px)) !important;
+    }
+}
+
+
+
+/* V30 — selector TXT claro y consistente */
+.txt-file-input,
+.txt-file-input > div,
+.txt-file-input .wrap,
+.txt-file-input .file-preview,
+.txt-file-input [data-testid="file"],
+.txt-file-input [data-testid="file-preview"] {
+    background: #ffffff !important;
+    color: #27304a !important;
+}
+
+.txt-file-input .wrap,
+.txt-file-input .file-preview,
+.txt-file-input [data-testid="file-preview"] {
+    border: 1px solid #d8dcef !important;
+    border-radius: 14px !important;
+    box-shadow: none !important;
+}
+
+.txt-file-input span,
+.txt-file-input p,
+.txt-file-input div,
+.txt-file-input button {
+    color: #27304a !important;
+}
+
+.txt-file-input button[aria-label*="Remove"],
+.txt-file-input button[aria-label*="remove"],
+.txt-file-input button[aria-label*="Clear"],
+.txt-file-input button[aria-label*="clear"] {
+    background: #f1f2f8 !important;
+    color: #303650 !important;
+    border: 1px solid #d8dcef !important;
+}
+
+.txt-file-input .file-size,
+.txt-file-input [class*="file-size"] {
+    color: #69718d !important;
+}
+
+
+
+/* Selector de archivo: elimina fondos oscuros heredados de Gradio. */
+#txt_file_upload,
+#txt_file_upload > div,
+#txt_file_upload [class*="container"],
+#txt_file_upload [class*="file"],
+#txt_file_upload [class*="preview"],
+#txt_file_upload [data-testid],
+#txt_file_upload ul,
+#txt_file_upload li {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    color: #27304a !important;
+    border-color: #d8dcef !important;
+    box-shadow: none !important;
+}
+
+#txt_file_upload [class*="file"] *,
+#txt_file_upload [class*="preview"] *,
+#txt_file_upload [data-testid] * {
+    color: #27304a !important;
+    -webkit-text-fill-color: #27304a !important;
+    opacity: 1 !important;
+}
+
+/* Botón de eliminar archivo claro y discreto. */
+#txt_file_upload button[aria-label],
+#txt_file_upload button[title] {
+    background: #f6f7fb !important;
+    color: #4b536d !important;
+    border: 1px solid #d8dcef !important;
+    border-radius: 9px !important;
+    box-shadow: none !important;
+}
+
+/* Encabezados de los controles: texto normal, no cápsulas violetas. */
+#txt_voice_section label > span:first-child,
+#txt_voice_section .label-wrap,
+#txt_voice_section .label-wrap span {
+    background: transparent !important;
+    color: #303750 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    font-weight: 700 !important;
+}
+
+/* Botones utilitarios del reproductor (descarga/compartir) claros. */
+#txt_voice_section .txt-audio-output button,
+#txt_voice_section [data-testid="audio"] button,
+#txt_voice_section [class*="audio"] button {
+    background: #f5f6fb !important;
+    color: #303750 !important;
+    border: 1px solid #d8dcef !important;
+    box-shadow: none !important;
+}
+
+#txt_voice_section .txt-audio-output button svg,
+#txt_voice_section [data-testid="audio"] button svg,
+#txt_voice_section [class*="audio"] button svg {
+    color: #303750 !important;
+    fill: currentColor !important;
+    stroke: currentColor !important;
+}
+
+/* Acciones: estado normal y seleccionado claramente diferenciados. */
+.txt-actions-v28 {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    width: 100% !important;
+}
+
+.txt-actions-v28 > div,
+.txt-actions-v28 button {
+    width: 100% !important;
+    min-width: 0 !important;
+}
+
+.txt-actions-v28 button {
+    min-height: 50px !important;
+    background: #f7f8fc !important;
+    color: #303750 !important;
+    border: 1px solid #d7dced !important;
+    border-radius: 12px !important;
+    font-weight: 700 !important;
+    transition: background .18s ease, color .18s ease, border-color .18s ease,
+                transform .18s ease, box-shadow .18s ease !important;
+}
+
+.txt-actions-v28 button:hover {
+    background: #efedff !important;
+    border-color: #b8adff !important;
+}
+
+.txt-actions-v28 button.txt-action-selected {
+    background: linear-gradient(135deg, #6254df, #7a5ce5) !important;
+    color: #ffffff !important;
+    border-color: #6254df !important;
+    box-shadow: 0 8px 20px rgba(98, 84, 223, .22) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* El resultado de vinculación no se muestra como un bloque suelto. */
+#txt_context_result_section {
+    display: none !important;
+}
+
+/* Vista móvil: se mantienen TODAS las opciones, sin ocultar ninguna. */
+@media (max-width: 700px) {
+    .txt-actions-v28 {
+        grid-template-columns: 1fr !important;
+        gap: 9px !important;
+    }
+
+    .txt-actions-v28 > div,
+    .txt-actions-v28 button {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+    }
+
+    #txt_voice_section .txt-options-row {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    #txt_voice_section,
+    .txt-section-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+    }
+
+    #txt_voice_section .txt-audio-output,
+    #txt_voice_section audio {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+
+/* Archivo TXT: evita bloques oscuros heredados del tema */
+#txt_file_upload,
+#txt_file_upload > div,
+#txt_file_upload .wrap,
+#txt_file_upload [class*="file-preview"],
+#txt_file_upload [class*="filePreview"],
+#txt_file_upload li {
+    background: #ffffff !important;
+    color: #28324a !important;
+    border-color: #d9deec !important;
+}
+
+#txt_file_upload span,
+#txt_file_upload p,
+#txt_file_upload div {
+    color: #28324a !important;
+    -webkit-text-fill-color: #28324a !important;
+}
+
+/* Botón para quitar el TXT */
+#txt_file_upload button,
+#txt_file_upload button svg {
+    background: #ffffff !important;
+    color: #4f5870 !important;
+    stroke: #4f5870 !important;
+    fill: none !important;
+    border-color: #d9deec !important;
+    box-shadow: none !important;
+}
+
+/* Reproductor: controles secundarios claros */
+#txt_audio_player button,
+#txt_audio_player button:hover,
+#txt_audio_player [role="button"] {
+    background: #ffffff !important;
+    color: #273149 !important;
+    border-color: #d9deec !important;
+    box-shadow: none !important;
+}
+
+#txt_audio_player button svg,
+#txt_audio_player [role="button"] svg {
+    color: #273149 !important;
+    stroke: #273149 !important;
+    fill: none !important;
+}
+
+/* Oculta solamente la barra flotante de descargar/compartir del audio.
+   El play, el volumen y la velocidad siguen visibles. */
+#txt_audio_player .download-button,
+#txt_audio_player .share-button,
+#txt_audio_player [aria-label*="Download"],
+#txt_audio_player [aria-label*="download"],
+#txt_audio_player [aria-label*="Share"],
+#txt_audio_player [aria-label*="share"],
+#txt_audio_player [title*="Download"],
+#txt_audio_player [title*="download"],
+#txt_audio_player [title*="Share"],
+#txt_audio_player [title*="share"] {
+    display: none !important;
+}
+
+/* Estado seleccionado de las acciones */
+.txt-actions-v28 button.txt-action-selected,
+.txt-actions-v28 button.txt-action-selected:hover,
+.txt-actions-v28 button[aria-pressed="true"] {
+    background: linear-gradient(135deg, #5548e9, #7658f3) !important;
+    border-color: #5548e9 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Todas las opciones se conservan en móvil */
+@media (max-width: 768px) {
+    .txt-actions-v28,
+    .txt-actions-v26 {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+        width: 100% !important;
+    }
+
+    .txt-actions-v28 > *,
+    .txt-actions-v26 > *,
+    .txt-actions-v28 button,
+    .txt-actions-v26 button {
+        display: flex !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+
+    #txt_voice_section {
+        padding: 14px !important;
+    }
+
+    #txt_audio_player,
+    #txt_audio_player audio,
+    #txt_audio_player .audio-container,
+    #txt_audio_player .waveform-container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+#txt_file_upload,
+#txt_file_upload > div,
+#txt_file_upload [class*="container"],
+#txt_file_upload [class*="file-preview"],
+#txt_file_upload [class*="filePreview"],
+#txt_file_upload ul,
+#txt_file_upload li {
+    background: #ffffff !important;
+    color: #263047 !important;
+    -webkit-text-fill-color: #263047 !important;
+}
+
+#txt_file_upload {
+    border: 1px solid #d9def0 !important;
+    border-radius: 14px !important;
+    padding: 10px 12px !important;
+    overflow: hidden !important;
+}
+
+#txt_file_upload .file-name,
+#txt_file_upload [class*="file-name"],
+#txt_file_upload [class*="fileName"] {
+    color: #263047 !important;
+    font-weight: 650 !important;
+}
+
+/* El control de quitar archivo queda discreto y no aparece como un óvalo oscuro. */
+#txt_file_upload button[aria-label*="Clear"],
+#txt_file_upload button[aria-label*="clear"],
+#txt_file_upload button[aria-label*="Remove"],
+#txt_file_upload button[aria-label*="remove"],
+#txt_file_upload button[aria-label*="Delete"],
+#txt_file_upload button[aria-label*="delete"],
+#txt_file_upload button[title*="Clear"],
+#txt_file_upload button[title*="Remove"],
+#txt_file_upload button[title*="Delete"],
+#txt_file_upload .icon-button,
+#txt_file_upload button.icon-button,
+#txt_file_upload [data-testid="clear-button"],
+#txt_file_upload [data-testid="remove-file"],
+#txt_file_upload li button,
+#txt_file_upload [class*="file-preview"] button,
+#txt_file_upload [class*="filePreview"] button {
+    background: transparent !important;
+    color: #7b8298 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    border-radius: 6px !important;
+    min-width: 28px !important;
+    width: 28px !important;
+    height: 28px !important;
+    padding: 4px !important;
+}
+
+#txt_file_upload button:hover {
+    background: #f1f3f8 !important;
+}
+
+#txt_voice_section {
+    background: #ffffff !important;
+    border: 1px solid #dde2ef !important;
+    border-radius: 16px !important;
+    padding: 16px !important;
+    margin-top: 14px !important;
+}
+
+#txt_voice_section audio,
+#txt_voice_section .audio-container,
+#txt_voice_section .waveform-container {
+    width: 100% !important;
+}
+
+/* Contraste y presentación de la sección académica de audio */
+.academic-audio-shell,
+.academic-audio-shell * {
+    color: #243047 !important;
+    -webkit-text-fill-color: #243047 !important;
+    opacity: 1 !important;
+}
+.academic-audio-header h2 {
+    color: #182038 !important;
+    margin: 0 0 6px !important;
+}
+.academic-audio-header p,
+.academic-audio-note,
+.academic-audio-note p,
+.academic-audio-note strong,
+#project_audio_status,
+#project_audio_status * {
+    color: #46516a !important;
+}
+.academic-audio-card {
+    background: #ffffff !important;
+    border: 1px solid #dce2ef !important;
+    border-radius: 16px !important;
+    padding: 16px !important;
+    box-shadow: 0 7px 22px rgba(31, 42, 68, .06) !important;
+}
+.academic-audio-card h3,
+.academic-audio-card label,
+.academic-audio-card span,
+.academic-audio-card p {
+    color: #243047 !important;
+}
+.academic-audio-card audio,
+.academic-audio-card .audio-container,
+.academic-audio-card .waveform-container {
+    width: 100% !important;
+    background: #f7f8fc !important;
+}
+#run_project_audios_button {
+    background: #6557c8 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: #6557c8 !important;
+    min-height: 46px !important;
+    font-weight: 750 !important;
+}
+#run_project_audios_button:hover {
+    background: #5548b5 !important;
+}
+#transcription_reference_text textarea,
+#transcription_reference_text input {
+    color: #202941 !important;
+    -webkit-text-fill-color: #202941 !important;
+}
+#transcription_reference_text textarea::placeholder,
+#transcription_reference_text input::placeholder {
+    color: #68728a !important;
+    opacity: 1 !important;
+}
+.metric-table,
+.metric-table th,
+.metric-table td,
+#transcription_comparison_result,
+#transcription_comparison_result *,
+#project_audios_result,
+#project_audios_result * {
+    color: #263047 !important;
+    -webkit-text-fill-color: #263047 !important;
+}
+.metric-table th {
+    background: #eef0fa !important;
+    color: #283252 !important;
+}
+@media (max-width: 768px) {
+    .project-audio-grid {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+    .academic-audio-card {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+}
+
+.menu-section { display:none !important; }
+#audio_input button[aria-label*="Clear" i],#audio_input button[aria-label*="Remove" i],#audio_input button[title*="Clear" i],#audio_input button[title*="Remove" i],#audio_input .clear-button,#audio_input [class*="clear"] { display:none !important; }
+#audio_input > label,#audio_input label,.voice-recorder > label { background:transparent !important;border:0 !important;box-shadow:none !important;color:#334155 !important;font-size:13px !important;font-weight:700 !important;padding:0 0 7px !important; }
+#app p,#app span,#app small,#app label,#app .prose,#app .markdown,#app .caption { color:#334155; }
+#app input::placeholder,#app textarea::placeholder { color:#667085 !important;opacity:1 !important; }
+@media (max-width:768px){
+#app{padding:8px !important}.sidebar{padding:12px !important}.sidebar-brand{margin-bottom:8px !important}
+.sidebar .menu{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:8px !important;width:100% !important}.sidebar .menu>:first-child{grid-column:1/-1 !important}
+.sidebar .side-button,.sidebar .side-button button{width:100% !important;min-width:0 !important;min-height:44px !important;height:auto !important;margin:0 !important;padding:9px 8px !important;font-size:13px !important;line-height:1.15 !important;white-space:normal !important;text-align:center !important}.sidebar-detail{margin-top:10px !important}
+.txt-actions-v28,.txt-actions-v26,.txt-actions{display:grid !important;grid-template-columns:1fr !important;gap:8px !important;width:100% !important;margin:10px 0 14px !important}.txt-actions-v28 button,.txt-actions-v26 button,.txt-actions button{width:100% !important;min-height:48px !important;height:auto !important;margin:0 !important;padding:10px 12px !important;border-radius:12px !important;font-size:15px !important;line-height:1.2 !important;white-space:normal !important}
+#txt_file_upload,#audio_file_upload,#audio_upload,.voice-upload{min-height:0 !important;padding:10px !important}#txt_file_upload .upload-container,#audio_file_upload .upload-container,.voice-upload .upload-container{min-height:84px !important}
+#audio_input,#audio_out,#txt_audio_player,#project_audio_informative,#project_audio_emotional,#audio_input audio,#audio_out audio,#txt_audio_player audio{width:100% !important;max-width:100% !important}.module-panel,.txt-section-card,.voice-pipeline-section{padding:14px !important;border-radius:16px !important}.panel-title{margin-bottom:10px !important}.panel-title h2{font-size:20px !important}.panel-title p{font-size:13px !important}
+}
+
+.gradio-container,
+.gradio-container p,
+.gradio-container span,
+.gradio-container label,
+.gradio-container input,
+.gradio-container textarea,
+.gradio-container table,
+.gradio-container th,
+.gradio-container td { color: #202941; }
+#send {
+    width: auto !important; min-width: 88px !important; max-width: none !important;
+    min-height: 48px !important; padding: 0 18px !important; border-radius: 13px !important;
+    background: #5b4fc4 !important; color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important; font-size: 15px !important; font-weight: 750 !important;
+}
+.txt-actions-label {
+    background: transparent !important; border: 0 !important; box-shadow: none !important;
+    padding: 0 !important; margin: 16px 0 8px !important; color: #475069 !important; font-size: 14px !important;
+}
+#audio_entrada button[aria-label*="Clear"],
+#audio_entrada button[aria-label*="clear"],
+#audio_entrada button[aria-label*="Remove"],
+#audio_entrada button[aria-label*="remove"],
+#audio_entrada button[title*="Clear"],
+#audio_entrada button[title*="Remove"] { display: none !important; }
+.voice-guide, .voice-guide strong, .voice-note-mobile, .voice-help {
+    background: transparent !important; border: 0 !important; box-shadow: none !important;
+}
+@media (max-width: 768px) {
+    .gradio-container { padding: 8px !important; }
+    .sidebar .menu { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 8px !important; }
+    .sidebar .menu .side-button:first-child { grid-column: 1 / -1 !important; }
+    .sidebar .menu::before, .sidebar .menu::after { display: none !important; content: none !important; }
+    .side-button { min-height: 46px !important; height: auto !important; padding: 9px 8px !important; white-space: normal !important; line-height: 1.2 !important; }
+    .message-composer-row { display: grid !important; grid-template-columns: minmax(0, 1fr) auto !important; gap: 8px !important; align-items: stretch !important; }
+    #send { min-width: 82px !important; min-height: 48px !important; padding: 0 14px !important; }
+    #txt_file_upload, #txt_file_upload > div, #txt_file_upload [class*="wrap"], #txt_file_upload [class*="container"] {
+        position: relative !important; display: flex !important; flex-direction: column !important; align-items: stretch !important;
+        width: 100% !important; height: auto !important; min-height: 0 !important; overflow: visible !important;
+    }
+    #txt_file_upload button, #txt_file_upload [role="button"] {
+        position: static !important; inset: auto !important; transform: none !important; width: 100% !important;
+        max-width: 100% !important; min-height: 46px !important; margin: 0 0 8px !important; white-space: normal !important;
+    }
+    #txt_file_upload .upload-container, #txt_file_upload [class*="drop"], #txt_file_upload [class*="upload"] {
+        position: static !important; width: 100% !important; min-height: 82px !important; margin: 0 !important; padding: 12px !important;
+    }
+    .txt-actions-v28, .txt-actions-v26 { display: grid !important; grid-template-columns: 1fr !important; gap: 8px !important; width: 100% !important; margin: 8px 0 14px !important; }
+    .txt-actions-v28 button, .txt-actions-v26 button {
+        width: 100% !important; min-height: 48px !important; height: auto !important; padding: 10px 12px !important;
+        margin: 0 !important; white-space: normal !important; line-height: 1.2 !important; font-size: 15px !important;
+    }
+    .chat-card, .txt-section-card, .module-panel, .panel-shell { margin-top: 8px !important; margin-bottom: 8px !important; }
+}
+
+/* Botones del archivo: estado normal claro y selección visible. */
+#txt_action_analysis button,
+#txt_action_context button,
+#txt_action_clear button {
+    background: #ffffff !important;
+    color: #5146a8 !important;
+    -webkit-text-fill-color: #5146a8 !important;
+    border: 1px solid #bcb6ec !important;
+    box-shadow: none !important;
+    font-weight: 700 !important;
+}
+
+#txt_action_analysis button:hover,
+#txt_action_context button:hover,
+#txt_action_clear button:hover {
+    background: #f3f1ff !important;
+    border-color: #7669d8 !important;
+}
+
+#txt_action_analysis button.txt-action-selected,
+#txt_action_context button.txt-action-selected,
+#txt_action_clear button.txt-action-selected {
+    background: #6657c8 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: #6657c8 !important;
+}
+
+/* Estado seleccionado del menú principal. */
+#app .side-button button.menu-selected,
+#app button.side-button.menu-selected,
+#app .side-button.active button {
+    background: #6657c8 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: #6657c8 !important;
+}
+
+/* Controles de audio claros; se evita la barra oscura de acciones secundarias. */
+#txt_audio_player,
+#txt_audio_player > div,
+#audio_out,
+#audio_out > div,
+#audio_input,
+#audio_input > div {
+    background: #ffffff !important;
+    color: #252b42 !important;
+}
+#txt_audio_player button,
+#audio_out button,
+#audio_input button {
+    background: #f2f0ff !important;
+    color: #5146a8 !important;
+    -webkit-text-fill-color: #5146a8 !important;
+    border-color: #d5d0f4 !important;
+}
+#txt_audio_player [class*="download"],
+#txt_audio_player [class*="share"],
+#audio_out [class*="download"],
+#audio_out [class*="share"] {
+    display: none !important;
+}
+
+/* En celular se conservan todos los módulos y controles del escritorio. */
+@media (max-width: 768px) {
+    #app {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    #app > .sidebar,
+    #app > .main,
+    .sidebar,
+    .main {
+        display: flex !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+        visibility: visible !important;
+    }
+    .sidebar {
+        position: static !important;
+        height: auto !important;
+        overflow: visible !important;
+        padding: 12px !important;
+    }
+    .sidebar .menu {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        width: 100% !important;
+    }
+    .sidebar .menu .menu-section {
+        display: block !important;
+        grid-column: 1 / -1 !important;
+    }
+    .sidebar .side-button,
+    .sidebar .side-button button {
+        display: flex !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 46px !important;
+        white-space: normal !important;
+        visibility: visible !important;
+    }
+    .sidebar-detail,
+    .breathe-card,
+    .module-panel,
+    .voice-pipeline-section,
+    .transcription-comparison-section,
+    .pdf-actions,
+    .txt-section-card,
+    .input-mode-tabs,
+    #tab_escribir,
+    #tab_hablar {
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+    .txt-actions-v28 {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 9px !important;
+        width: 100% !important;
+    }
+    .txt-actions-v28 > div,
+    .txt-actions-v28 button {
+        width: 100% !important;
+        min-height: 48px !important;
+    }
+    .txt-options-row {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+    }
+    .voice-desktop-help,
+    .voice-mobile-help,
+    .voice-note-mobile,
+    .voice-help,
+    .voice-guide,
+    #process_uploaded_audio,
+    #upload_audio,
+    #audio_input {
+        display: block !important;
+        visibility: visible !important;
+    }
+    .chat-scroll {
+        height: 52vh !important;
+        min-height: 340px !important;
+    }
+}
+
+@media (max-width: 430px) {
+    .sidebar .menu {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.summary-icon {
+    overflow: visible !important;
+    color: #5f58a6 !important;
+}
+.summary-icon svg {
+    display: block !important;
+    width: 29px !important;
+    height: 29px !important;
+    fill: none !important;
+    stroke: currentColor !important;
+    stroke-width: 1.8 !important;
+    stroke-linecap: round !important;
+    stroke-linejoin: round !important;
+}
+.blue-card .summary-icon { color: #4e6fa8 !important; }
+.green-card .summary-icon { color: #368573 !important; }
+.orange-card .summary-icon { color: #ad6b31 !important; }
+.purple-card .summary-icon { color: #6559ae !important; }
+
+/* Acciones principales: violeta medio, texto blanco y contraste estable. */
+#send, #send button,
+#process_uploaded_audio, #process_uploaded_audio button,
+#run_full_pipeline_button, #run_full_pipeline_button button,
+#compare_transcriptions_button, #compare_transcriptions_button button,
+#load_project_audios_button, #load_project_audios_button button,
+#generate_pdf_button, #generate_pdf_button button {
+    background: #7569d1 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border: 1px solid #7569d1 !important;
+    box-shadow: 0 5px 14px rgba(74, 62, 150, .16) !important;
+}
+#send:hover, #send button:hover,
+#process_uploaded_audio:hover, #process_uploaded_audio button:hover,
+#run_full_pipeline_button:hover, #run_full_pipeline_button button:hover,
+#compare_transcriptions_button:hover, #compare_transcriptions_button button:hover,
+#load_project_audios_button:hover, #load_project_audios_button button:hover,
+#generate_pdf_button:hover, #generate_pdf_button button:hover {
+    background: #675bc0 !important;
+    border-color: #675bc0 !important;
+}
+
+/* Acciones secundarias: fondo suave en vez de violeta oscuro. */
+#run_project_audios_button, #run_project_audios_button button,
+#download_pdf_button, #download_pdf_button button,
+#reset, #reset button {
+    background: #eeebfb !important;
+    color: #4c4387 !important;
+    -webkit-text-fill-color: #4c4387 !important;
+    border: 1px solid #c8c1ec !important;
+    box-shadow: none !important;
+}
+#run_project_audios_button:hover, #run_project_audios_button button:hover,
+#download_pdf_button:hover, #download_pdf_button button:hover,
+#reset:hover, #reset button:hover {
+    background: #e3dff7 !important;
+    border-color: #aaa0df !important;
+}
+
+/* Menú lateral claro; el módulo seleccionado conserva énfasis moderado. */
+.side-button, .side-button button {
+    background: #f0eef9 !important;
+    color: #443c76 !important;
+    -webkit-text-fill-color: #443c76 !important;
+    border-color: #d5d0ec !important;
+}
+.side-button.menu-selected, .side-button.menu-selected button,
+.side-button.active, .side-button.active button,
+.side-button button.menu-selected {
+    background: #7569d1 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border-color: #7569d1 !important;
+}
+
+/* Etiquetas de los reproductores y del texto de referencia. */
+#project_audio_informative label,
+#project_audio_emotional label,
+#transcription_reference_text label {
+    background: #ece9fa !important;
+    color: #443c76 !important;
+    -webkit-text-fill-color: #443c76 !important;
+    border-radius: 7px !important;
+    border: 0 !important;
+}
+#project_audio_informative label *,
+#project_audio_emotional label *,
+#transcription_reference_text label * {
+    color: #443c76 !important;
+    -webkit-text-fill-color: #443c76 !important;
+}
+
+/* ===== V6: móvil compacto, controles claros y audio alineado ===== */
+.voice-pipeline-section,
+.voice-pipeline-section > div,
+.voice-pipeline-section label,
+.voice-pipeline-section .container,
+#pipeline_audio_input,
+#pipeline_transcription,
+#pipeline_sentiment,
+#pipeline_summary {
+    background: #ffffff !important;
+    color: #283149 !important;
+    -webkit-text-fill-color: #283149 !important;
+    border-color: #d9deec !important;
+    box-shadow: none !important;
+}
+
+.voice-pipeline-section textarea,
+.voice-pipeline-section input,
+#pipeline_transcription textarea,
+#pipeline_sentiment textarea,
+#pipeline_summary textarea {
+    background: #f8f9fc !important;
+    color: #283149 !important;
+    -webkit-text-fill-color: #283149 !important;
+    border: 1px solid #d9deec !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+}
+
+.voice-pipeline-section label > span,
+.voice-pipeline-section .label-wrap,
+.voice-pipeline-section .label-wrap span {
+    background: transparent !important;
+    color: #3d4660 !important;
+    -webkit-text-fill-color: #3d4660 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+#pipeline_audio_input button,
+#pipeline_audio_input [role="button"],
+#run_full_pipeline_button,
+#run_full_pipeline_button button {
+    background: #eeeaf9 !important;
+    color: #4b427c !important;
+    -webkit-text-fill-color: #4b427c !important;
+    border: 1px solid #c9c1e8 !important;
+    box-shadow: none !important;
+}
+
+#pipeline_audio_input svg {
+    width: 30px !important;
+    height: 30px !important;
+    max-width: 30px !important;
+    max-height: 30px !important;
+}
+
+.transcription-comparison-section,
+.transcription-comparison-section > div,
+#comparison_audio_input,
+#comparison_audio_input > div {
+    background: #ffffff !important;
+    color: #283149 !important;
+    -webkit-text-fill-color: #283149 !important;
+    border-color: #d9deec !important;
+    box-shadow: none !important;
+}
+
+#comparison_audio_input button,
+#comparison_audio_input [role="button"],
+#load_project_audios_button,
+#load_project_audios_button button,
+#compare_transcriptions_button,
+#compare_transcriptions_button button {
+    background: #eeeaf9 !important;
+    color: #4b427c !important;
+    -webkit-text-fill-color: #4b427c !important;
+    border: 1px solid #c9c1e8 !important;
+    box-shadow: none !important;
+}
+
+#transcription_reference_text,
+#transcription_reference_text > div,
+#transcription_reference_text label,
+#transcription_reference_text textarea {
+    background: #ffffff !important;
+    color: #283149 !important;
+    -webkit-text-fill-color: #283149 !important;
+    border-color: #d9deec !important;
+    box-shadow: none !important;
+}
+
+#transcription_reference_text textarea {
+    background: #f8f9fc !important;
+    border: 1px solid #d9deec !important;
+    border-radius: 10px !important;
+}
+
+#transcription_reference_text label > span,
+#transcription_reference_text .label-wrap,
+#transcription_reference_text .label-wrap span {
+    background: transparent !important;
+    color: #3d4660 !important;
+    -webkit-text-fill-color: #3d4660 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+#project_audio_informative button[aria-label*="download" i],
+#project_audio_informative button[aria-label*="share" i],
+#project_audio_informative button[title*="download" i],
+#project_audio_informative button[title*="share" i],
+#project_audio_emotional button[aria-label*="download" i],
+#project_audio_emotional button[aria-label*="share" i],
+#project_audio_emotional button[title*="download" i],
+#project_audio_emotional button[title*="share" i] {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .gradio-container {
+        padding: 5px !important;
+        font-size: 14px !important;
+    }
+
+    .main,
+    .main-content,
+    .chat-card,
+    .txt-section-card,
+    .module-panel,
+    .voice-pipeline-section {
+        padding: 12px !important;
+        margin-top: 6px !important;
+        margin-bottom: 6px !important;
+        border-radius: 14px !important;
+    }
+
+    .txt-v26-header h3,
+    .voice-guide strong {
+        font-size: 18px !important;
+        line-height: 1.25 !important;
+        margin-bottom: 5px !important;
+    }
+
+    .txt-v26-header p,
+    .voice-guide span,
+    .voice-help,
+    .voice-note-mobile {
+        font-size: 13px !important;
+        line-height: 1.45 !important;
+    }
+
+    .voice-step {
+        margin: 12px 0 7px !important;
+        font-size: 16px !important;
+        line-height: 1.3 !important;
+    }
+
+    #txt_file_upload,
+    #upload_audio,
+    #pipeline_audio_input,
+    #comparison_audio_input {
+        width: 100% !important;
+        min-height: 0 !important;
+        height: auto !important;
+        padding: 8px !important;
+        border: 1px solid #d8dcef !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+        background: #ffffff !important;
+    }
+
+    #txt_file_upload > div,
+    #txt_file_upload [class*="drop"],
+    #txt_file_upload [class*="upload"],
+    #upload_audio > div,
+    #upload_audio [class*="drop"],
+    #upload_audio [class*="upload"],
+    #pipeline_audio_input > div,
+    #pipeline_audio_input [class*="drop"],
+    #pipeline_audio_input [class*="upload"],
+    #comparison_audio_input > div {
+        width: 100% !important;
+        min-height: 88px !important;
+        max-height: 124px !important;
+        height: auto !important;
+        padding: 10px !important;
+        gap: 5px !important;
+        overflow: hidden !important;
+        background: #ffffff !important;
+        border-color: #d8dcef !important;
+    }
+
+    #txt_file_upload svg,
+    #upload_audio svg,
+    #pipeline_audio_input svg,
+    #comparison_audio_input svg {
+        width: 27px !important;
+        height: 27px !important;
+        min-width: 27px !important;
+        min-height: 27px !important;
+        max-width: 27px !important;
+        max-height: 27px !important;
+        flex: 0 0 27px !important;
+        stroke-width: 1.8 !important;
+    }
+
+    #txt_file_upload button,
+    #txt_file_upload [role="button"],
+    #upload_audio button,
+    #upload_audio [role="button"],
+    #pipeline_audio_input button,
+    #pipeline_audio_input [role="button"],
+    #comparison_audio_input button,
+    #comparison_audio_input [role="button"] {
+        width: auto !important;
+        max-width: 100% !important;
+        min-height: 40px !important;
+        height: auto !important;
+        padding: 8px 11px !important;
+        margin: 0 auto 5px !important;
+        background: #f1effb !important;
+        color: #4d4678 !important;
+        -webkit-text-fill-color: #4d4678 !important;
+        border: 1px solid #d2ccec !important;
+        border-radius: 10px !important;
+        box-shadow: none !important;
+        font-size: 14px !important;
+        line-height: 1.25 !important;
+        white-space: normal !important;
+    }
+
+    #process_uploaded_audio,
+    #process_uploaded_audio button {
+        min-height: 46px !important;
+        padding: 9px 12px !important;
+        background: #eeeaf9 !important;
+        color: #4b427c !important;
+        -webkit-text-fill-color: #4b427c !important;
+        border: 1px solid #c9c1e8 !important;
+        border-radius: 12px !important;
+        box-shadow: none !important;
+        font-size: 15px !important;
+        font-weight: 750 !important;
+    }
+
+    #process_uploaded_audio:hover,
+    #process_uploaded_audio button:hover {
+        background: #e4dff5 !important;
+        border-color: #aca2dc !important;
+    }
+
+    #run_full_pipeline_button,
+    #run_full_pipeline_button button {
+        min-height: 46px !important;
+        padding: 9px 12px !important;
+        background: #eeeaf9 !important;
+        color: #4b427c !important;
+        -webkit-text-fill-color: #4b427c !important;
+        border: 1px solid #c9c1e8 !important;
+        border-radius: 12px !important;
+        box-shadow: none !important;
+        font-size: 15px !important;
+    }
+
+    .voice-pipeline-heading h2 {
+        font-size: 20px !important;
+        line-height: 1.25 !important;
+    }
+
+    .voice-pipeline-heading p {
+        font-size: 13px !important;
+        line-height: 1.45 !important;
+    }
+
+    .comparison-heading h2,
+    .academic-audio-header h2 {
+        font-size: 20px !important;
+        line-height: 1.25 !important;
+    }
+
+    .comparison-heading p,
+    .academic-audio-header p,
+    .academic-audio-note {
+        font-size: 13px !important;
+        line-height: 1.45 !important;
+    }
+
+    .academic-audio-shell,
+    .academic-audio-card {
+        padding: 12px !important;
+        border-radius: 13px !important;
+    }
+
+    #pipeline_transcription textarea,
+    #pipeline_summary textarea {
+        min-height: 84px !important;
+        height: 84px !important;
+    }
+
+    #pipeline_sentiment textarea {
+        min-height: 48px !important;
+        height: 48px !important;
+    }
+
+    #audio_input,
+    #audio_input > div {
+        position: relative !important;
+        width: 100% !important;
+        min-height: 104px !important;
+        height: auto !important;
+        max-height: 150px !important;
+        padding: 8px !important;
+        overflow: hidden !important;
+        background: #ffffff !important;
+        border-color: #d8dcef !important;
+        border-radius: 12px !important;
+    }
+
+    #audio_input button {
+        width: auto !important;
+        min-width: 0 !important;
+        min-height: 42px !important;
+        height: 42px !important;
+        padding: 8px 13px !important;
+        margin: 0 !important;
+        background: #f1effb !important;
+        color: #514791 !important;
+        -webkit-text-fill-color: #514791 !important;
+        border: 1px solid #d2ccec !important;
+        border-radius: 11px !important;
+        box-shadow: none !important;
+    }
+
+    #audio_input button[aria-label*="clear" i],
+    #audio_input button[aria-label*="remove" i],
+    #audio_input button[aria-label*="delete" i],
+    #audio_input button[title*="clear" i],
+    #audio_input button[title*="remove" i],
+    #audio_input button[title*="delete" i],
+    #audio_input .clear-button,
+    #audio_input button.icon-button {
+        display: none !important;
+    }
+}
+
