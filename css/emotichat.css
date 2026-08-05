@@ -6460,3 +6460,54 @@ button#comparison_audio_input {
     padding: 16px !important;
   }
 }
+
+
+/* === V13 PIPELINE CLARO Y REPRODUCTORES LIMPIOS === */
+/* Contraste legible incluso en tablas creadas por módulos externos. */
+.gradio-container table thead,
+.gradio-container table thead tr,
+.gradio-container table thead th,
+.gradio-container table th {
+  background: #ece9fa !important;
+  color: #293149 !important;
+  -webkit-text-fill-color: #293149 !important;
+  opacity: 1 !important;
+  font-weight: 800 !important;
+}
+
+/* Gradio agrupa compartir/descargar en este bloque oscuro. */
+#project_audio_informative .icon-button-wrapper,
+#project_audio_emotional .icon-button-wrapper,
+#project_audio_informative .share-button,
+#project_audio_informative .download-button,
+#project_audio_emotional .share-button,
+#project_audio_emotional .download-button {
+  display: none !important;
+}
+
+#project_audio_informative,
+#project_audio_emotional {
+  overflow: hidden !important;
+  border-radius: 12px !important;
+}
+
+.voice-pipeline-heading {
+  margin-bottom: 14px !important;
+}
+
+.voice-pipeline-heading h2 {
+  margin-bottom: 6px !important;
+  color: #222b42 !important;
+  -webkit-text-fill-color: #222b42 !important;
+}
+
+#run_full_pipeline_button,
+#run_full_pipeline_button button {
+  min-height: 52px !important;
+  background: #7064cf !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border: 1px solid #7064cf !important;
+  border-radius: 13px !important;
+  font-weight: 800 !important;
+}
