@@ -7477,3 +7477,175 @@ button#comparison_audio_input {
     max-height: 76px !important;
   }
 }
+
+
+/* === V21 FLUJO DE AUDIO EN UN PASO Y ESPACIADO UNIFORME === */
+/* Los elementos del formulario no deben crecer para completar la pantalla. */
+#tab_hablar,
+#tab_hablar > div,
+#tab_hablar .form,
+.txt-section-card,
+.txt-section-card > div,
+.txt-section-card > .form {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+
+#tab_hablar > *,
+#tab_hablar .form > *,
+.txt-section-card > *,
+.txt-section-card .form > * {
+  flex: 0 0 auto !important;
+  flex-grow: 0 !important;
+  min-height: 0 !important;
+}
+
+#tab_hablar {
+  gap: 11px !important;
+  padding: 14px !important;
+  font-size: 14px !important;
+}
+
+#tab_hablar .voice-guide {
+  gap: 4px !important;
+  min-height: 0 !important;
+  margin: 0 0 3px !important;
+  padding: 12px 14px !important;
+  border: 1px solid #e1e3ec !important;
+  border-radius: 12px !important;
+  background: #f8f9fc !important;
+}
+
+#tab_hablar .voice-guide strong,
+.txt-v26-header h3 {
+  margin: 0 !important;
+  font-size: 18px !important;
+  line-height: 1.3 !important;
+  font-weight: 800 !important;
+  color: #252c40 !important;
+  -webkit-text-fill-color: #252c40 !important;
+}
+
+#tab_hablar .voice-guide span,
+.txt-v26-header p {
+  margin: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  font-weight: 400 !important;
+  color: #626b80 !important;
+  -webkit-text-fill-color: #626b80 !important;
+}
+
+#tab_hablar .voice-step {
+  min-height: 0 !important;
+  margin: 7px 0 2px !important;
+  padding: 0 !important;
+  font-size: 14px !important;
+  line-height: 1.35 !important;
+  font-weight: 800 !important;
+  color: #30384d !important;
+}
+
+#tab_hablar #audio_input,
+#tab_hablar #upload_audio,
+#tab_hablar #voice_processing_status {
+  margin: 0 !important;
+}
+
+#tab_hablar #upload_audio,
+#tab_hablar #upload_audio button,
+#tab_hablar button#upload_audio {
+  width: 100% !important;
+  min-height: 48px !important;
+  height: 48px !important;
+  max-height: 48px !important;
+  font-size: 14px !important;
+}
+
+#voice_processing_status .processing-card {
+  min-height: 54px !important;
+  margin: 0 !important;
+  padding: 10px 12px !important;
+  border-radius: 11px !important;
+}
+
+#voice_processing_status .processing-card strong {
+  font-size: 14px !important;
+  line-height: 1.3 !important;
+}
+
+#voice_processing_status .processing-card span {
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
+
+#voice_processing_status .processing-success {
+  border-color: #b9dfd3 !important;
+  background: #eef9f5 !important;
+}
+
+/* Tarjeta TXT compacta: sin huecos creados por flex-grow. */
+.txt-section-card {
+  gap: 11px !important;
+  min-height: 0 !important;
+  margin: 12px 0 0 !important;
+  padding: 18px !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  font-size: 14px !important;
+}
+
+.txt-v26-header {
+  min-height: 0 !important;
+  margin: 0 0 4px !important;
+  padding: 0 !important;
+}
+
+.txt-v26-header h3 {
+  margin-bottom: 5px !important;
+}
+
+#txt_file_upload,
+#txt_file_upload button,
+button#txt_file_upload {
+  min-height: 48px !important;
+  height: 48px !important;
+  max-height: 48px !important;
+  margin: 0 !important;
+  font-size: 14px !important;
+}
+
+.txt-status {
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 10px 12px !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
+
+.txt-actions-label {
+  min-height: 0 !important;
+  margin: 8px 0 0 !important;
+  font-size: 14px !important;
+  line-height: 1.35 !important;
+}
+
+@media (max-width: 700px) {
+  #tab_hablar,
+  .txt-section-card {
+    gap: 9px !important;
+    padding: 12px !important;
+  }
+
+  #tab_hablar .voice-guide strong,
+  .txt-v26-header h3 {
+    font-size: 17px !important;
+  }
+
+  #tab_hablar .voice-guide span,
+  .txt-v26-header p,
+  #tab_hablar .voice-step {
+    font-size: 13px !important;
+  }
+}
