@@ -6365,3 +6365,98 @@ fuera del viewport. Se evita depender de reducir el zoom del navegador.
     width: 100% !important;
   }
 }
+
+
+/* === V12 BOTONES DE CARGA NATIVOS === */
+/* UploadButton evita las capas, zonas de arrastre y cruces de gr.File. */
+#upload_audio,
+#txt_file_upload,
+#pipeline_audio_input,
+#comparison_audio_input {
+  display: block !important;
+  width: 100% !important;
+  min-height: 52px !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  border: 0 !important;
+  border-radius: 14px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#upload_audio button,
+#txt_file_upload button,
+#pipeline_audio_input button,
+#comparison_audio_input button,
+button#upload_audio,
+button#txt_file_upload,
+button#pipeline_audio_input,
+button#comparison_audio_input {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-height: 52px !important;
+  height: 52px !important;
+  margin: 0 !important;
+  padding: 0 18px !important;
+  overflow: hidden !important;
+  border: 1px solid #cec8e9 !important;
+  border-radius: 14px !important;
+  background: #f1eff9 !important;
+  color: #49406f !important;
+  box-shadow: none !important;
+  font-size: 15px !important;
+  font-weight: 750 !important;
+  line-height: 1.2 !important;
+  text-align: center !important;
+  transform: none !important;
+}
+
+#upload_audio button::before,
+#upload_audio button::after,
+#txt_file_upload button::before,
+#txt_file_upload button::after,
+#pipeline_audio_input button::before,
+#pipeline_audio_input button::after,
+#comparison_audio_input button::before,
+#comparison_audio_input button::after {
+  content: none !important;
+  display: none !important;
+  transform: none !important;
+}
+
+#upload_audio button:hover,
+#txt_file_upload button:hover,
+#pipeline_audio_input button:hover,
+#comparison_audio_input button:hover {
+  border-color: #a99fda !important;
+  background: #eae7f7 !important;
+  color: #403768 !important;
+}
+
+.own-audio-comparison {
+  overflow: hidden !important;
+}
+
+@media (max-width: 640px) {
+  #upload_audio button,
+  #txt_file_upload button,
+  #pipeline_audio_input button,
+  #comparison_audio_input button,
+  button#upload_audio,
+  button#txt_file_upload,
+  button#pipeline_audio_input,
+  button#comparison_audio_input {
+    min-height: 50px !important;
+    height: 50px !important;
+    font-size: 14px !important;
+  }
+
+  .own-audio-comparison {
+    gap: 12px !important;
+    padding: 16px !important;
+  }
+}
