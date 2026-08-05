@@ -6998,3 +6998,131 @@ button#comparison_audio_input {
     font-size: 14px !important;
   }
 }
+
+
+/* === V17 ALINEACIÓN Y NAVEGACIÓN FINAL === */
+/* Encabezado idéntico al patrón visual de los demás módulos. */
+.audio-panel-title {
+  margin: 0 0 14px !important;
+  padding: 0 !important;
+}
+
+.audio-panel-title h2 {
+  margin: 0 0 4px !important;
+  color: #1f273b !important;
+  -webkit-text-fill-color: #1f273b !important;
+  font-size: 22px !important;
+  line-height: 1.2 !important;
+}
+
+.audio-panel-title p {
+  margin: 0 !important;
+  color: #687086 !important;
+  -webkit-text-fill-color: #687086 !important;
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+}
+
+/* El botón real de carga no debe heredar la altura de los controles pequeños. */
+#pipeline_manual_audio button:has(> .wrap),
+#pipeline_manual_audio button[aria-label*="upload" i],
+#pipeline_manual_audio button[aria-label*="drop" i],
+#comparison_uploaded_audio button:has(> .wrap),
+#comparison_uploaded_audio button[aria-label*="upload" i],
+#comparison_uploaded_audio button[aria-label*="drop" i] {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  min-width: 100% !important;
+  height: auto !important;
+  min-height: 118px !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 16px !important;
+  overflow: visible !important;
+  border: 1px dashed #c9c5dc !important;
+  border-radius: 11px !important;
+  background: #fafafe !important;
+  color: #41495f !important;
+  -webkit-text-fill-color: #41495f !important;
+  box-shadow: none !important;
+  font-size: 14px !important;
+  line-height: 1.45 !important;
+  text-align: center !important;
+  transform: none !important;
+}
+
+#pipeline_manual_audio button:has(> .wrap) .wrap,
+#comparison_uploaded_audio button:has(> .wrap) .wrap {
+  min-height: 0 !important;
+  padding: 0 !important;
+}
+
+/* Las etiquetas de resultados dejan de ser pastillas azules. */
+#pipeline_transcription > label[data-testid="block-label"],
+#pipeline_sentiment > label[data-testid="block-label"],
+#pipeline_summary > label[data-testid="block-label"],
+#pipeline_transcription .label-wrap,
+#pipeline_sentiment .label-wrap,
+#pipeline_summary .label-wrap {
+  position: static !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 28px !important;
+  margin: 0 0 7px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #30384d !important;
+  -webkit-text-fill-color: #30384d !important;
+  box-shadow: none !important;
+  font-size: 14px !important;
+  font-weight: 750 !important;
+  line-height: 1.2 !important;
+  transform: none !important;
+}
+
+#pipeline_transcription > label[data-testid="block-label"] *,
+#pipeline_sentiment > label[data-testid="block-label"] *,
+#pipeline_summary > label[data-testid="block-label"] *,
+#pipeline_transcription .label-wrap *,
+#pipeline_sentiment .label-wrap *,
+#pipeline_summary .label-wrap * {
+  background: transparent !important;
+  color: #30384d !important;
+  -webkit-text-fill-color: #30384d !important;
+  opacity: 1 !important;
+}
+
+#pipeline_transcription textarea,
+#pipeline_sentiment textarea,
+#pipeline_sentiment input,
+#pipeline_summary textarea {
+  border: 1px solid #d9dce7 !important;
+  background: #f9fafc !important;
+  color: #30384d !important;
+  -webkit-text-fill-color: #30384d !important;
+  box-shadow: none !important;
+}
+
+/* Todos los botones de acción mantienen texto oscuro sobre fondo claro. */
+#audio_tools_section button:not([aria-label*="play" i]):not([aria-label*="pause" i]) {
+  color: #403865 !important;
+  -webkit-text-fill-color: #403865 !important;
+}
+
+@media (max-width: 700px) {
+  .audio-panel-title h2 {
+    font-size: 20px !important;
+  }
+
+  #pipeline_manual_audio button:has(> .wrap),
+  #comparison_uploaded_audio button:has(> .wrap) {
+    min-height: 108px !important;
+    padding: 13px !important;
+  }
+}
