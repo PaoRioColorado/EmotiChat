@@ -6750,3 +6750,251 @@ button#comparison_audio_input {
     min-height: 130px !important;
   }
 }
+
+
+/* === V16 ACABADO FINAL DE AUDIO === */
+/* Estas reglas son deliberadamente específicas para neutralizar estilos
+   antiguos sin alterar la funcionalidad nativa de Gradio. */
+
+/* Encabezados de opción siempre legibles. */
+.audio-option-help,
+.audio-option-help *,
+.comparison-source-card > .prose,
+.comparison-source-card > .prose *,
+.comparison-source-card p,
+.comparison-source-card strong {
+  color: #30384d !important;
+  -webkit-text-fill-color: #30384d !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.audio-option-help {
+  padding: 13px 15px !important;
+  border: 1px solid #e3e5ed !important;
+  background: #f8f9fc !important;
+}
+
+/* Botones de acción: misma altura, texto perfectamente centrado y tonos claros. */
+#analyze_chat_audio_button,
+#analyze_chat_audio_button button,
+#analyze_selected_audio_button,
+#analyze_selected_audio_button button,
+#load_project_audios_button,
+#load_project_audios_button button,
+#run_project_audios_button,
+#run_project_audios_button button,
+#compare_transcriptions_button,
+#compare_transcriptions_button button {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 50px !important;
+  min-height: 50px !important;
+  max-height: 50px !important;
+  margin: 0 !important;
+  padding: 0 18px !important;
+  overflow: hidden !important;
+  border: 1px solid #c9c3e5 !important;
+  border-radius: 12px !important;
+  background: #efedf8 !important;
+  color: #403865 !important;
+  -webkit-text-fill-color: #403865 !important;
+  box-shadow: none !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  text-align: center !important;
+  transform: none !important;
+}
+
+#analyze_chat_audio_button::before,
+#analyze_chat_audio_button::after,
+#analyze_selected_audio_button::before,
+#analyze_selected_audio_button::after,
+#load_project_audios_button::before,
+#load_project_audios_button::after,
+#run_project_audios_button::before,
+#run_project_audios_button::after,
+#compare_transcriptions_button::before,
+#compare_transcriptions_button::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Controles de entrada de audio: superficies blancas y compactas. */
+#pipeline_manual_audio,
+#comparison_recorded_audio,
+#comparison_uploaded_audio {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  min-height: 150px !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 12px !important;
+  overflow: hidden !important;
+  border: 1px solid #d9dce7 !important;
+  border-radius: 13px !important;
+  background: #ffffff !important;
+  color: #31394f !important;
+  -webkit-text-fill-color: #31394f !important;
+  box-shadow: none !important;
+}
+
+/* La columna ya explica la función; se elimina la etiqueta violeta duplicada. */
+#pipeline_manual_audio > label[data-testid="block-label"],
+#comparison_recorded_audio > label[data-testid="block-label"],
+#comparison_uploaded_audio > label[data-testid="block-label"] {
+  display: none !important;
+}
+
+#pipeline_manual_audio .audio-container,
+#comparison_recorded_audio .audio-container,
+#comparison_uploaded_audio .audio-container,
+#pipeline_manual_audio [data-testid="audio"],
+#comparison_recorded_audio [data-testid="audio"],
+#comparison_uploaded_audio [data-testid="audio"] {
+  min-height: 124px !important;
+  border: 0 !important;
+  border-radius: 11px !important;
+  background: #fbfbfe !important;
+  color: #31394f !important;
+  box-shadow: none !important;
+}
+
+/* Zona de carga centrada, sin texto desplazado. */
+#pipeline_manual_audio .wrap,
+#comparison_recorded_audio .wrap,
+#comparison_uploaded_audio .wrap {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  width: 100% !important;
+  min-height: 110px !important;
+  margin: 0 !important;
+  padding: 14px !important;
+  background: transparent !important;
+  color: #4a5268 !important;
+  -webkit-text-fill-color: #4a5268 !important;
+  text-align: center !important;
+  transform: none !important;
+}
+
+#pipeline_manual_audio .wrap *,
+#comparison_recorded_audio .wrap *,
+#comparison_uploaded_audio .wrap * {
+  color: #4a5268 !important;
+  -webkit-text-fill-color: #4a5268 !important;
+  text-align: center !important;
+  transform: none !important;
+}
+
+/* Grabar, detener, seleccionar dispositivo y borrar: nunca oscuros. */
+#pipeline_manual_audio button,
+#pipeline_manual_audio [role="button"],
+#comparison_recorded_audio button,
+#comparison_recorded_audio [role="button"],
+#comparison_uploaded_audio button,
+#comparison_uploaded_audio [role="button"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  margin: 0 !important;
+  padding: 0 14px !important;
+  border: 1px solid #cec9e8 !important;
+  border-radius: 11px !important;
+  background: #f0eef8 !important;
+  color: #443c6d !important;
+  -webkit-text-fill-color: #443c6d !important;
+  box-shadow: none !important;
+  font-size: 14px !important;
+  font-weight: 750 !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  transform: none !important;
+}
+
+#pipeline_manual_audio button *,
+#comparison_recorded_audio button *,
+#comparison_uploaded_audio button * {
+  color: #443c6d !important;
+  -webkit-text-fill-color: #443c6d !important;
+}
+
+#pipeline_manual_audio button:disabled,
+#comparison_recorded_audio button:disabled,
+#comparison_uploaded_audio button:disabled {
+  border-color: #e0e2ea !important;
+  background: #f6f7fa !important;
+  color: #8a90a0 !important;
+  -webkit-text-fill-color: #8a90a0 !important;
+  opacity: 1 !important;
+}
+
+/* El contenedor de iconos ya no forma un rectángulo negro. */
+#pipeline_manual_audio .icon-button-wrapper,
+#comparison_recorded_audio .icon-button-wrapper,
+#comparison_uploaded_audio .icon-button-wrapper {
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#pipeline_manual_audio svg,
+#comparison_recorded_audio svg,
+#comparison_uploaded_audio svg {
+  color: #514879 !important;
+  stroke: #514879 !important;
+}
+
+/* Tarjetas de comparación equilibradas. */
+.comparison-source-card {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+  padding: 14px !important;
+  border-color: #dfe1e9 !important;
+  background: #f9fafc !important;
+}
+
+@media (max-width: 700px) {
+  #pipeline_manual_audio,
+  #comparison_recorded_audio,
+  #comparison_uploaded_audio {
+    min-height: 138px !important;
+    padding: 9px !important;
+  }
+
+  #pipeline_manual_audio .audio-container,
+  #comparison_recorded_audio .audio-container,
+  #comparison_uploaded_audio .audio-container,
+  #pipeline_manual_audio [data-testid="audio"],
+  #comparison_recorded_audio [data-testid="audio"],
+  #comparison_uploaded_audio [data-testid="audio"] {
+    min-height: 116px !important;
+  }
+
+  #analyze_chat_audio_button,
+  #analyze_selected_audio_button,
+  #load_project_audios_button,
+  #run_project_audios_button,
+  #compare_transcriptions_button {
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    font-size: 14px !important;
+  }
+}
