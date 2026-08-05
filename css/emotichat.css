@@ -7479,6 +7479,207 @@ button#comparison_audio_input {
 }
 
 
+/* === V24 ELIMINA ESPACIOS CREADOS POR SALTOS DEL HTML === */
+/* pre-wrap se reserva para el texto cargado, no para la estructura visual. */
+.txt-section-card,
+.txt-section-card > *,
+.txt-section-card .block,
+.txt-section-card .html-container,
+.txt-section-card .prose,
+.txt-v26-header,
+.txt-status,
+.txt-actions-label,
+.txt-preview-accordion {
+  white-space: normal !important;
+}
+
+.txt-v26-header {
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.txt-v26-header h3,
+.txt-v26-header p {
+  white-space: normal !important;
+}
+
+/* Gradio coloca padding tanto en el bloque como en el Markdown interior. */
+.txt-section-card .block.txt-status {
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 10px 12px !important;
+  margin: 0 !important;
+}
+
+.txt-section-card .block.txt-status .txt-status,
+.txt-section-card .block.txt-status .prose {
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  overflow: visible !important;
+}
+
+.txt-section-card .block.txt-status p {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.45 !important;
+}
+
+.txt-preview-accordion {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+/* Solamente la vista previa conserva saltos de línea del archivo TXT. */
+.txt-preview-accordion textarea,
+.txt-preview {
+  white-space: pre-wrap !important;
+}
+
+
+/* === V23 ESTRUCTURA SIMPLE Y SIN RECORTES === */
+/* Flex elimina el conflicto entre las antiguas cuadrículas del compositor. */
+.message-composer-row {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  gap: 10px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 48px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+.message-composer-row > :first-child,
+.message-composer-row .message-input {
+  display: block !important;
+  flex: 1 1 auto !important;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  height: auto !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+.message-composer-row .message-input > div,
+.message-composer-row .message-input .form,
+.message-composer-row .message-input .wrap,
+.message-composer-row .message-input textarea {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.message-composer-row > :last-child,
+#send,
+#send button {
+  position: static !important;
+  inset: auto !important;
+  flex: 0 0 88px !important;
+  width: 88px !important;
+  min-width: 88px !important;
+  max-width: 88px !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  margin: 0 !important;
+  padding: 0 12px !important;
+  align-self: stretch !important;
+  transform: none !important;
+  box-sizing: border-box !important;
+}
+
+/* El Group de TXT toma solamente la altura necesaria. */
+.txt-section-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  flex: none !important;
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+  flex-basis: auto !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  gap: 11px !important;
+  margin: 12px 0 0 !important;
+  padding: 18px !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+.txt-section-card *,
+.txt-section-card > *,
+.txt-section-card .form,
+.txt-section-card .wrap {
+  flex-grow: 0 !important;
+  flex-shrink: 0 !important;
+  flex-basis: auto !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.txt-section-card > *,
+.txt-section-card > div,
+.txt-section-card > .form {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+}
+
+.txt-section-card #txt_file_upload,
+.txt-section-card #txt_file_upload button {
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+}
+
+@media (max-width: 700px) {
+  .message-composer-row {
+    gap: 8px !important;
+  }
+
+  .message-composer-row > :last-child,
+  #send,
+  #send button {
+    flex-basis: 76px !important;
+    width: 76px !important;
+    min-width: 76px !important;
+    max-width: 76px !important;
+    padding: 0 7px !important;
+  }
+
+  .txt-section-card {
+    gap: 9px !important;
+    margin-top: 9px !important;
+    padding: 13px !important;
+  }
+}
+
+
 /* === V21 FLUJO DE AUDIO EN UN PASO Y ESPACIADO UNIFORME === */
 /* Los elementos del formulario no deben crecer para completar la pantalla. */
 #tab_hablar,
