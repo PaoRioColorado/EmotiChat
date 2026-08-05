@@ -6667,3 +6667,86 @@ button#comparison_audio_input {
     min-height: 135px !important;
   }
 }
+
+
+/* === V15 FUNCIONES DE VOZ RESTAURADAS Y BOTONES CLAROS === */
+/* Acciones claras: ningún botón operativo de audio usa fondo oscuro. */
+#audio_tools_tabs [role="tab"][aria-selected="true"] {
+  background: #ddd8f4 !important;
+  color: #403869 !important;
+  -webkit-text-fill-color: #403869 !important;
+  border: 1px solid #c8c0e9 !important;
+}
+
+#analyze_chat_audio_button,
+#analyze_chat_audio_button button,
+#analyze_selected_audio_button,
+#analyze_selected_audio_button button,
+#load_project_audios_button,
+#load_project_audios_button button,
+#run_project_audios_button,
+#run_project_audios_button button,
+#compare_transcriptions_button,
+#compare_transcriptions_button button {
+  min-height: 50px !important;
+  background: #f0eef9 !important;
+  color: #433b70 !important;
+  -webkit-text-fill-color: #433b70 !important;
+  border: 1px solid #cbc5e9 !important;
+  border-radius: 13px !important;
+  box-shadow: none !important;
+  font-weight: 800 !important;
+}
+
+#analyze_chat_audio_button:hover,
+#analyze_selected_audio_button:hover,
+#load_project_audios_button:hover,
+#run_project_audios_button:hover,
+#compare_transcriptions_button:hover {
+  background: #e7e3f6 !important;
+  border-color: #b8afe0 !important;
+  color: #39315f !important;
+  -webkit-text-fill-color: #39315f !important;
+}
+
+.comparison-audio-sources {
+  align-items: stretch !important;
+  gap: 12px !important;
+}
+
+.comparison-source-card {
+  min-width: 0 !important;
+  padding: 12px !important;
+  border: 1px solid #dedfea !important;
+  border-radius: 14px !important;
+  background: #fafafe !important;
+}
+
+.comparison-source-card > .prose,
+.comparison-source-card p {
+  margin: 0 !important;
+  color: #343b50 !important;
+  -webkit-text-fill-color: #343b50 !important;
+}
+
+#comparison_recorded_audio,
+#comparison_uploaded_audio {
+  min-height: 145px !important;
+  height: auto !important;
+  overflow: visible !important;
+  border: 1px solid #dadce7 !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+}
+
+@media (max-width: 700px) {
+  .comparison-audio-sources {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  #comparison_recorded_audio,
+  #comparison_uploaded_audio {
+    min-height: 130px !important;
+  }
+}
