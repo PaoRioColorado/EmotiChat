@@ -7479,6 +7479,135 @@ button#comparison_audio_input {
 }
 
 
+/* === V27 ETIQUETAS LIMPIAS Y CONTROLES TTS LEGIBLES === */
+/* Los títulos de campo dejan de heredar el fondo azul de los botones. */
+#tts_experiment_language > label[data-testid="block-label"],
+#tts_experiment_speed > label[data-testid="block-label"],
+#tts_experiment_language .label-wrap,
+#tts_experiment_speed .label-wrap {
+  position: static !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 24px !important;
+  height: auto !important;
+  margin: 0 0 7px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #30384d !important;
+  -webkit-text-fill-color: #30384d !important;
+  box-shadow: none !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  line-height: 1.3 !important;
+}
+
+#tts_experiment_language > label[data-testid="block-label"] *,
+#tts_experiment_speed > label[data-testid="block-label"] *,
+#tts_experiment_language .label-wrap *,
+#tts_experiment_speed .label-wrap * {
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: #30384d !important;
+  -webkit-text-fill-color: #30384d !important;
+  box-shadow: none !important;
+}
+
+/* Selector de idioma blanco, con borde visible y texto oscuro. */
+#tts_experiment_language,
+#tts_experiment_language > div,
+#tts_experiment_language .wrap,
+#tts_experiment_language input,
+#tts_experiment_language [role="combobox"] {
+  background: #ffffff !important;
+  color: #30384d !important;
+  -webkit-text-fill-color: #30384d !important;
+  border-color: #cfd4e2 !important;
+  box-shadow: none !important;
+}
+
+/* Opciones de velocidad claras; la seleccionada conserva contraste alto. */
+#tts_experiment_speed label:not([data-testid="block-label"]) {
+  min-height: 42px !important;
+  padding: 9px 13px !important;
+  border: 1px solid #cec8e9 !important;
+  border-radius: 10px !important;
+  background: #f0eef9 !important;
+  color: #403865 !important;
+  -webkit-text-fill-color: #403865 !important;
+  box-shadow: none !important;
+  font-size: 14px !important;
+  font-weight: 750 !important;
+}
+
+#tts_experiment_speed label:not([data-testid="block-label"]):has(input:checked) {
+  border-color: #7569d1 !important;
+  background: #7569d1 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+#tts_experiment_speed label:not([data-testid="block-label"]):has(input:checked) * {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+#tts_experiment_speed input {
+  accent-color: #7569d1 !important;
+}
+
+#tts_experiment_upload,
+#tts_experiment_upload button,
+button#tts_experiment_upload {
+  border-color: #bdb5e5 !important;
+  background: #ded9f5 !important;
+  color: #342d68 !important;
+  -webkit-text-fill-color: #342d68 !important;
+}
+
+/* Se elimina el doble recuadro de los mensajes informativos. */
+.tts-experiment-card .block.tts-experiment-status,
+.tts-experiment-card .block.tts-comparison-guide {
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 11px 13px !important;
+  overflow: visible !important;
+}
+
+.tts-experiment-card .block.tts-experiment-status .tts-experiment-status,
+.tts-experiment-card .block.tts-experiment-status .prose,
+.tts-experiment-card .block.tts-comparison-guide .tts-comparison-guide,
+.tts-experiment-card .block.tts-comparison-guide .prose {
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  white-space: normal !important;
+}
+
+.tts-experiment-card .tts-experiment-status p,
+.tts-experiment-card .tts-comparison-guide p {
+  margin: 0 !important;
+  padding: 0 !important;
+  white-space: normal !important;
+  line-height: 1.5 !important;
+}
+
+.tts-experiment-card [data-testid="status-tracker"],
+.tts-experiment-card > .wrap.hide,
+.tts-experiment-card .block > .wrap.hide {
+  display: none !important;
+}
+
+
 /* === V24 ELIMINA ESPACIOS CREADOS POR SALTOS DEL HTML === */
 /* pre-wrap se reserva para el texto cargado, no para la estructura visual. */
 .txt-section-card,
