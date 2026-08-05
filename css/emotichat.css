@@ -6511,3 +6511,159 @@ button#comparison_audio_input {
   border-radius: 13px !important;
   font-weight: 800 !important;
 }
+
+
+/* === V14 PROCESAMIENTO DE VOZ ORGANIZADO === */
+.audio-tools-section {
+  gap: 14px !important;
+  padding: 20px !important;
+  border: 1px solid #dfe2ec !important;
+  border-radius: 20px !important;
+  background: #ffffff !important;
+}
+
+.audio-tools-heading {
+  margin-bottom: 4px !important;
+}
+
+.audio-tools-kicker {
+  display: block !important;
+  margin-bottom: 5px !important;
+  color: #6b5fc2 !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: .08em !important;
+  text-transform: uppercase !important;
+}
+
+.audio-tools-heading h2,
+.audio-tools-heading p {
+  margin: 0 !important;
+  color: #252c40 !important;
+  -webkit-text-fill-color: #252c40 !important;
+}
+
+.audio-tools-heading p {
+  margin-top: 5px !important;
+  color: #667085 !important;
+  -webkit-text-fill-color: #667085 !important;
+}
+
+#audio_tools_tabs {
+  background: transparent !important;
+}
+
+#audio_tools_tabs [role="tablist"] {
+  gap: 8px !important;
+  padding: 5px !important;
+  border: 1px solid #ddd9ef !important;
+  border-radius: 14px !important;
+  background: #f5f3fb !important;
+}
+
+#audio_tools_tabs [role="tab"] {
+  flex: 1 1 0 !important;
+  min-height: 44px !important;
+  border-radius: 10px !important;
+  color: #4b4567 !important;
+  -webkit-text-fill-color: #4b4567 !important;
+  font-weight: 750 !important;
+}
+
+#audio_tools_tabs [role="tab"][aria-selected="true"] {
+  background: #7164cf !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.audio-workspace-card {
+  gap: 14px !important;
+  padding: 18px !important;
+  border: 1px solid #e0e2ea !important;
+  border-radius: 16px !important;
+  background: #ffffff !important;
+}
+
+.audio-option-help {
+  margin: 0 !important;
+  padding: 12px 14px !important;
+  border-radius: 12px !important;
+  background: #f7f8fc !important;
+  color: #3f475d !important;
+}
+
+.audio-choice-divider {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  color: #7a8092 !important;
+}
+
+.audio-choice-divider::before,
+.audio-choice-divider::after {
+  content: "" !important;
+  flex: 1 !important;
+  height: 1px !important;
+  background: #e0e2ea !important;
+}
+
+#pipeline_manual_audio,
+#comparison_manual_audio {
+  min-height: 150px !important;
+  height: auto !important;
+  overflow: visible !important;
+  padding: 10px !important;
+  border: 1px solid #d9dce7 !important;
+  border-radius: 14px !important;
+  background: #fafafe !important;
+}
+
+#pipeline_manual_audio button,
+#comparison_manual_audio button {
+  width: auto !important;
+  min-width: 42px !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  padding: 0 12px !important;
+  border-radius: 10px !important;
+  color: #4c4378 !important;
+  -webkit-text-fill-color: #4c4378 !important;
+  background: #f0eef9 !important;
+  border-color: #d5d0ed !important;
+}
+
+#analyze_chat_audio_button,
+#analyze_chat_audio_button button,
+#compare_transcriptions_button,
+#compare_transcriptions_button button {
+  background: #7164cf !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-color: #7164cf !important;
+}
+
+#analyze_selected_audio_button,
+#analyze_selected_audio_button button {
+  background: #f0eef9 !important;
+  color: #4c4378 !important;
+  -webkit-text-fill-color: #4c4378 !important;
+  border-color: #d5d0ed !important;
+}
+
+@media (max-width: 640px) {
+  .audio-tools-section,
+  .audio-workspace-card {
+    padding: 12px !important;
+  }
+
+  #audio_tools_tabs [role="tab"] {
+    min-width: 0 !important;
+    padding: 8px !important;
+    font-size: 13px !important;
+  }
+
+  #pipeline_manual_audio,
+  #comparison_manual_audio {
+    min-height: 135px !important;
+  }
+}
