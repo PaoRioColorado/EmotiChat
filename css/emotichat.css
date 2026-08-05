@@ -7542,6 +7542,76 @@ button#comparison_audio_input {
 }
 
 
+/* === V25 SUPERFICIE CLARA PARA EL GRUPO TXT === */
+#app .txt-section-card,
+.gradio-container .txt-section-card {
+  --block-background-fill: #ffffff !important;
+  --panel-background-fill: #ffffff !important;
+  --background-fill-secondary: #ffffff !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #252c40 !important;
+  -webkit-text-fill-color: #252c40 !important;
+  border: 1px solid #dfe3ec !important;
+  box-shadow: none !important;
+}
+
+#app .txt-section-card > div,
+#app .txt-section-card > .block,
+#app .txt-section-card .html-container,
+#app .txt-section-card .prose,
+#app .txt-section-card .form,
+#app .txt-section-card .wrap,
+.gradio-container .txt-section-card > div,
+.gradio-container .txt-section-card > .block,
+.gradio-container .txt-section-card .html-container,
+.gradio-container .txt-section-card .prose,
+.gradio-container .txt-section-card .form,
+.gradio-container .txt-section-card .wrap {
+  background: transparent !important;
+  color: #252c40 !important;
+  -webkit-text-fill-color: #252c40 !important;
+  box-shadow: none !important;
+}
+
+#app .txt-section-card h3,
+#app .txt-section-card h4,
+#app .txt-section-card strong,
+#app .txt-section-card p,
+#app .txt-section-card span,
+.gradio-container .txt-section-card h3,
+.gradio-container .txt-section-card h4,
+.gradio-container .txt-section-card strong,
+.gradio-container .txt-section-card p,
+.gradio-container .txt-section-card span {
+  color: #252c40 !important;
+  -webkit-text-fill-color: #252c40 !important;
+}
+
+#app .txt-section-card .txt-status,
+.gradio-container .txt-section-card .txt-status {
+  background: #f7f8fc !important;
+  color: #4f5870 !important;
+  -webkit-text-fill-color: #4f5870 !important;
+  border-color: #e0e3ec !important;
+}
+
+#app .txt-section-card button,
+.gradio-container .txt-section-card button {
+  background: #f3f2fa !important;
+  color: #3f4760 !important;
+  -webkit-text-fill-color: #3f4760 !important;
+  border-color: #d7d3eb !important;
+  box-shadow: none !important;
+}
+
+#app .txt-section-card button:hover,
+.gradio-container .txt-section-card button:hover {
+  background: #eae7f7 !important;
+  border-color: #bdb6e2 !important;
+}
+
+
 /* === V23 ESTRUCTURA SIMPLE Y SIN RECORTES === */
 /* Flex elimina el conflicto entre las antiguas cuadrículas del compositor. */
 .message-composer-row {
