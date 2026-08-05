@@ -7351,3 +7351,129 @@ button#comparison_audio_input {
     min-height: 100px !important;
   }
 }
+
+
+/* === V20 RESULTADOS COMPACTOS Y ESTADOS INICIALES LIMPIOS === */
+/* Evita mostrar "No se encontró micrófono" antes de intentar grabar. */
+#comparison_recorded_audio .mic-select,
+#comparison_recorded_audio select[aria-label="Select input device"] {
+  display: none !important;
+}
+
+/* Resultados del Pipeline: altura guiada por el contenido y lectura cómoda. */
+#pipeline_transcription,
+#pipeline_sentiment,
+#pipeline_summary {
+  min-height: 0 !important;
+  height: auto !important;
+  margin: 8px 0 14px !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+#pipeline_transcription textarea,
+#pipeline_sentiment textarea,
+#pipeline_summary textarea {
+  field-sizing: content !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 58px !important;
+  max-height: 190px !important;
+  padding: 13px 14px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere !important;
+  line-height: 1.55 !important;
+  font-weight: 500 !important;
+}
+
+#pipeline_sentiment textarea {
+  min-height: 50px !important;
+  max-height: 82px !important;
+}
+
+/* Reproductor final: etiqueta clara y sin pastilla violeta oscura. */
+#pipeline_summary_audio,
+#pipeline_summary_audio > div,
+#pipeline_summary_audio .audio-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 0 !important;
+  margin-top: 8px !important;
+  overflow: hidden !important;
+  border-color: #dfe3ec !important;
+  border-radius: 12px !important;
+  background: #ffffff !important;
+  color: #30384d !important;
+  box-shadow: none !important;
+}
+
+#pipeline_summary_audio > label[data-testid="block-label"],
+#pipeline_summary_audio .label-wrap {
+  position: static !important;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: 30px !important;
+  margin: 0 !important;
+  padding: 3px 0 8px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #30384d !important;
+  -webkit-text-fill-color: #30384d !important;
+  box-shadow: none !important;
+  font-size: 14px !important;
+  font-weight: 750 !important;
+}
+
+#pipeline_summary_audio > label[data-testid="block-label"] *,
+#pipeline_summary_audio .label-wrap * {
+  background: transparent !important;
+  color: #30384d !important;
+  -webkit-text-fill-color: #30384d !important;
+}
+
+#pipeline_summary_audio .icon-button-wrapper,
+#pipeline_summary_audio button[aria-label*="share" i],
+#pipeline_summary_audio button[aria-label*="download" i] {
+  display: none !important;
+}
+
+/* El acordeón de TXT deja de crear una barra horizontal en celular. */
+.txt-section-card,
+.txt-preview-accordion,
+.txt-preview-accordion > div,
+.txt-preview-accordion textarea,
+.txt-preview-accordion .prose {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  overflow-wrap: anywhere !important;
+  white-space: pre-wrap !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 700px) {
+  #pipeline_transcription,
+  #pipeline_sentiment,
+  #pipeline_summary {
+    margin: 7px 0 12px !important;
+  }
+
+  #pipeline_transcription textarea,
+  #pipeline_sentiment textarea,
+  #pipeline_summary textarea {
+    min-height: 54px !important;
+    max-height: 170px !important;
+    padding: 11px 12px !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+  }
+
+  #pipeline_sentiment textarea {
+    min-height: 48px !important;
+    max-height: 76px !important;
+  }
+}
