@@ -7612,6 +7612,140 @@ button#comparison_audio_input {
 }
 
 
+/* === V26 MÓDULO ACADÉMICO DE TEXTO A VOZ === */
+.tts-experiment-card {
+  display: flex !important;
+  flex-direction: column !important;
+  flex: 0 0 auto !important;
+  gap: 13px !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  padding: 18px !important;
+  border: 1px solid #dfe3ec !important;
+  border-radius: 16px !important;
+  background: #ffffff !important;
+  color: #252c40 !important;
+  box-shadow: none !important;
+}
+
+.tts-experiment-card > *,
+.tts-experiment-card > div,
+.tts-experiment-card .form {
+  flex: 0 0 auto !important;
+  flex-grow: 0 !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.tts-experiment-heading,
+.tts-experiment-heading * {
+  white-space: normal !important;
+}
+
+.tts-experiment-heading h2 {
+  margin: 3px 0 5px !important;
+  color: #252c40 !important;
+  font-size: 20px !important;
+  line-height: 1.25 !important;
+}
+
+.tts-experiment-heading p {
+  margin: 0 !important;
+  color: #626b80 !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+#tts_experiment_upload,
+#tts_experiment_upload button,
+button#tts_experiment_upload {
+  width: 100% !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  max-height: 48px !important;
+  margin: 0 !important;
+  background: #f1eff9 !important;
+  color: #443c70 !important;
+  -webkit-text-fill-color: #443c70 !important;
+  border: 1px solid #cec8e9 !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+}
+
+.tts-experiment-options {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.tts-experiment-status,
+.tts-experiment-status .prose {
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 10px 12px !important;
+  white-space: normal !important;
+  background: #f7f8fc !important;
+  color: #4f5870 !important;
+  -webkit-text-fill-color: #4f5870 !important;
+  border: 1px solid #e0e3ec !important;
+  border-radius: 10px !important;
+}
+
+#tts_experiment_audio,
+#tts_experiment_audio > div,
+#tts_experiment_audio .audio-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  background: #ffffff !important;
+  color: #30384d !important;
+  border-color: #dfe3ec !important;
+  box-shadow: none !important;
+}
+
+#tts_experiment_audio .icon-button-wrapper,
+#tts_experiment_audio button[aria-label*="share" i],
+#tts_experiment_audio button[aria-label*="download" i] {
+  display: none !important;
+}
+
+.tts-comparison-guide,
+.tts-comparison-guide .prose {
+  margin: 0 !important;
+  padding: 12px 14px !important;
+  white-space: normal !important;
+  background: #eef8f5 !important;
+  color: #31564f !important;
+  -webkit-text-fill-color: #31564f !important;
+  border: 1px solid #cfe7df !important;
+  border-radius: 11px !important;
+  line-height: 1.5 !important;
+}
+
+@media (max-width: 700px) {
+  .tts-experiment-card {
+    gap: 10px !important;
+    padding: 13px !important;
+  }
+
+  .tts-experiment-options {
+    grid-template-columns: 1fr !important;
+    gap: 9px !important;
+  }
+
+  .tts-experiment-heading h2 {
+    font-size: 18px !important;
+  }
+}
+
+
 /* === V23 ESTRUCTURA SIMPLE Y SIN RECORTES === */
 /* Flex elimina el conflicto entre las antiguas cuadrículas del compositor. */
 .message-composer-row {
