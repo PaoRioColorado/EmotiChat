@@ -6900,7 +6900,6 @@ button#comparison_audio_input {
 #comparison_recorded_audio [role="button"],
 #comparison_uploaded_audio button,
 #comparison_uploaded_audio [role="button"] {
-  display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   width: auto !important;
@@ -7124,5 +7123,231 @@ button#comparison_audio_input {
   #comparison_uploaded_audio button:has(> .wrap) {
     min-height: 108px !important;
     padding: 13px !important;
+  }
+}
+
+
+/* === V18 CONTROLES NATIVOS Y ETIQUETAS LEGIBLES === */
+/* Gradio decide qué controles mostrar según el estado de grabación.
+   Nunca se fuerza display sobre estos botones. */
+#pipeline_manual_audio button[hidden],
+#pipeline_manual_audio [role="button"][hidden],
+#comparison_recorded_audio button[hidden],
+#comparison_recorded_audio [role="button"][hidden],
+#comparison_uploaded_audio button[hidden],
+#comparison_uploaded_audio [role="button"][hidden],
+#pipeline_manual_audio .hidden,
+#comparison_recorded_audio .hidden,
+#comparison_uploaded_audio .hidden {
+  display: none !important;
+}
+
+/* Estados deshabilitados claros y con contraste suficiente. */
+#pipeline_manual_audio button:disabled,
+#pipeline_manual_audio [aria-disabled="true"],
+#comparison_recorded_audio button:disabled,
+#comparison_recorded_audio [aria-disabled="true"],
+#comparison_uploaded_audio button:disabled,
+#comparison_uploaded_audio [aria-disabled="true"] {
+  border: 1px solid #d9dce6 !important;
+  background: #f1f2f6 !important;
+  color: #656d80 !important;
+  -webkit-text-fill-color: #656d80 !important;
+  opacity: 1 !important;
+  box-shadow: none !important;
+}
+
+/* El texto interno de los botones visibles siempre conserva contraste. */
+#pipeline_manual_audio button:not(:disabled),
+#comparison_recorded_audio button:not(:disabled),
+#comparison_uploaded_audio button:not(:disabled) {
+  border-color: #cbc6e4 !important;
+  background: #efedf8 !important;
+  color: #3f3765 !important;
+  -webkit-text-fill-color: #3f3765 !important;
+}
+
+/* Selectores amplios pero limitados a las tres salidas del Pipeline. */
+#pipeline_transcription label,
+#pipeline_sentiment label,
+#pipeline_summary label,
+#pipeline_transcription label *,
+#pipeline_sentiment label *,
+#pipeline_summary label * {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #2f374b !important;
+  -webkit-text-fill-color: #2f374b !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  font-size: 14px !important;
+  font-weight: 750 !important;
+  line-height: 1.35 !important;
+  transform: none !important;
+}
+
+#pipeline_transcription label,
+#pipeline_sentiment label,
+#pipeline_summary label {
+  display: block !important;
+  width: 100% !important;
+  min-height: 26px !important;
+  margin-bottom: 7px !important;
+}
+
+/* Si Gradio utiliza un span flotante como etiqueta, se neutraliza también. */
+#pipeline_transcription [data-testid="block-label"],
+#pipeline_sentiment [data-testid="block-label"],
+#pipeline_summary [data-testid="block-label"],
+#pipeline_transcription [data-testid="block-label"] *,
+#pipeline_sentiment [data-testid="block-label"] *,
+#pipeline_summary [data-testid="block-label"] * {
+  background: transparent !important;
+  color: #2f374b !important;
+  -webkit-text-fill-color: #2f374b !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+
+/* === V19 TAMAÑOS FINALES DE CONTROLES === */
+/* Acciones principales: compactas, uniformes y fáciles de leer. */
+#analyze_chat_audio_button,
+#analyze_chat_audio_button button,
+#analyze_selected_audio_button,
+#analyze_selected_audio_button button,
+#load_project_audios_button,
+#load_project_audios_button button,
+#run_project_audios_button,
+#run_project_audios_button button,
+#compare_transcriptions_button,
+#compare_transcriptions_button button {
+  height: 46px !important;
+  min-height: 46px !important;
+  max-height: 46px !important;
+  padding: 0 16px !important;
+  font-size: 14px !important;
+  line-height: 1.15 !important;
+}
+
+/* Grabar, detener y reanudar: ancho suficiente para el texto, sin ocupar la fila. */
+#comparison_recorded_audio .record-button,
+#comparison_recorded_audio .stop-button,
+#comparison_recorded_audio .stop-button-paused,
+#comparison_recorded_audio .resume-button {
+  width: auto !important;
+  min-width: 104px !important;
+  max-width: 150px !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  max-height: 42px !important;
+  padding: 0 13px !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+}
+
+/* Pausa y borrar son controles cuadrados. */
+#comparison_recorded_audio .pause-button,
+#comparison_recorded_audio .icon-button,
+#comparison_uploaded_audio .icon-button,
+#pipeline_manual_audio .icon-button {
+  width: 42px !important;
+  min-width: 42px !important;
+  max-width: 42px !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  max-height: 42px !important;
+  padding: 0 !important;
+}
+
+/* Selector de dispositivo: limitado para no deformar la tarjeta. */
+#comparison_recorded_audio button:disabled,
+#comparison_recorded_audio [aria-disabled="true"] {
+  width: auto !important;
+  min-width: 120px !important;
+  max-width: 190px !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  max-height: 42px !important;
+  padding: 0 12px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-size: 13px !important;
+}
+
+/* Zona de carga proporcionada: visible sin ocupar media pantalla. */
+#pipeline_manual_audio button:has(> .wrap),
+#pipeline_manual_audio button[aria-label*="upload" i],
+#pipeline_manual_audio button[aria-label*="drop" i],
+#comparison_uploaded_audio button:has(> .wrap),
+#comparison_uploaded_audio button[aria-label*="upload" i],
+#comparison_uploaded_audio button[aria-label*="drop" i] {
+  min-height: 105px !important;
+  padding: 12px 16px !important;
+}
+
+#pipeline_manual_audio,
+#comparison_recorded_audio,
+#comparison_uploaded_audio {
+  min-height: 132px !important;
+  padding: 10px !important;
+}
+
+#pipeline_manual_audio .audio-container,
+#comparison_recorded_audio .audio-container,
+#comparison_uploaded_audio .audio-container,
+#pipeline_manual_audio [data-testid="audio"],
+#comparison_recorded_audio [data-testid="audio"],
+#comparison_uploaded_audio [data-testid="audio"] {
+  min-height: 108px !important;
+}
+
+@media (max-width: 700px) {
+  #analyze_chat_audio_button,
+  #analyze_chat_audio_button button,
+  #analyze_selected_audio_button,
+  #analyze_selected_audio_button button,
+  #load_project_audios_button,
+  #load_project_audios_button button,
+  #run_project_audios_button,
+  #run_project_audios_button button,
+  #compare_transcriptions_button,
+  #compare_transcriptions_button button {
+    height: 44px !important;
+    min-height: 44px !important;
+    max-height: 44px !important;
+    padding: 0 12px !important;
+    font-size: 13px !important;
+  }
+
+  #comparison_recorded_audio .record-button,
+  #comparison_recorded_audio .stop-button,
+  #comparison_recorded_audio .stop-button-paused,
+  #comparison_recorded_audio .resume-button {
+    min-width: 96px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    max-height: 44px !important;
+  }
+
+  #comparison_recorded_audio .pause-button,
+  #comparison_recorded_audio .icon-button,
+  #comparison_uploaded_audio .icon-button,
+  #pipeline_manual_audio .icon-button {
+    width: 44px !important;
+    min-width: 44px !important;
+    max-width: 44px !important;
+    height: 44px !important;
+    min-height: 44px !important;
+    max-height: 44px !important;
+  }
+
+  #pipeline_manual_audio button:has(> .wrap),
+  #comparison_uploaded_audio button:has(> .wrap) {
+    min-height: 100px !important;
   }
 }
