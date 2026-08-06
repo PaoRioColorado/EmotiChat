@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/30783802/README.md)
 # EmotiChat
 
 **Asistente conversacional de bienestar emocional con procesamiento de texto y audio.**
